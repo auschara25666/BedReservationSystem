@@ -1,0 +1,1263 @@
+# Webalizer V2.23-08 Incremental Data - 03/10/2021 23:55:50
+2021 3 10 23 55 50
+9720 7146 145 195 100 44 529995059 2142 128 0
+12 22 1895 1 10
+13 9 419791 10 9 8
+41 28 2412655 18 8 7
+1676 1232 73228515 20 381 20
+2505 2011 210576479 25 490 27
+5179 3665 230332906 15 1072 21
+125 86 6727836 21 92 15
+26 25 2073788 22 7 7
+32 32 1278619 22 7 7
+5 5 22558 5 4 4
+118 53 2921912 12 72 13
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+1658 1190 51437771 301
+2750 2097 99745483 243
+601 396 34559312 82
+755 580 42206356 131
+158 106 25453300 64
+414 337 30123828 131
+255 201 75923057 81
+68 50 17392805 50
+123 84 31782538 85
+6 6 356149 3
+2 1 191747 2
+3 1 16313 1
+22 22 3133594 9
+61 27 1652372 23
+387 307 9816545 91
+347 221 19264761 161
+224 130 11047440 166
+127 106 6447431 45
+86 66 6305819 46
+10 5 222672 9
+20 5 112097 9
+335 245 11226910 109
+337 184 21103214 135
+971 779 30473545 165
+6
+0
+0
+7146
+0
+0
+0
+0
+0
+21
+0
+6
+504
+0
+229
+0
+0
+0
+0
+0
+22
+1513
+66
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+207
+0
+0
+0
+0
+0
+# -urls- 
+/admindek/js/jquery.quicksearch.js
+0 100 0 148356 0 0
+/admindek/css/fullcalendar.print.css
+0 4 0 4296 0 0
+/formreserv/3
+0 79 0 936650 3 3
+/admindek/js/daterangepicker.js
+0 99 0 817120 0 0
+/formreserv/4
+0 6 0 72156 0 0
+/admindek/js/buttons.html5.min.js
+0 16 0 92666 0 0
+/AdminLTE/plugins/datepicker-master/docs/js/datepicker.js
+0 1 0 10291 0 0
+/healline
+0 13 0 221481 1 0
+/formreserv-user1
+0 47 0 566724 1 1
+/AdminLTE/plugins/moment/moment.min.js
+0 1 0 17646 0 0
+/css/dashboard.css
+0 10 0 13972 0 0
+/admindek/css/font-awesome-n.min.css
+0 112 0 880270 0 0
+/js/materialize.js
+0 21 0 1394505 0 0
+/admindek/js/jquery.datatables.min.js
+0 15 0 374118 0 0
+/js/validate_auth.js
+0 22 0 22501 0 0
+/register
+0 19 0 120776 3 3
+/admindek/js/fullcalendar.min.js
+0 4 0 163488 0 0
+/admindek/js/script.min.js
+0 9 0 14373 0 0
+/admindek/js/select2-custom.js
+0 98 0 201598 0 0
+/normalreserv
+0 69 0 2255253 0 1
+/index-chief
+0 15 0 82199 2 1
+/admindek/css/bootstrap-multiselect.css
+0 103 0 80259 0 0
+/adminward
+0 18 0 99293 0 0
+/index-user
+0 11 0 56159 0 0
+/image/registerblack.png
+0 6 0 1653262 0 0
+/AdminLTE/plugins/fontawesome-free/webfonts/fa-regular-400.woff2
+0 1 0 13897 0 0
+/reserve-user
+0 22 0 353616 0 0
+/index-superadmin
+0 2 0 10061 0 0
+/manageprofile-user
+0 1 0 8003 0 0
+/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js
+0 21 0 592429 0 0
+/admindek/js/datatables.buttons.min.js
+0 16 0 80528 0 0
+/operativeuser
+0 12 0 92445 0 0
+/admindek/js/bootstrap.min.js
+0 107 0 1393629 0 0
+/AdminLTE/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css
+0 1 0 839 0 0
+/formreserv/14
+0 1 0 12080 0 0
+/admindek/js/jquery-ui.min.js
+0 107 0 7122160 0 0
+/formreserv-nurse/4
+0 1 0 12271 0 0
+/admindek/js/waves.min.js
+0 106 0 296780 0 0
+/admindek/js/underscore-min.js
+0 99 0 611771 0 0
+/admindek/css/style.css
+0 112 0 3754434 0 0
+/admindek/js/classie.js
+0 16 0 13480 0 0
+/AdminLTE/plugins/jquery/jquery.min.js
+0 22 0 764767 0 0
+/AdminLTE/plugins/datepicker-master/docs/css/datepicker.css
+0 1 0 1419 0 0
+/admindek/js/auto.js
+0 74 0 60121 0 0
+/admindek/js/sweetalert.min.js
+0 16 0 82446 0 0
+/admindek/css/widget.css
+0 15 0 50986 0 0
+/bedstatus
+0 56 0 430291 0 0
+/admindek/js/moment.min.js
+0 99 0 1284175 0 0
+/wordpress/wp-login.php
+0 2 0 2344 0 0
+/formreserv-user/5
+0 3 0 37569 0 0
+/AdminLTE/plugins/jquery-validation/additional-methods.min.js
+0 22 0 180558 0 0
+/manage-user
+0 1 0 1177 0 0
+/AdminLTE/plugins/datepicker-master/docs/js/datepicker.th-TH.js
+0 1 0 989 0 0
+/GetOpt/5
+0 2 0 1548 0 0
+/admindek/css/select2.min.css
+0 103 0 245800 0 0
+/admindek/css/daterangepicker.css
+0 102 0 182172 0 0
+/bedstatus-nurse
+0 5 0 35077 0 0
+/admindek/css/pages.css
+0 109 0 2992615 0 0
+/image/logowhite.png
+0 1 0 334070 0 0
+/js/save.js
+0 1 0 1000 0 0
+/js/autocomplete.js
+0 21 0 19908 0 0
+/admindek/png/warning.png
+0 12 0 207842 0 0
+/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js.map
+0 7 0 2228618 0 0
+/admindek/js/form-validation.js
+0 10 0 13332 0 0
+/approvedreserv-nurse
+0 8 0 67263 0 0
+/admindek/css/component.css
+0 16 0 33178 0 0
+/admindek/js/responsive.bootstrap4.min.js
+0 16 0 15356 0 0
+/_ignition/health-check
+0 17 0 5876 0 0
+/AdminLTE/dist/css/adminlte.min.css
+0 21 0 3192742 0 0
+/AdminLTE/dist/js/demo.js
+0 1 0 2728 0 0
+/admindek/js/jquery.mcustomscrollbar.concat.min.js
+0 105 0 1380568 0 0
+/js/sub-select.js
+0 4 0 3280 0 0
+/admindek/js/modaleffects.js
+0 16 0 12024 0 0
+/formreserv-user/4
+0 4 0 46770 0 0
+/formreserv/5
+0 3 0 35963 0 0
+/favicon.ico
+0 58 0 22942 0 0
+/admindek/js/buttons.print.min.js
+0 16 0 19780 0 0
+/manageprofile-nurse
+0 2 0 16004 0 0
+/admindek/js/jscolor.js
+0 99 0 605078 0 0
+/manageprofile-chief
+0 6 0 48951 0 0
+/formreserv-user/13
+0 1 0 12769 0 0
+/AdminLTE/plugins/bootstrap-switch/js/bootstrap-switch.min.js
+0 1 0 4070 0 0
+/wp/wp-login.php
+0 3 0 3516 0 0
+/image/bedOccupied.png
+0 8 0 164512 0 0
+/AdminLTE/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js
+0 1 0 4235 0 0
+/admindek/css/icofont.css
+0 109 0 1843114 0 0
+/admindek/image/logolek.png
+0 111 0 1188642 0 0
+/admindek/js/pcoded.min.js
+0 109 0 458569 0 0
+/admindek/css/responsive.bootstrap4.min.css
+0 15 0 18263 0 0
+/image/logofontblack.png
+0 30 0 9291248 0 0
+/ward-statistic
+0 24 0 148850 0 0
+/image/Emblem.png
+0 336 0 398585771 0 0
+/formreserv-user/15
+0 1 0 11842 0 0
+/index-admin
+0 5 0 27591 0 1
+/admindek/js/data-table-custom.js
+0 16 0 99200 0 0
+/formreserv-user/1
+0 1 0 12850 0 0
+/chiefnurse
+0 50 0 273291 1 1
+/admindek/js/jszip.min.js
+0 16 0 344472 0 0
+/manageuserwards
+0 37 0 360532 1 0
+/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.woff2
+0 22 0 1436467 0 0
+/admindek/css/fullcalendar.css
+0 4 0 15628 0 0
+/GetOpt/7
+0 2 0 1554 0 0
+/formreserv1
+0 4 0 46473 0 0
+/operativechief
+0 58 0 382139 1 0
+/healrole
+0 4 0 42886 0 0
+/admindek/js/modernizr.js
+0 104 0 604924 0 0
+/admindek/js/jquery.multi-select.js
+0 100 0 372092 0 0
+/approvedreserv
+0 53 0 623088 1 1
+/login
+0 41 0 164700 6 4
+/findPatient
+0 37 0 98461 0 0
+/admindek/jpg/avatar-4.jpg
+0 112 0 309216 0 0
+/admindek/css/multi-select.css
+0 103 0 106620 0 0
+/admindek/js/bootstrap-datepicker.min.js
+0 99 0 1022081 0 0
+/admindek/js/calendar.js
+0 4 0 5692 0 0
+/user
+0 16 0 83165 0 0
+/formreserv-user/3
+0 3 0 35761 0 0
+/admindek/js/vfs_fonts.js
+0 16 0 4067842 0 0
+/wp-login.php
+0 4 0 4678 0 0
+/cancelreserve
+0 2 0 19791 0 0
+/manageprofile-admin
+0 3 0 24721 0 0
+/admindek/js/pdfmake.min.js
+0 16 0 1445936 0 0
+/admindek/css/themify-icons.css
+0 108 0 344540 0 0
+/userwards
+0 12 0 153909 0 0
+/schedule
+0 4 0 22444 0 0
+/manageward
+0 32 0 1047491 0 0
+/admindek/js/datedropper.min.js
+0 99 0 546684 0 0
+/superadmin
+0 10 0 50238 0 0
+/image/eu.jpg
+0 18 0 1282966 0 0
+/formreserv/2
+0 34 0 408975 0 1
+/js/table.js
+0 1 0 576 0 0
+/AdminLTE/plugins/fontawesome-free/css/all.min.css
+0 23 0 445344 0 0
+/admindek/css/buttons.datatables.min.css
+0 15 0 26429 0 0
+/manageadmin
+0 10 0 110130 0 0
+/formreserv/9
+0 3 0 36202 0 0
+/AdminLTE/dist/js/adminlte.min.js.map
+0 7 0 582568 0 0
+/admindek/css/sweetalert.css
+0 13 0 39776 0 0
+/admindek/js/moment-with-locales.min.js
+0 100 0 6941720 0 0
+/image/bedAvailable.png
+0 8 0 168104 0 0
+/GetOpt/1
+0 12 0 10380 0 0
+/manageoperative
+0 13 0 318151 0 0
+/AdminLTE/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js
+0 1 0 12611 0 0
+/home
+0 2 0 2182 0 0
+/admindek/js/select2.full.min.js
+0 98 0 2082720 0 0
+/nurse
+0 7 0 37722 0 0
+/AdminLTE/plugins/jquery-validation/jquery.validate.min.js
+0 21 0 199387 0 0
+/approvedreserv-user
+0 51 0 434759 0 0
+/admindek/js/css-scrollbars.js
+0 104 0 68912 0 0
+/admindek/js/spectrum.js
+0 99 0 1229079 0 0
+/AdminLTE/dist/css/adminlte.min.css.map
+0 7 0 10218784 0 0
+/admindek/css/datatables.bootstrap4.min.css
+0 15 0 18616 0 0
+/AdminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css
+0 1 0 2019 0 0
+/admindek/js/popper.min.js
+0 107 0 765778 0 0
+/
+0 193 0 813475 95 20
+/normalreserv-nurse
+0 70 0 1854492 0 0
+/managebed
+0 5 0 107447 0 1
+/js/clock.js
+0 112 0 77692 0 0
+/AdminLTE/plugins/inputmask/min/jquery.inputmask.bundle.min.js
+0 1 0 28801 0 0
+/formreserv-nurse/3
+0 2 0 24496 0 0
+/formreserv/6
+0 2 0 24156 0 0
+/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css
+0 22 0 82511 0 0
+/image/logo.png
+0 1 0 210119 0 0
+/AdminLTE/plugins/fontawesome-free/webfonts/fa-solid-900.woff
+0 1 0 103628 0 0
+/admindek/js/seehide.js
+0 7 0 4291 0 0
+/admindek/css/bootstrap.min.css
+0 112 0 2277544 0 0
+/admindek/js/bootstrap-datetimepicker.min.js
+0 99 0 1245569 0 0
+/admindek/js/script.js
+0 105 0 192772 0 0
+/admindek/js/datatables.bootstrap4.min.js
+0 16 0 22146 0 0
+/css/autocomplete.min.css
+0 18 0 17010 0 0
+/admindek/js/custom-picker.js
+0 99 0 232057 0 0
+/js/validate.js
+0 1 0 1159 0 0
+/admindek/css/waves.min.css
+0 112 0 162505 0 0
+/operativenurse
+0 4 0 25551 0 0
+/blog/wp-login.php
+0 2 0 2344 0 0
+/admindek/css/spectrum.css
+0 100 0 356410 0 0
+/AdminLTE/dist/js/adminlte.min.js
+0 23 0 209818 0 0
+/admindek/js/datatables.responsive.min.js
+0 16 0 70180 0 0
+/formreserv-user/2
+0 2 0 25712 0 0
+/admindek/css/bootstrap-datetimepicker.css
+0 103 0 188432 0 0
+/admindek/js/modal.js
+0 15 0 16497 0 0
+/robots.txt
+0 25 0 8311 0 0
+/admindek/js/moment.min-2.js
+0 4 0 70340 0 0
+/admindek/js/bootstrap-multiselect.js
+0 97 0 578839 0 0
+/formreserv-user/11
+0 3 0 38545 0 0
+/formreserv-nurse/2
+0 2 0 24502 0 0
+/admindek/css/datedropper.min.css
+0 103 0 233781 0 0
+/admindek/js/validate.js
+0 10 0 55166 0 0
+/admindek/js/jquery.slimscroll.js
+0 106 0 271442 0 0
+/formreserv/1
+0 2 0 23840 0 0
+/admindek/jpg/avatar-3.jpg
+0 37 0 107241 0 0
+/admindek/js/vertical-layout.min.js
+0 109 0 171309 0 0
+/formreserv/7
+0 1 0 11997 0 0
+/managedoctor
+0 8 0 1389861 2 0
+/admindek/css/feather.css
+0 112 0 266818 0 0
+/admindek/js/rocket-loader.min.js
+0 111 0 466230 0 0
+/admindek/js/jquery.min.js
+0 107 0 3191168 0 0
+# End Of Table - urls
+# -sites- (monthly)
+40.77.189.0
+0 1 1 690067 0 0
+-
+45.158.15.146
+0 1 0 952 0 0
+-
+180.183.16.243
+0 191 77 14147622 4 1614814330
+/chiefnurse
+202.12.97.155
+0 271 139 23312050 1 1614963428
+/manageward
+100.20.87.87
+0 1 1 388 0 0
+-
+52.38.218.205
+0 1 1 4040 1 1615161947
+/
+147.92.179.108
+0 1 1 3175 1 1614861794
+/
+40.77.188.204
+0 1 1 25599 0 0
+-
+185.200.117.171
+0 21 0 20391 1 1614833110
+/
+40.82.209.237
+0 1 1 3943 1 1614696395
+/
+66.249.71.152
+0 1 1 332 0 0
+-
+54.36.148.217
+0 1 1 3576 1 1614792637
+/
+157.55.39.36
+0 1 1 5410 1 1614605141
+/register
+202.28.118.76
+0 248 193 5627136 2 1614869059
+-
+40.77.189.21
+0 1 1 690067 0 0
+-
+1.46.74.211
+0 9 9 3096936 0 0
+-
+139.155.16.233
+0 1 1 4047 1 1615026675
+/
+40.77.191.32
+0 1 1 88552 0 0
+-
+95.217.207.28
+0 1 1 1300 1 1614898359
+/
+40.77.188.133
+0 1 1 25599 0 0
+-
+82.102.25.141
+0 1 1 10140 1 1614690638
+/
+147.92.179.109
+0 1 1 3175 1 1614861794
+/
+45.158.15.36
+0 1 1 4042 1 1615135704
+/
+13.124.222.242
+0 4 0 4000 0 0
+-
+54.36.148.17
+0 1 1 3588 1 1614567090
+/
+5.133.11.116
+0 1 1 10128 1 1614631085
+/
+54.36.148.216
+0 1 1 3675 1 1615028824
+/
+34.209.105.222
+0 4 4 4688 0 0
+-
+34.221.163.213
+0 1 1 4045 1 1615417520
+/
+40.77.191.70
+0 3 3 249415 0 0
+-
+31.13.115.3
+0 1 1 348 0 0
+-
+52.188.50.116
+0 6 0 566204 2 1614961549
+/
+223.24.158.247
+0 85 82 3275326 1 1614952911
+/register
+54.36.149.81
+0 1 1 332 0 0
+-
+40.77.189.135
+0 1 1 23066 0 0
+-
+40.77.188.99
+0 1 1 58969 0 0
+-
+40.77.189.60
+0 1 1 25599 0 0
+-
+40.77.190.73
+0 1 1 88552 0 0
+-
+202.12.97.142
+0 22 5 1377464 2 1614901329
+/login
+147.92.179.116
+0 1 1 4052 1 1615072587
+/
+46.228.7.5
+0 1 0 1859 1 1614731565
+-
+146.88.60.4
+0 13 13 680367 1 1614827735
+/
+31.13.127.2
+0 2 2 352357 0 0
+-
+54.36.149.80
+0 1 1 3669 1 1614955480
+/
+54.36.148.210
+0 1 1 332 0 0
+-
+54.187.163.189
+0 1 1 4235 1 1615245068
+/
+54.36.148.104
+0 1 1 332 0 0
+-
+40.77.190.87
+0 1 1 690067 0 0
+-
+52.34.229.60
+0 1 1 388 0 0
+-
+54.71.108.122
+0 1 1 4045 1 1615072766
+/
+157.55.39.223
+0 1 1 6613 1 1615036903
+/register
+40.77.188.8
+0 1 1 12892 0 0
+-
+31.13.127.19
+0 1 1 6683 0 0
+-
+54.36.148.237
+0 1 1 332 0 0
+-
+18.136.72.135
+0 4 4 4688 0 0
+-
+34.218.64.34
+0 1 1 569 0 0
+-
+40.77.189.225
+0 1 1 2269 0 0
+-
+54.36.149.44
+0 1 1 3682 1 1615192305
+/
+40.77.190.209
+0 2 2 35958 0 0
+-
+54.188.125.60
+0 1 1 10265 1 1615279243
+/
+34.223.113.210
+0 1 1 4234 1 1615072769
+/
+31.13.127.118
+0 1 1 31184 0 0
+-
+31.13.127.8
+0 1 1 6923 0 0
+-
+202.28.119.26
+0 273 188 5690793 2 1614963277
+/manageprofile-chief
+217.160.240.48
+0 2 0 1943 2 1614799749
+-
+180.183.20.242
+0 108 99 3291921 1 1614807726
+/
+95.165.146.14
+0 1 0 187700 1 1615025662
+-
+202.102.144.121
+0 3 3 12700 3 1615420401
+/
+124.122.37.234
+0 114 102 6918013 1 1614807600
+/normalreserv
+54.36.148.127
+0 3 3 10938 3 1615281070
+/
+51.158.108.61
+0 1 1 10194 1 1614567886
+/
+223.24.92.108
+0 142 90 12288209 1 1614811051
+/ward-statistic
+158.69.228.209
+0 1 1 10479 1 1614996182
+/
+40.77.189.58
+0 1 1 81105 0 0
+-
+18.237.161.193
+0 1 1 569 0 0
+-
+52.161.97.121
+0 3 0 4649 1 1615385258
+-
+40.77.167.58
+0 9 9 36150 9 1615309729
+/
+52.13.48.33
+0 1 1 4242 1 1614813782
+/
+14.207.206.185
+0 48 35 2798733 4 1615420550
+/index-admin
+66.249.71.150
+0 4 4 47619 1 1615179304
+/
+61.222.31.80
+0 1 1 4225 1 1615354995
+/
+198.55.126.156
+0 1 1 10128 1 1614656237
+/
+54.244.49.101
+0 1 1 4055 1 1614990170
+/
+157.55.39.108
+0 12 12 3984 0 0
+-
+42.83.147.202
+0 1 1 4049 1 1615369625
+/
+180.183.65.108
+0 918 725 163815051 7 1614953362
+/
+40.77.188.199
+0 3 3 163509 0 0
+-
+54.36.149.75
+0 1 1 332 0 0
+-
+40.77.190.124
+0 2 2 37674 0 0
+-
+44.233.249.66
+0 1 1 4050 1 1614813785
+/
+40.77.189.20
+0 1 1 23066 0 0
+-
+13.66.139.17
+0 1 1 330595 0 0
+-
+82.165.117.55
+0 2 0 12638 0 0
+-
+31.13.127.24
+0 1 1 79758 0 0
+-
+52.22.58.6
+0 1 1 1167 0 0
+-
+40.77.189.93
+0 3 3 86837 0 0
+-
+31.13.127.13
+0 1 1 85474 0 0
+-
+147.92.179.115
+0 1 1 3175 1 1614861794
+/
+138.246.253.24
+0 1 1 1301 1 1614917657
+/
+40.77.190.162
+0 1 1 2269 0 0
+-
+13.66.139.139
+0 6 6 24306 3 1615062570
+/login
+167.172.247.12
+0 2 0 188650 1 1614881340
+/
+34.77.162.33
+0 1 1 10132 1 1614736847
+/
+185.244.214.43
+0 1 1 10265 1 1614808112
+/
+54.39.19.74
+0 2 2 4366 1 1614926041
+/
+13.66.139.61
+0 1 1 344078 0 0
+-
+147.92.179.117
+0 2 2 8048 1 1614861784
+/
+52.64.20.252
+0 1 1 1172 0 0
+-
+31.13.127.3
+0 1 1 1270536 0 0
+-
+180.183.17.153
+0 56 10 76113 1 1615411998
+/user
+223.24.163.47
+0 2284 1538 137694916 2 1614917459
+/index-superadmin
+31.13.127.116
+0 2 2 17114 1 1615136797
+/
+54.218.255.23
+0 1 1 569 0 0
+-
+54.188.102.61
+0 1 1 388 0 0
+-
+40.77.188.238
+0 1 1 103628 0 0
+-
+44.234.25.98
+0 1 1 3920 1 1614726935
+/
+34.219.214.211
+0 1 1 4051 1 1615158491
+/
+223.206.133.134
+0 96 59 5202399 2 1615074648
+/managedoctor
+159.203.184.69
+0 1 1 4044 1 1614797876
+/
+157.55.39.222
+0 1 1 4047 1 1615094395
+/login
+18.237.32.176
+0 1 1 388 0 0
+-
+54.36.148.70
+0 1 1 3677 1 1615357149
+/
+40.77.191.30
+0 1 1 81105 0 0
+-
+52.1.89.74
+0 1 1 4049 1 1615193419
+/
+44.234.188.103
+0 1 1 4238 1 1615158498
+/
+2.57.122.32
+0 1 1 10264 1 1614885642
+/
+54.189.9.112
+0 1 1 4048 1 1615245062
+/
+13.66.139.82
+0 1 1 334070 0 0
+-
+34.215.4.186
+0 1 1 3955 1 1614639764
+/
+157.55.39.41
+0 5 5 1660 0 0
+-
+147.92.179.105
+0 1 1 3175 1 1614861794
+/
+212.237.99.89
+0 1 0 187892 1 1615060640
+-
+35.80.32.40
+0 1 1 4046 1 1614898980
+/
+147.92.179.118
+0 1 1 3175 1 1614861794
+/
+40.77.191.21
+0 2 2 37674 0 0
+-
+54.36.148.218
+0 1 1 3589 1 1614641833
+/
+54.36.148.133
+0 1 1 3681 1 1615110910
+/
+51.222.9.32
+0 1 1 1167 0 0
+-
+66.249.71.148
+0 2 2 12980 0 0
+-
+40.77.167.76
+0 1 1 4042 1 1615397210
+/
+40.77.189.193
+0 1 1 58969 0 0
+-
+31.13.127.6
+0 3 3 26156 0 0
+-
+40.77.189.217
+0 1 1 79758 0 0
+-
+31.13.127.7
+0 1 1 74779 0 0
+-
+14.207.201.26
+0 4624 3629 132672553 14 1614949402
+/operativechief
+# End Of Table - sites (monthly)
+# -sites- (daily)
+45.158.15.146
+0 1 0 952 0 0
+-
+34.221.163.213
+0 1 1 4045 1 1615417520
+/
+202.102.144.121
+0 2 2 8457 2 1615420401
+/
+52.161.97.121
+0 3 0 4649 1 1615385258
+-
+14.207.206.185
+0 48 35 2798733 4 1615420550
+/index-admin
+61.222.31.80
+0 1 1 4225 1 1615354995
+/
+42.83.147.202
+0 1 1 4049 1 1615369625
+/
+82.165.117.55
+0 2 0 12638 0 0
+-
+180.183.17.153
+0 56 10 76113 1 1615411998
+/user
+54.36.148.70
+0 1 1 3677 1 1615357149
+/
+157.55.39.41
+0 1 1 332 0 0
+-
+40.77.167.76
+0 1 1 4042 1 1615397210
+/
+# End Of Table - sites (daily)
+# -referrers- 
+http://www.newbaiyok.com/formreserv/14
+0 15
+http://newbaiyok.com/formreserv1
+0 59
+http://www.newbaiyok.com/manageoperative
+0 24
+http://www.newbaiyok.com/healrole
+0 4
+http://www.newbaiyok.com/manageadmin
+0 4
+http://www.newbaiyok.com/event/10
+0 1
+http://newbaiyok.com/formreserv-user/15
+0 3
+http://www.newbaiyok.com/login
+0 243
+http://www.newbaiyok.com/formreserv-user/11
+0 19
+http://newbaiyok.com/formreserv/5
+0 9
+http://newbaiyok.com/register
+0 12
+http://www.newbaiyok.com/bedstatus
+0 55
+http://newbaiyok.com/manage-user/6
+0 2
+http://newbaiyok.com/formreserv/2
+0 22
+http://www.newbaiyok.com/formreserv/5
+0 4
+http://newbaiyok.com/manageprofile-user
+0 2
+http://newbaiyok.com/cancelreserve
+0 3
+http://newbaiyok.com/normalreserv
+0 67
+http://newbaiyok.com/formreserv-user1
+0 936
+http://www.newbaiyok.com/operativeuser
+0 16
+http://newbaiyok.com/managedoctor
+0 3
+http://www.newbaiyok.com/AdminLTE/plugins/fontawesome-free/css/all.min.css
+0 10
+http://newbaiyok.com/formreserv/3
+0 119
+http://www.newbaiyok.com/manageprofile-chief
+0 11
+http://newbaiyok.com/approvedreserv
+0 19
+http://www.newbaiyok.com/nurse
+0 1
+http://www.newbaiyok.com/operativechief
+0 238
+http://newbaiyok.com/formreserv/7
+0 3
+http://www.newbaiyok.com/normalreserv
+0 162
+http://newbaiyok.com/healline
+0 2
+http://newbaiyok.com/formreserv-user/13
+0 6
+http://www.newbaiyok.com/index-admin
+0 6
+http://newbaiyok.com/manageprofile-nurse
+0 5
+http://newbaiyok.com/normalreserv-nurse
+0 142
+http://www.newbaiyok.com/formreserv/2
+0 712
+http://newbaiyok.com/userwards
+0 9
+http://www.newbaiyok.com/healline
+0 25
+http://newbaiyok.com/formreserv-user/3
+0 57
+http://newbaiyok.com/approvedreserv-user
+0 138
+http://newbaiyok.com/formreserv-nurse/3
+0 32
+http://newbaiyok.com/superadmin
+0 42
+http://newbaiyok.com/user
+0 58
+http://www.newbaiyok.com/superadmin
+0 3
+http://www.newbaiyok.com/user
+0 3
+- (Direct Request)
+0 1302
+http://www.newbaiyok.com/formreserv/9
+0 22
+http://newbaiyok.com/bedstatus
+0 56
+http://newbaiyok.com/operativeuser
+0 43
+http://www.newbaiyok.com/adminward
+0 15
+http://newbaiyok.com/
+0 224
+http://www.newbaiyok.com/manageward
+0 29
+http://newbaiyok.com/manageprofile-admin
+0 3
+http://www.newbaiyok.com/register
+0 15
+http://newbaiyok.com/formreserv-user/5
+0 18
+http://newbaiyok.com/login
+0 27
+http://www.newbaiyok.com/formreserv-user/2
+0 14
+http://www.newbaiyok.com/formreserv/3
+0 2912
+http://newbaiyok.com/operativenurse
+0 8
+http://www.newbaiyok.com/index-superadmin
+0 2
+http://www.newbaiyok.com/formreserv-user/1
+0 10
+http://newbaiyok.com/formreserv/4
+0 10
+http://newbaiyok.com/approvedreserv-nurse
+0 38
+http://www.newbaiyok.com/userwards
+0 9
+http://newbaiyok.com/formreserv-nurse/4
+0 3
+http://www.newbaiyok.com/formreserv
+0 1
+http://newbaiyok.com/managebed
+0 3
+http://www.newbaiyok.com/approvedreserv-user
+0 13
+http://newbaiyok.com/manageward
+0 62
+http://www.newbaiyok.com/
+0 331
+http://newbaiyok.com/chiefnurse
+0 91
+http://newbaiyok.com/operativechief
+0 121
+http://newbaiyok.com/admin
+0 2
+http://www.newbaiyok.com/reserve-user
+0 20
+http://newbaiyok.com/nurse
+0 15
+http://newbaiyok.com/manageadmin
+0 12
+http://www.newbaiyok.com/managebed
+0 3
+http://newbaiyok.com/reserve-user
+0 19
+http://www.newbaiyok.com/ward-statistic
+0 32
+http://newbaiyok.com/bedstatus-nurse
+0 8
+http://www.newbaiyok.com/managedoctor
+0 12
+http://newbaiyok.com/admin/Cms_Wysiwyg/directive/index/
+0 1
+http://www.newbaiyok.com/schedule
+0 25
+http://www.newbaiyok.com/operativenurse
+0 3
+http://www.newbaiyok.com/manageuserwards
+0 11
+http://www.newbaiyok.com/manageprofile-admin
+0 2
+http://newbaiyok.com/index-user
+0 77
+http://newbaiyok.com/AdminLTE/plugins/fontawesome-free/css/all.min.css
+0 5
+http://www.newbaiyok.com/chiefnurse
+0 123
+http://www.newbaiyok.com/index-chief
+0 11
+http://newbaiyok.com/adminward
+0 9
+http://www.newbaiyok.com/formreserv1
+0 1
+http://newbaiyok.com/index-chief
+0 8
+http://newbaiyok.com/formreserv-user/4
+0 63
+http://www.newbaiyok.com/formreserv/6
+0 13
+http://newbaiyok.com/formreserv/1
+0 7
+http://www.newbaiyok.com/formreserv/4
+0 118
+http://www.newbaiyok.com/approvedreserv
+0 57
+http://newbaiyok.com/manageuserwards
+0 327
+http://newbaiyok.com/formreserv-nurse/2
+0 7
+http://newbaiyok.com/ward-statistic
+0 41
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0
+0 5
+Mozilla/5.0 (compatible; TestBot/0.1; +In_the_test_phase,_if_the_spider_brings_you_trouble,_please_add_our_IP_to_the_blacklis
+0 1
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; BuiltWith/1.0; +http://builtwith.c
+0 2
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15
+0 352
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36
+0 22
+Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0
+0 2
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 Edg/88.0.
+0 3816
+httpx - Open-source project (github.com/projectdiscovery/httpx)
+0 1
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.67 Safari/537.36
+0 1
+Mozilla/5.0 (iPad; CPU OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safar
+0 15
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534+ (KHTML, like Gecko) BingPreview/1.0b
+0 48
+Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/88.0.43
+0 5
+facebookexternalhit/1.1;line-poker/1.0
+0 19
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.72 Safari/537.36 Edg/89.0.7
+0 56
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:56.0) Gecko/20100101 Firefox/56.0
+0 1
+Mozilla/5.0 (compatible; AhrefsBot/6.1; +http://ahrefs.com/robot/)
+0 5
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36
+0 114
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+0 2
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+0 39
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+0 4891
+Go-http-client/1.1
+0 8
+Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Mobile/15E148 
+0 85
+Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)
+0 11
+Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36
+0 14
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15
+0 147
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36
+0 6
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:15.0) Gecko/20100101 Firefox/15.0.1
+0 1
+Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2225.0 Safari/537.36
+0 4
+facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+0 1
+Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E14
+0 2
+Mozilla/5.0 (Windows NT 10.0; rv:47.0) Gecko/20100101 Firefox/47.0
+0 3
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+0 3
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1664.3 Safari/537.36
+0 4
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36
+0 1
+Mozilla/5.0(Windows NT 6.3; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0
+0 2
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0
+0 4
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36
+0 13
+Expanse indexes the network perimeters of our customers. If you have any questions or concerns, please reach out to: scaninfo
+0 1
+Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1866.237 Safari/537.36
+0 4
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+0 1
+Mozlila/5.0 (Linux; Android 7.0; SM-G892A Bulid/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.31
+0 2
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/74.0.3729.169 Safari/537.36
+0 1
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

@@ -1,0 +1,478 @@
+AWSTATS DATA FILE 7.8 (build 20200416)
+# If you remove this file, all statistics for date 202103 will be lost/reset.
+# Last config file used to build this data file was /home/furcgjrf/domains/newbaiyok.com/awstats/.data/awstats.newbaiyok.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 30
+POS_GENERAL 2104                
+POS_TIME 2774                
+POS_VISITOR 9758                
+POS_DAY 11762               
+POS_DOMAIN 3620                
+POS_LOGIN 3854                
+POS_ROBOT 4009                
+POS_WORMS 4591                
+POS_EMAILSENDER 4722                
+POS_EMAILRECEIVER 4865                
+POS_SESSION 12048               
+POS_SIDER 12254               
+POS_FILETYPES 5000                
+POS_DOWNLOADS 5235                
+POS_OS 5283                
+POS_BROWSER 5494                
+POS_SCREENSIZE 6039                
+POS_UNKNOWNREFERER 6113                
+POS_UNKNOWNREFERERBROWSER 6200                
+POS_ORIGIN 6282                
+POS_SEREFERRALS 6422                
+POS_PAGEREFS 6566                
+POS_SEARCHWORDS 6714                
+POS_KEYWORDS 6866                
+POS_MISC 2437                
+POS_ERRORS 6925                
+POS_CLUSTER 3710                
+POS_SIDER_403 7100                
+POS_SIDER_400 7861                
+POS_SIDER_404 7943                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20210310235550 118 27923 15262548684634
+FirstTime 0
+LastTime 20210310235550
+LastUpdate 20210311002337 118 0 118 0 0
+TotalVisits 65                  
+TotalUnique 47                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 47                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 58 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 120 1196 50634181 396 462 802958
+1 124 2084 96085853 551 666 3659630
+2 65 440 34351331 145 161 194226
+3 81 585 40490086 138 170 1715638
+4 37 101 22960774 33 57 2491578
+5 91 359 29299044 44 55 817880
+6 77 209 75669714 41 46 250499
+7 35 49 16919046 15 19 473443
+8 56 81 30912975 42 42 868931
+9 1 1 4049 2 5 352100
+10 0 0 0 2 2 191747
+11 0 0 0 3 3 16313
+12 6 6 12735 7 16 3120859
+13 12 12 118392 32 49 1533980
+14 45 303 9115836 70 84 700502
+15 101 245 18440557 81 102 817334
+16 100 112 9041702 79 112 2005422
+17 18 62 3242219 28 65 3204896
+18 27 66 6091197 20 20 214622
+19 3 3 16115 7 7 206557
+20 3 3 27618 15 17 84479
+21 67 275 10538095 52 60 680008
+22 66 229 15326333 73 108 5757995
+23 96 776 26123710 154 195 4346185
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 1231 7197 495421562
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 12
+bingpreview 48 5413229 20210308170951 0
+bingbot/ 39 1094955 20210310172650 17
+facebookexternalhit/ 20 3813467 20210307170626 1
+AhrefsBot/ 16 41735 20210310061909 5
+Googlebot/ 7 60931 20210308045519 1
+no_user_agent 3 30723 20210309084043 0
+^mozilla\/5\.0$ 3 12700 20210310235321 0
+discover 1 1300 20210304225239 0
+Go\-http\-client/ 1 4049 20210308085019 0
+testbot 1 4047 20210306103115 0
+unknown 1 327 20210305063404 1
+custo 1 10132 20210303020047 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 8
+css 1782 15401943 0 0
+png 497 405391631 0 0
+woff2 19 1130504 0 0
+php 160 634644 0 0
+map 21 13029970 0 0
+js 3502 44077918 0 0
+jpg 166 1611378 0 0
+Unknown 1050 14143574 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 11
+macosx15 350 154
+macosx6 1 1
+winxp 4 4
+ios_iphone 82 6
+macosx5 1 1
+linuxubuntu 2 2
+linux 14 14
+win7 3 3
+win8.1 6 6
+win10 6720 1038
+ios_ipad 14 2
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 23
+firefox84.0 2 2
+chrome88.0.4324.182 2829 717
+chrome41.0.2225.0 4 4
+chrome88.0.4324.190 3832 305
+chrome34.0.1866.237 4 4
+chrome78.0.3904.108 3 3
+chrome36.0.1985.67 1 1
+safari14.0 119 30
+firefox56.0 1 1
+chrome80.0.3987.149 1 1
+chrome83.0.4103.97 14 14
+chrome79.0.3945.88 1 1
+firefox62.0 1 1
+chrome84.0.4147.135 13 1
+chrome60.0.3112.101 1 1
+safari14.0.3 230 123
+safari5.1 1 1
+chrome88.0.4324.146 1 1
+chrome74.0.3729.169 1 1
+chrome89.0.4389.72 41 10
+safari14.0.1 82 6
+safari 14 2
+firefox15.0.1 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 0
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 121 121
+From1 0 0
+From2 0 0
+From3 0 0
+From4 1110 7076
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 7
+403 22 21382
+302 504 633296
+419 6 8330
+405 66 2639746
+500 207 18783634
+301 6 5792
+404 1513 1905065
+END_ERRORS
+
+# URL with 403 errors - Hits - Last URL referrer
+BEGIN_SIDER_403 20
+/blog/wp-includes/wlwmanifest.xml 1 -
+/website/wp-includes/wlwmanifest.xml 1 -
+/ 3 -
+/wp/wp-includes/wlwmanifest.xml 1 -
+/site/wp-includes/wlwmanifest.xml 1 -
+/wordpress/wp-includes/wlwmanifest.xml 1 -
+/news/wp-includes/wlwmanifest.xml 1 -
+/sito/wp-includes/wlwmanifest.xml 1 -
+/shop/wp-includes/wlwmanifest.xml 1 -
+/media/wp-includes/wlwmanifest.xml 1 -
+/wp1/wp-includes/wlwmanifest.xml 1 -
+/wp-includes/wlwmanifest.xml 1 -
+/2019/wp-includes/wlwmanifest.xml 1 -
+/cpanel 1 -
+/cms/wp-includes/wlwmanifest.xml 1 -
+/xmlrpc.php 1 -
+/2018/wp-includes/wlwmanifest.xml 1 -
+/test/wp-includes/wlwmanifest.xml 1 -
+/web/wp-includes/wlwmanifest.xml 1 -
+/wp2/wp-includes/wlwmanifest.xml 1 -
+END_SIDER_403
+
+# URL with 400 errors - Hits - Last URL referrer
+BEGIN_SIDER_400 0
+END_SIDER_400
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 31
+/admindek/js/pdfmake.min.js.map 16 -
+/GetOpt 10 http://newbaiyok.com/operativeuser
+/formreserv/%22%7B%7B%20$opt-%3Eid%20%7D%7D%22/autocomplete 68 http://www.newbaiyok.com/formreserv/6
+/wp-admin/upgrade.php 1 -
+/formreserv/admindek/jpg/avatar-3.jpg 122 http://www.newbaiyok.com/formreserv/3
+/admindek/css/waves.min.css%22%20type=%22text/css 63 http://www.newbaiyok.com/operativechief
+//vendor/phpunit/phpunit/phpunit.xsd 2 -
+/formreserv-nurse/admindek/jpg/avatar-4.jpg 5 http://newbaiyok.com/formreserv-nurse/4
+/admindek/js/waves.min.js.map 202 -
+/formreserv-nurse/admindek/jpg/avatar-3.jpg 5 http://newbaiyok.com/formreserv-nurse/4
+/wordpress/wp-login.php 1 -
+/admin 2 http://newbaiyok.com/admin
+/formreserv/admindek/jpg/avatar-4.jpg 123 http://www.newbaiyok.com/formreserv/3
+/formreserv 2 -
+/%22%7B%7B%20$opt-%3Eid%20%7D%7D%22/autocomplete 6 http://newbaiyok.com/formreserv1
+/formreserv-user/admindek/jpg/avatar-4.jpg 19 http://newbaiyok.com/formreserv-user/15
+/formreserv-user/admindek/jpg/avatar-3.jpg 18 http://newbaiyok.com/formreserv-user/15
+/checkout 1 -
+/.env 4 -
+/cpanel 1 -
+/resources/demos/style.css 35 http://www.newbaiyok.com/formreserv-user/1
+/admindek/js/bootstrap.min.js.map 203 -
+/blog/wp-login.php 1 -
+/admindek/css/bootstrap.min.css.map 210 -
+/formreserv-user1 15 http://newbaiyok.com/user
+/admindek/js/popper.min.js.map 202 -
+/admindek/js/underscore-min.map 171 -
+/wp-login.php 1 -
+/formreserv-user 2 http://newbaiyok.com/index-user
+/wp/wp-login.php 1 -
+/formreserv/3/autocomplete 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 47
+223.24.163.47 288 1526 132935683 20210305041059
+180.183.65.108 257 734 159878361 20210305140922
+14.207.201.26 201 3681 127418299 20210305130322
+202.12.97.155 110 164 22479268 20210305165708
+202.28.119.26 85 187 4987647 20210305165437
+223.24.92.108 68 80 8836698 20210303223731
+180.183.16.243 59 162 14084382 20210303233210
+223.206.133.134 40 57 1899802 20210306235044
+14.207.206.185 26 34 1976053 20210310235550 20210310232108 /index-admin
+202.28.118.76 14 193 5296730 20210304144409
+44.234.25.98 1 1 3920 20210302231535
+35.80.32.40 1 1 4046 20210304230300
+52.64.20.252 1 1 1172 20210305174353
+34.215.4.186 1 1 3955 20210301230244
+44.233.249.66 1 1 4050 20210303232305
+198.55.126.156 1 1 10128 20210302033717
+34.221.163.213 1 1 4045 20210310230520 20210310230520 /
+54.71.108.122 1 1 4045 20210306231926
+82.102.25.141 1 1 10140 20210302131038
+5.133.11.116 1 1 10128 20210301203805
+34.219.214.211 1 1 4051 20210307230811
+54.244.49.101 1 1 4055 20210306002250
+180.183.20.242 11 99 3280370 20210303214206
+44.234.188.103 1 1 4238 20210307230818
+124.122.37.234 14 102 6904579 20210303214000
+52.13.48.33 1 1 4242 20210303232302
+61.222.31.80 1 1 4225 20210310054315
+54.187.163.189 1 1 4235 20210308231108
+185.244.214.43 1 1 10265 20210303214832
+34.223.113.210 1 1 4234 20210306231929
+54.39.19.74 1 1 4039 20210305063401
+146.88.60.4 1 13 680367 20210304031535
+159.203.184.69 1 1 4044 20210303185756
+202.12.97.142 4 5 1298671 20210304234209
+138.246.253.24 1 1 1301 20210305041417
+51.222.9.32 1 1 1167 20210304005522
+54.189.9.112 1 1 4048 20210308231102
+40.82.209.237 1 1 3943 20210302144635
+52.38.218.205 1 1 4040 20210308000547
+34.209.105.222 4 4 4688 20210302124512
+180.183.17.153 10 41 46808 20210310213318
+42.83.147.202 1 1 4049 20210310094705
+52.22.58.6 1 1 1167 20210301212818
+158.69.228.209 1 1 10479 20210306020302
+45.158.15.36 1 1 4042 20210307164824
+223.24.158.247 6 82 3270975 20210305140151
+18.136.72.135 4 4 4688 20210303150730
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 9
+20210301 3 3 15250 3
+20210302 10 24 1312701 6
+20210303 221 1346 66149424 13
+20210304 307 1998 201813827 13
+20210305 601 3681 222147911 11
+20210306 44 61 1922615 6
+20210307 3 3 12331 3
+20210308 3 3 12323 3
+20210310 39 78 2035180 7
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 9
+5mn-15mn 6
+15mn-30mn 4
+2mn-5mn 1
+0s-30s 39
+30s-2mn 1
+30mn-1h 3
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 75
+/ 149 621762 49 33
+/formreserv/3 79 936650 1 2
+/normalreserv-nurse 70 1851964 0 0
+/normalreserv 69 2254621 0 2
+/operativechief 58 382139 1 1
+/bedstatus 56 429975 0 0
+/approvedreserv 53 622772 0 0
+/approvedreserv-user 51 434127 0 0
+/chiefnurse 50 273291 1 2
+/formreserv-user1 47 566724 1 1
+/AdminLTE/dist/js/adminlte.min.js.map 7 582568 0 0
+/manageuserwards 37 359900 0 0
+/managebed 5 107447 0 1
+/manageprofile-user 1 8003 0 0
+/formreserv-user/11 3 38545 0 0
+/formreserv-nurse/2 2 24502 0 0
+/healline 13 221481 0 0
+/user 16 83165 0 1
+/GetOpt/5 2 1232 0 0
+/schedule 4 22444 0 0
+/formreserv/14 1 12080 0 0
+/wordpress/wp-login.php 2 2344 0 0
+/manageadmin 10 110130 0 0
+/superadmin 10 50238 0 0
+/AdminLTE/dist/css/adminlte.min.css.map 7 10218784 0 0
+/formreserv/2 34 408975 0 1
+/index-chief 15 82199 0 1
+/formreserv-user/3 3 35761 0 0
+/cancelreserve 2 19791 0 0
+/operativenurse 4 25551 0 0
+/register 17 108753 1 4
+/manageward 32 1046543 0 1
+/index-superadmin 2 10061 0 1
+/formreserv/4 6 72156 0 1
+/manageprofile-admin 3 24721 0 1
+/formreserv-user/2 2 25712 0 0
+/blog/wp-login.php 2 2344 0 0
+/home 2 2182 0 0
+/approvedreserv-nurse 8 67263 0 0
+/wp-login.php 4 4678 4 2
+/login 37 148503 6 3
+/formreserv-nurse/4 1 12271 0 0
+/nurse 7 37722 0 0
+/formreserv/6 2 24156 0 0
+/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js.map 7 2228618 0 0
+/formreserv-user/13 1 12769 0 0
+/bedstatus-nurse 5 35077 0 0
+/index-admin 5 27591 0 0
+/ward-statistic 24 148568 0 1
+/manage-user 1 1177 0 0
+/operativeuser 12 92445 0 0
+/GetOpt/7 2 1238 0 0
+/formreserv-user/1 1 12850 0 0
+/healrole 4 42886 0 0
+/managedoctor 8 1389861 0 0
+/formreserv/9 3 36202 0 0
+/formreserv-user/5 3 37569 0 0
+/wp/wp-login.php 3 3516 1 3
+/findPatient 37 98461 0 0
+/formreserv/7 1 11997 0 0
+/reserve-user 22 353616 0 0
+/formreserv/5 3 35963 0 0
+/GetOpt/1 12 10098 0 0
+/userwards 12 153909 0 0
+/formreserv-nurse/3 2 24496 0 0
+/manageoperative 13 318151 0 0
+/formreserv-user/4 4 46770 0 0
+/adminward 18 99293 0 0
+/formreserv1 4 46473 0 0
+/manageprofile-chief 6 48951 0 1
+/index-user 11 56159 0 0
+/formreserv/1 2 23840 0 0
+/_ignition/health-check 17 5568 0 0
+/formreserv-user/15 1 11842 0 0
+/manageprofile-nurse 2 16004 0 0
+END_SIDER

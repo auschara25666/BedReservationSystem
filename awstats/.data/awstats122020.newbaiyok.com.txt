@@ -1,0 +1,494 @@
+AWSTATS DATA FILE 7.8 (build 20200416)
+# If you remove this file, all statistics for date 202012 will be lost/reset.
+# Last config file used to build this data file was /home/furcgjrf/domains/newbaiyok.com/awstats/.data/awstats.newbaiyok.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 30
+POS_GENERAL 2104                
+POS_TIME 2776                
+POS_VISITOR 9842                
+POS_DAY 12591               
+POS_DOMAIN 3583                
+POS_LOGIN 3817                
+POS_ROBOT 3972                
+POS_WORMS 4731                
+POS_EMAILSENDER 4862                
+POS_EMAILRECEIVER 5005                
+POS_SESSION 13294               
+POS_SIDER 13490               
+POS_FILETYPES 5140                
+POS_DOWNLOADS 5378                
+POS_OS 5426                
+POS_BROWSER 5705                
+POS_SCREENSIZE 6537                
+POS_UNKNOWNREFERER 6611                
+POS_UNKNOWNREFERERBROWSER 6799                
+POS_ORIGIN 6982                
+POS_SEREFERRALS 7121                
+POS_PAGEREFS 7265                
+POS_SEARCHWORDS 7445                
+POS_KEYWORDS 7597                
+POS_MISC 2439                
+POS_ERRORS 7656                
+POS_CLUSTER 3673                
+POS_SIDER_403 7811                
+POS_SIDER_400 7893                
+POS_SIDER_404 7975                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20210101020235 1 0 8199466105855
+FirstTime 20201201000323
+LastTime 20201231205447
+LastUpdate 20210101043329 1 0 0 0 0
+TotalVisits 82                  
+TotalUnique 62                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 70                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 13 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 166 287 23296854 49 51 1621883
+1 75 211 12783219 15 15 412624
+2 82 145 16139571 26 30 464593
+3 49 88 23227187 20 67 1814944
+4 7 35 4115619 3 4 12738
+5 2 14 681595 2 3 2904
+6 2 2 23118 7 23 736259
+7 4 4 32603 6 32 1654046
+8 54 56 5449365 30 35 74640
+9 173 213 38231832 63 81 1554583
+10 2 2 7895 4 22 1180025
+11 101 200 10847565 60 100 560212
+12 27 37 688621 11 24 664532
+13 57 150 4650997 20 23 35745
+14 101 886 44907688 16 62 1039508
+15 2 2 14088 5 18 266443
+16 16 62 3574622 9 19 1010713
+17 2 3 1284616 4 23 695972
+18 6 7 32314 10 21 374126
+19 5 17 663679 6 24 216034
+20 54 96 9633330 25 28 33044
+21 8 52 3883517 7 14 24002
+22 4 5 1288087 2 2 20682
+23 19 31 469268 11 14 25463
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 1018 2605 205927250
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 16
+bingbot/ 96 1979734 20201231090228 25
+Googlebot/ 83 882401 20201228114835 12
+bingpreview 61 2489921 20201226144916 0
+AhrefsBot/ 41 101462 20201231151700 14
+baidu 39 2040915 20201228175602 0
+dataprovider\.com 18 725043 20201209065555 1
+Go\-http\-client/ 10 28581 20201227233951 3
+bot[\s_+:,\.\;\/\\-] 4 8545 20201227152033 2
+MSIE[\x20]6 3 24184 20201215114208 0
+unknown 3 981 20201231212851 3
+Googlebot\-Image/ 1 1270535 20201224001226 0
+CFNetwork 1 1270535 20201208070152 0
+[\s_+:,\.\;\/\\-]bot 1 4146 20201202045305 0
+Nimbostratus-Bot 2 20682 20201218224031 0
+python 1 1106 20201218102248 0
+netcraft 1 10170 20201202143420 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 9
+css 421 4442116 0 0
+png 197 172511610 0 0
+woff2 79 3675773 0 0
+php 131 626898 0 0
+map 5 2117790 0 0
+js 876 9184313 0 0
+jpg 13 919488 0 0
+xml 1 0 0 0
+Unknown 882 12449262 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 15
+androidoreo 14 2
+macosx15 1 1
+winlong 11 2
+ios_iphone 181 39
+unix 34 7
+androidlollipop 1 1
+linuxubuntu 1 1
+macosx5 2 2
+androidmarshmallow 9 2
+linux 3 3
+win7 8 8
+macosx10 3 3
+win10 2332 942
+Unknown 4 4
+macosx8 1 1
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 38
+firefox57.0 1 1
+safari13.1.2 52 4
+safari11.0 13 1
+chrome87.0.4280.88 3 3
+chrome88.0.4240.193 6 6
+chrome80.0.3987.122 1 1
+opera55.0.2994.44 1 1
+chrome39.0.2171.95 1 1
+firefox54.0 1 1
+safari14.0 4 1
+chrome83.0.4103.97 2 2
+firefox62.0 1 1
+chrome65.0.3325.209 34 7
+chrome26.0.1410.65 1 1
+firefox59.0 2 2
+chrome40.0.2214.85 3 3
+chrome41.0.2272.89 1 1
+msie9.0 10 1
+firefox79.0 1 1
+Unknown 4 4
+firefox84.0 1 1
+chrome76.0.3809.132 4 3
+chrome68.0.3440.106 1 1
+chrome78.0.3904.108 10 5
+chrome87.0.4280.67 592 430
+chrome78.0.3904.87 11 1
+chrome80.0.3987.149 3 3
+chrome75.0.3765.0 14 2
+firefox61.0 11 11
+chrome79.0.3945.88 1 1
+chrome45.0.2454.94 1 1
+chrome80.0.3987 1 1
+chrome86.0.4240.198 1688 476
+firefox81.0 1 1
+netscape5.0 1 1
+safari14.0.1 112 33
+firefox15.0.1 2 2
+chrome83.0.4103.116 9 2
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+Embarcadero_URI_Client/1.0 20201223181239
+colly_-_https://github.com/gocolly/colly/v2 20201221124637
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 2
+Embarcadero_URI_Client/1.0 20201223181239
+colly_-_https://github.com/gocolly/colly/v2 20201221124637
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 83 89
+From1 0 0
+From2 0 0
+From3 11 11
+From4 924 2505
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+https://brandnewblogs.com 11 11
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 6
+302 217 305578
+419 6 8306
+500 10 2061247
+405 5 941220
+404 118 314420
+301 1 959
+END_ERRORS
+
+# URL with 403 errors - Hits - Last URL referrer
+BEGIN_SIDER_403 0
+END_SIDER_403
+
+# URL with 400 errors - Hits - Last URL referrer
+BEGIN_SIDER_400 0
+END_SIDER_400
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 42
+/blog/wp-includes/wlwmanifest.xml 3 -
+/sitemap.xml 2 -
+/website/wp-includes/wlwmanifest.xml 3 -
+/manage-ward/2 1 http://www.newbaiyok.com/superadmin
+/apple-touch-icon.png 1 -
+//wp-admin/install.php 1 -
+/humans.txt 3 -
+/contact 1 -
+/adminlte/dist/js/adminlte.min.js 1 -
+/site/wp-includes/wlwmanifest.xml 3 -
+/vendor/phpunit/phpunit/LICENSE 1 -
+/wp1/wp-includes/wlwmanifest.xml 3 -
+/wp-includes/wlwmanifest.xml 3 -
+/2019/wp-includes/wlwmanifest.xml 3 -
+/.env 4 -
+/adminlte/plugins/jquery-validation/additional-methods.min.js 1 -
+/cms/wp-includes/wlwmanifest.xml 3 -
+/test/wp-includes/wlwmanifest.xml 3 -
+/xmlrpc.php 3 -
+/2018/wp-includes/wlwmanifest.xml 1 -
+/manage-ward/3 1 http://www.newbaiyok.com/superadmin
+/ads.txt 5 -
+/web/wp-includes/wlwmanifest.xml 3 -
+/adminlte/plugins/jquery-validation/jquery.validate.min.js 1 -
+/apple-touch-icon-precomposed.png 1 -
+/GetOpt 28 http://newbaiyok.com/reserveuser
+/wp/wp-includes/wlwmanifest.xml 3 -
+/manage-ward/1 7 http://newbaiyok.com/superadmin
+/news/wp-includes/wlwmanifest.xml 3 -
+/wordpress/wp-includes/wlwmanifest.xml 3 -
+/sito/wp-includes/wlwmanifest.xml 3 -
+/apple-touch-icon-120x120.png 1 -
+/shop/wp-includes/wlwmanifest.xml 3 -
+/2020/wp-includes/wlwmanifest.xml 2 -
+/media/wp-includes/wlwmanifest.xml 1 -
+/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js 1 -
+/homeuser 1 -
+/apple-touch-icon-120x120-precomposed.png 1 -
+/adminlte/plugins/jquery/jquery.min.js 1 -
+/wp-content/plugins/ioptimization/IOptimize.php 1 www.google.com
+/wordpress/wp-admin/install.php 1 -
+/wp2/wp-includes/wlwmanifest.xml 3 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 70
+14.207.207.38 256 1272 61887481 20201202025758
+202.12.97.185 164 217 10867434 20201208121123
+202.12.97.190 159 188 40967262 20201208095732
+180.183.23.137 121 182 17069831 20201208010142
+14.207.205.150 120 344 25575271 20201208070144
+202.12.97.155 102 127 30320596 20201208035919
+27.55.74.16 17 64 2437673 20201222122935
+217.197.186.137 4 4 15732 20201211121311
+207.244.230.205 3 3 12584 20201221124637
+23.95.219.30 3 14 1794141 20201228005547
+181.215.78.156 1 13 680299 20201202114258
+44.233.220.130 1 1 4139 20201221230410
+103.62.48.229 1 1 10131 20201222140227
+171.13.14.60 1 13 563198 20201229020514
+51.15.184.151 1 1 10177 20201226200215
+171.13.14.76 1 5 400561 20201226033826
+3.226.254.103 1 1 0 20201221020027
+96.126.125.77 1 1 3953 20201205024246
+3.238.203.155 1 1 0 20201221185608
+89.147.68.255 2 2 7879 20201213183139
+34.209.251.238 1 1 3951 20201226045123
+91.243.188.85 1 1 13816 20201219064535
+216.145.14.142 1 1 3960 20201231140331
+3.236.213.243 3 3 28638 20201227071242
+23.95.219.136 3 9 1732698 20201221040648
+77.234.68.169 2 2 7911 20201206155337
+64.246.161.42 1 1 3956 20201206172826
+38.145.82.109 1 13 680298 20201202050318
+37.9.13.68 1 1 10126 20201203025418
+27.115.124.38 0 2 2541070 
+171.13.14.75 0 5 170149 
+171.13.14.4 1 1 3947 20201229020556
+159.65.196.245 1 1 3916 20201231205350
+67.207.196.246 1 1 3950 20201204141037
+171.13.14.12 0 1 23217 
+44.234.121.82 1 1 4147 20201219230407
+27.115.124.70 0 1 1270535 
+42.236.10.114 0 1 1270535 
+38.132.122.207 1 1 10129 20201221152455
+27.55.79.131 1 2 3951 20201210184002
+38.145.91.238 1 13 664275 20201202044945
+149.202.67.223 1 1 10125 20201220170645
+52.152.235.75 3 3 28636 20201218031425
+54.158.181.62 3 3 28650 20201210114037
+23.100.232.233 1 10 170983 20201218092626
+88.99.226.179 1 1 3952 20201224180347
+103.62.48.235 2 2 19378 20201221090043
+176.119.140.74 1 1 13822 20201221081551
+94.158.245.162 1 1 10126 20201223181239
+205.164.20.166 0 10 1706822 
+104.248.236.204 1 1 3946 20201220193949
+185.157.82.175 1 1 10121 20201220020317
+82.102.25.144 1 1 10127 20201222111154
+62.165.226.252 3 3 11849 20201217014903
+167.99.45.26 1 1 4127 20201231205447
+167.114.232.244 1 1 3964 20201231190255
+138.246.253.24 3 3 3901 20201225093945
+51.222.43.126 1 1 9302 20201209060115
+200.35.154.86 1 1 3930 20201207040120
+66.70.178.119 1 1 10392 20201211210951
+192.185.130.170 1 1 1167 20201220221704
+42.236.10.125 0 1 1270535 
+38.145.114.213 1 13 647930 20201202194020
+82.102.25.139 0 1 0 
+171.13.14.84 1 13 664277 20201226033806
+18.184.195.200 1 1 3943 20201218103439
+158.69.228.209 2 2 20658 20201226023530
+219.143.171.36 2 9 167127 20201206230909
+3.238.124.53 1 1 0 20201220202603
+52.152.150.197 1 1 3943 20201224040715
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 29
+20201201 195 1105 56338158 3
+20201202 66 220 8232455 7
+20201203 1 1 10126 1
+20201204 1 1 3950 1
+20201205 2 2 7905 2
+20201206 4 11 175042 3
+20201207 93 241 20358274 7
+20201208 577 831 106164660 8
+20201209 1 1 9302 1
+20201210 4 5 32601 2
+20201211 2 2 14336 2
+20201212 2 2 5225 2
+20201213 1 1 3955 1
+20201214 1 1 3961 1
+20201215 1 1 3949 1
+20201217 1 1 3939 1
+20201218 6 16 204859 4
+20201219 2 2 17963 2
+20201220 5 5 25359 5
+20201221 13 19 1792750 8
+20201222 19 66 2457931 3
+20201223 1 1 10126 1
+20201224 2 2 7895 2
+20201225 1 1 1303 1
+20201226 5 31 6364800 5
+20201227 3 3 28638 1
+20201228 3 15 3064676 1
+20201229 2 14 567145 2
+20201231 4 4 15967 4
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+1h+ 5
+5mn-15mn 3
+0s-30s 66
+2mn-5mn 2
+15mn-30mn 3
+30mn-1h 3
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 30
+/findPatient 419 1590381 0 13
+/ 130 625731 73 61
+/superadmin 75 359054 1 0
+/manageuser 51 357477 0 0
+/user 50 789249 0 0
+/adminward 47 5354402 1 0
+/wardadmin 39 1203595 1 0
+/chiefnurse 35 1247051 1 0
+/reserveadminward 31 333270 0 0
+/reserveuser 18 195528 0 0
+/reservechief 13 150483 0 0
+/AdminLTE/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map 1 27463 0 0
+/AdminLTE/dist/js/adminlte.min.js.map 1 83224 0 0
+/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js.map 1 318374 0 0
+/GetOpt/1 17 12838 0 0
+/register 10 65061 2 3
+/getValueOpt/16 1 1347 0 0
+/getValueOpt/1 8 9326 0 0
+/statistic 13 97285 1 0
+/schedule 14 112801 0 0
+/AdminLTE/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map 1 204961 0 0
+/reservenurse 6 68969 0 0
+/getValueOpt/27 1 1340 0 0
+/AdminLTE/dist/css/adminlte.min.css.map 1 1483768 0 0
+/wp-login.php 1 1167 1 1
+/login 8 31591 1 4
+/GetOpt/2 2 1235 0 0
+/chief-statistic 7 50079 0 0
+/getValueOpt/34 3 4006 0 0
+/nurse 14 412894 0 0
+END_SIDER

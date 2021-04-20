@@ -1,0 +1,726 @@
+AWSTATS DATA FILE 7.8 (build 20200416)
+# If you remove this file, all statistics for date 202010 will be lost/reset.
+# Last config file used to build this data file was /home/furcgjrf/domains/newbaiyok.com/awstats/.data/awstats.newbaiyok.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 30
+POS_GENERAL 2104                
+POS_TIME 2778                
+POS_VISITOR 15161               
+POS_DAY 21745               
+POS_DOMAIN 3710                
+POS_LOGIN 3947                
+POS_ROBOT 4102                
+POS_WORMS 5034                
+POS_EMAILSENDER 5165                
+POS_EMAILRECEIVER 5308                
+POS_SESSION 22271               
+POS_SIDER 22481               
+POS_FILETYPES 5443                
+POS_DOWNLOADS 5683                
+POS_OS 5731                
+POS_BROWSER 6150                
+POS_SCREENSIZE 8010                
+POS_UNKNOWNREFERER 8084                
+POS_UNKNOWNREFERERBROWSER 8316                
+POS_ORIGIN 8503                
+POS_SEREFERRALS 8644                
+POS_PAGEREFS 8807                
+POS_SEARCHWORDS 9006                
+POS_KEYWORDS 9158                
+POS_MISC 2440                
+POS_ERRORS 9217                
+POS_CLUSTER 3803                
+POS_SIDER_403 9406                
+POS_SIDER_400 9494                
+POS_SIDER_404 9576                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20201101005753 1 0 15260594380960
+FirstTime 20201016200920
+LastTime 20201031235222
+LastUpdate 20201101042940 1 0 0 0 0
+TotalVisits 264                 
+TotalUnique 157                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 167                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 601 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 707 2258 269574298 147 309 14499396
+1 1251 3484 639477464 175 366 15049781
+2 1526 3725 391024641 167 314 14394763
+3 520 1301 183651947 26 48 2395930
+4 276 323 56849113 138 149 1045302
+5 193 301 5866129 14 18 363289
+6 2 2 12755 4 8 33219
+7 12 12 39410 4 7 25422
+8 16 35 1260295 3 5 556585
+9 9 17 606895 4 14 405351
+10 9 29 1543253 2 4 26992
+11 65 82 6329004 18 48 2019981
+12 61 81 7345492 26 26 588934
+13 62 76 3546359 13 14 14254
+14 418 621 96806707 79 104 2520289
+15 742 1266 200309491 109 173 6901827
+16 508 707 121264921 52 124 2434308
+17 534 913 119609419 92 187 7854265
+18 604 2271 160778333 63 186 3102379
+19 634 2043 241346900 114 327 6346898
+20 700 1996 372069997 135 270 11682399
+21 487 1685 218877462 127 699 12691235
+22 544 2793 253955451 56 163 3364623
+23 471 1369 166662671 119 177 7865682
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 10351 27390 3518808407
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 21
+dataprovider\.com 71 3171380 20201029023344 5
+baidu 49 2842693 20201031033342 0
+Googlebot/ 47 629784 20201031225419 5
+facebookexternalhit/ 15 2858582 20201025141004 0
+spider 12 216616 20201019092447 1
+scrapy 8 778850 20201019193201 0
+bingbot/ 5 7394 20201029060239 3
+CFNetwork 4 5082143 20201027173934 0
+ips\-agent 4 10283 20201023154436 1
+python 3 8765 20201025161650 0
+Googlebot\-Image/ 2 678148 20201031050230 0
+(firefox/)([0-9]\.|[0-1][0]\.) 2 9582 20201021041609 0
+Python\-urllib/ 1 6362 20201021165149 0
+no_user_agent 2 13517 20201027053827 0
+MSIE[\x20]6 2 15426 20201031180857 0
+curl 1 7149 20201027231451 0
+unknown 2 659 20201020112425 2
+catbot 2 3523 20201019225410 1
+Apache\-HttpClient/ 1 3167 20201018025512 0
+bot[\s_+:,\.\;\/\\-] 2 3495 20201021085802 1
+netcraft 1 9090 20201031183708 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 8
+css 4382 41275422 0 0
+png 3255 3255823680 0 0
+woff2 941 37807000 0 0
+map 251 31026679 0 0
+php 615 1848151 0 0
+js 8448 84569965 0 0
+jpg 13 1333569 0 0
+Unknown 9485 65123941 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 25
+androidpie 2 2
+winlong 5 5
+winxp 3 3
+macosx11 4 4
+androidnougat 3 2
+ios_iphone 1949 958
+androidlollipop 6 6
+winvista 1 1
+androidjellybean 4 2
+macosx9 1 0
+win8 1 1
+ios_ipad 222 173
+macosx7 2 2
+macosx15 389 220
+winnt 2 2
+linuxubuntu 29 29
+macosx14 19 19
+linux 82 21
+win7 37 25
+win16 4 4
+android10 12 3
+win10 24589 8855
+Unknown 14 6
+win8.1 8 6
+macosx8 2 2
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 86
+firefox57.0 9 1
+safari7.0.3 1 0
+chrome80.0.3987.163 29 29
+chrome72.0.3626.121 1 1
+chrome79.0.3945.79 9 1
+chrome85.0.4183.121 41 6
+firefox34.0 5 5
+firefox49.0 1 1
+chrome86.0.4240.111 8785 2914
+chrome58.0.3029.110 3 2
+chrome83.0.4103.97 1 1
+firefox70.0 1 1
+chrome73.0.2718.88 1 1
+chrome57.0.2987.110 1 1
+chrome43.0.2376.69 2 2
+chrome76.0.3809.71 5 3
+chrome86.0.4240.80 5040 2539
+firefox41.0 2 2
+chrome66.0.3359.181 2 2
+firefox79.0 1 1
+safari13.0.1 2 2
+chrome65.0.3325.181 1 1
+chrome41.0.2224.3 1 1
+chrome72.0.3626.119 46 14
+chrome34.0.1847.131 1 1
+chrome76.0.3809.132 10 10
+firefox55.0 1 1
+chrome68.0.3440.106 18 2
+chrome63.0.3239.132 4 4
+firefox29.0 1 1
+firefox68.0 3 3
+chrome78.0.3904.97 1 1
+firefox33.0 1 1
+mozilla 13 4
+netscape5.0 8 8
+firefox14.0.1 2 2
+chrome84.0.4147.105 1 1
+chrome65.0.2985.153 1 1
+chrome41.0.2228.0 1 1
+chrome11.0.696.71 4 4
+chrome86.0.4240.110 12 3
+firefox36.0 5 3
+safari11.1.2 3 3
+safari 485 334
+chrome21.0.1180.89 3 3
+chrome83.0.4103.116 4 4
+safari13.1.2 91 32
+safari11.0 7 3
+chrome41.0.2225.0 1 1
+android 4 2
+chrome67.0.3396.79 13 5
+safari14.0 1288 780
+chrome85.0.4182.0 12 3
+iphone 2 0
+chrome80.0.3987.106 1 1
+chrome26.0.1410.65 1 1
+chrome19.0.1084.9 1 1
+chrome40.0.2214.85 2 2
+chrome83.0.4103.61 4 1
+chrome21.0.1180.83 1 1
+chrome74.0.3729.169 1 1
+safari13.0.3 633 184
+Unknown 13 5
+chrome70.0.3538.77 8 1
+chrome74.0.3552.88 1 1
+safari10.0 43 7
+chrome77.0.1896.88 1 1
+chrome41.0.2226.0 3 3
+chrome76.0.3809.100 1 1
+chrome73.0.3683.86 6 6
+chrome85.0.4183.102 3 3
+chrome36.0.1985.67 1 1
+chrome41.0.2227.0 1 1
+firefox46.0 1 1
+chrome20.0.1132.57 1 1
+chrome80.0.3987.149 2 2
+chrome79.0.3945.88 3 3
+chrome45.0.2454.94 6 6
+msie11.0 2 1
+chrome67.0.3396.99 31 6
+chrome80.0.3987.119 2 2
+firefox81.0 2 2
+chrome51.0.2704.106 3 2
+msie10.0 1 1
+chrome80.0.3987.132 1 1
+chrome86.0.4240.75 10620 3349
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 4
+\ 20201018095500
+Mozilla/5.0_Firefox/33.0 20201019071052
+colly_-_https://github.com/gocolly/colly/v2 20201019104228
+webtech/1.2.8 20201018193600
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+\ 20201018095500
+colly_-_https://github.com/gocolly/colly/v2 20201019104228
+webtech/1.2.8 20201018193600
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 690 704
+From1 0 0
+From2 1 1
+From3 4 4
+From4 9656 26681
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+www_google_com 1 1
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 2
+http://margerit.com 2 2
+https://l.facebook.com 2 2
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 8
+403 8 7952
+401 5 4209
+302 807 1085043
+419 37 51332
+500 557 93086807
+405 17 3564222
+404 1437 1761298
+301 34 32658
+END_ERRORS
+
+# URL with 403 errors - Hits - Last URL referrer
+BEGIN_SIDER_403 1
+/ 8 -
+END_SIDER_403
+
+# URL with 400 errors - Hits - Last URL referrer
+BEGIN_SIDER_400 0
+END_SIDER_400
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 99
+/blog/wp-includes/wlwmanifest.xml 3 -
+/sitemap.xml 6 -
+/ 1 -
+//wp-admin/install.php 1 -
+/admin.php 5 -
+/image/logofontwhite.png 5 http://www.newbaiyok.com/login
+/adminlte/dist/js/adminlte.min.js 26 http://www.newbaiyok.com/reserve
+/image/healthcare.jpg 8 http://www.newbaiyok.com/login
+/getValueOpt/2 1 http://newbaiyok.com/reserveadminward
+/site/wp-includes/wlwmanifest.xml 3 -
+/adminlte/plugins/fontawesome-free/css/all.min.css 2 http://www.newbaiyok.com/reserve
+/wp-admin/install.php 8 -
+/getValueOpt/11 14 http://www.newbaiyok.com/reservechief
+/wp1/wp-includes/wlwmanifest.xml 1 -
+/blog/wp-admin/setup-config.php 1 -
+/getValueopt/3 1 http://www.newbaiyok.com/reserve
+/dist/img/user3-128x128.jpg 12 http://www.newbaiyok.com/
+/getvalueopt/1 1 http://www.newbaiyok.com/reserve
+/2019/wp-includes/wlwmanifest.xml 1 -
+/adminlte/plugins/daterangepicker/daterangepicker.js 30 http://www.newbaiyok.com/reserve
+/datepicker/js/bootstrap-datepicker.th.min.js 4 http://www.newbaiyok.com/schedule
+/test/wp-includes/wlwmanifest.xml 1 -
+/xmlrpc.php 3 -
+/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css 2 http://www.newbaiyok.com/reserve
+/image/logowhite.png 12 http://www.newbaiyok.com/login
+/api/signup 1 -
+/chiefnurse-schedule 3 http://newbaiyok.com/adminward
+/adminlte/plugins/select2/js/select2.full.min.js 26 http://www.newbaiyok.com/reserve
+/web/wp-includes/wlwmanifest.xml 1 -
+/wp/wp-admin/install.php 1 -
+/adminlte/plugins/inputmask/min/jquery.inputmask.bundle.min.js 30 http://www.newbaiyok.com/reserve
+/adminlte/dist/img/user1-128x128.jpg 12 http://www.newbaiyok.com/
+/AdminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css 676 http://newbaiyok.com/chiefnurse
+/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js 30 http://www.newbaiyok.com/reserve
+/getValueOpt/1 2 http://www.newbaiyok.com/reserve
+/news/wp-includes/wlwmanifest.xml 1 -
+/apple-touch-icon-120x120.png 2 -
+/dist/img/user8-128x128.jpg 12 http://www.newbaiyok.com/
+/shop/wp-includes/wlwmanifest.xml 1 -
+/adminlte/plugins/bootstrap-switch/js/bootstrap-switch.min.js 29 http://www.newbaiyok.com/reserve
+/apple-touch-icon-152x152.png 2 -
+/ward/images/solaria.jpg 9 http://www.newbaiyok.com/ward/1
+/adminlte/plugins/daterangepicker/daterangepicker.css 2 http://www.newbaiyok.com/reserve
+/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js 28 http://www.newbaiyok.com/reserve
+/reserveuser 1 http://newbaiyok.com/homeuser
+/adminlte/dist/js/demo.js 25 http://www.newbaiyok.com/reserve
+/administrator 5 -
+/apple-touch-icon-120x120-precomposed.png 2 -
+/apple-touch-icon-152x152-precomposed.png 2 -
+/wordpress/wp-admin/setup-config.php 1 -
+/adminlte/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js 30 http://www.newbaiyok.com/reserve
+/api/order 1 -
+/wordpress/wp-admin/install.php 3 -
+/adminlte/plugins/select2/css/select2.min.css 2 http://www.newbaiyok.com/reserve
+/image/care_contrast.png 1 http://www.newbaiyok.com/login
+/website/wp-includes/wlwmanifest.xml 1 -
+/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css 2 http://www.newbaiyok.com/reserve
+/apple-touch-icon.png 5 -
+/new/wp-admin/install.php 1 -
+/news/wp-admin/setup-config.php 1 -
+/new/wp-admin/setup-config.php 1 -
+/getValueOpt/13 1 http://www.newbaiyok.com/reservechief
+/adminlte/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js 29 http://www.newbaiyok.com/reserve
+/ward/images/riverway.jpg 9 http://www.newbaiyok.com/ward/1
+/wp-content/plugins/wp-file-manager/lib/files 1 -
+/wp-includes/wlwmanifest.xml 3 -
+/adminlte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css 2 http://www.newbaiyok.com/reserve
+/wp-admin 5 http://newbaiyok.com/wp-login.php
+/.env 4 -
+/ungraylistcheck 1 http://www.newbaiyok.com/
+/adminlte/plugins/jquery-validation/additional-methods.min.js 54 http://www.newbaiyok.com/reserve
+/cms/wp-includes/wlwmanifest.xml 3 -
+/2018/wp-includes/wlwmanifest.xml 1 -
+/ward/images/vermillion.jpg 9 http://www.newbaiyok.com/ward/1
+/findPatient 2 http://www.newbaiyok.com/user
+/ads.txt 7 -
+/adminlte/plugins/jquery-validation/jquery.validate.min.js 47 http://www.newbaiyok.com/reserve
+/apple-touch-icon-precomposed.png 5 -
+/GetOpt 20 http://www.newbaiyok.com/reserve
+/GetOpt/1 16 http://www.newbaiyok.com/reservechief
+/wp/wp-includes/wlwmanifest.xml 3 -
+/adminlte/plugins/moment/moment.min.js 31 http://www.newbaiyok.com/reserve
+/wp/wp-admin/setup-config.php 1 -
+/administrator/index.php 5 http://newbaiyok.com/administrator
+/manage-ward/1 9 http://newbaiyok.com/superadmin
+/wordpress/wp-includes/wlwmanifest.xml 3 -
+/blog/wp-admin/install.php 1 -
+/adminlte/dist/img/user2-160x160.jpg 12 http://www.newbaiyok.com/
+/adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css 2 http://www.newbaiyok.com/reserve
+/sito/wp-includes/wlwmanifest.xml 1 -
+/media/wp-includes/wlwmanifest.xml 1 -
+/admin 13 -
+/getValueopt/1 4 http://www.newbaiyok.com/reserve
+/adminlte/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css 2 http://www.newbaiyok.com/reserve
+/wp-admin/setup-config.php 2 -
+/news/wp-admin/install.php 1 -
+/adminlte/plugins/jquery/jquery.min.js 20 http://www.newbaiyok.com/reserve
+/wp2/wp-includes/wlwmanifest.xml 1 -
+/adminlte/dist/css/adminlte.min.css 2 http://www.newbaiyok.com/reserve
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 167
+180.183.18.84 3838 10417 1191323015 20201021172126
+14.207.204.254 1667 6362 970091207 20201031235222
+180.183.69.109 1058 2468 361105116 20201021044234
+202.176.119.34 485 1123 166980220 20201019184800
+14.207.207.186 417 715 154800668 20201027020411
+180.183.17.49 406 768 174178456 20201031024417
+202.28.119.67 385 1528 147856582 20201019185131
+202.12.97.176 320 374 18238715 20201020173139
+14.207.200.134 306 667 66291115 20201020031956
+180.183.66.66 223 310 57707739 20201025121721
+147.147.220.71 3 5 707253 20201018222731
+14.207.207.82 47 171 10551327 20201031230336
+54.202.232.191 1 1 3163 20201018230623
+65.154.226.100 2 13 639152 20201025195426
+128.90.135.25 3 3 9472 20201020030017
+3.12.41.202 1 10 1848505 20201027234608
+104.131.44.79 1 4 64257 20201022003438
+171.13.14.76 1 2 16226 20201023182518
+207.244.230.205 3 3 9943 20201019104228
+23.83.184.134 1 2 350447 20201018222731
+69.164.111.198 1 1 6358 20201018191119
+49.237.23.13 10 14 261892 20201025172339
+176.123.5.140 1 1 3160 20201018211538
+159.203.30.140 1 1 1107 20201018202327
+175.42.44.147 1 1 6386 20201023075736
+104.168.170.221 1 1 3162 20201019013701
+27.55.73.149 57 226 20003135 20201028223213
+73.139.21.42 1 1 3159 20201020210505
+146.59.157.229 1 1 4512 20201017173410
+51.158.108.122 3 3 9514 20201022003433
+44.234.67.26 1 9 577929 20201023213224
+165.227.252.43 1 1 2885 20201022201608
+223.24.144.100 1 1 2490 20201019035341
+103.212.147.34 2 2 7459 20201019052519
+47.52.147.41 1 1 3387 20201026132341
+52.15.46.205 1 8 233090 20201017132600
+36.99.136.140 1 1 3612 20201023183801
+18.224.22.241 1 10 1848466 20201018234156
+171.13.14.26 0 1 74779 
+142.93.146.97 1 1 1112 20201020074205
+3.17.210.127 1 1 3164 20201018155334
+171.13.14.75 0 1 2006 
+202.12.97.141 133 136 1295521 20201020161426
+27.55.78.21 0 1 1270536 
+36.99.136.139 1 1 3622 20201023183748
+51.210.182.66 1 1 6428 20201018035328
+34.222.40.115 1 1 3153 20201018081344
+54.165.225.204 1 1 6386 20201018130606
+51.222.43.159 1 1 7183 20201024172756
+181.215.217.169 1 9 577932 20201019010235
+185.158.151.229 2 2 5462 20201018144006
+159.89.124.248 2 2 2227 20201020074205
+193.153.174.99 1 1 3165 20201022114111
+111.7.100.16 2 7 521526 20201026113742
+45.134.22.6 1 1 10522 20201020012732
+161.69.99.11 1 1 3148 20201018174020
+205.251.148.66 2 3 356816 20201018222731
+47.252.24.84 1 1 3188 20201026112134
+62.115.15.146 1 1 6353 20201019071052
+51.222.43.158 6 6 42496 20201022182750
+51.91.125.152 3 3 15445 20201018005255
+54.191.38.124 0 1 6678 
+34.221.181.179 0 1 23212 
+34.122.214.172 3 3 17367 20201021154525
+167.114.185.54 1 1 6439 20201017234911
+27.55.77.182 98 243 6131903 20201018190859
+138.197.171.253 1 1 1104 20201020074206
+159.203.37.232 1 1 1119 20201018202326
+52.25.65.48 1 1 3164 20201019082010
+54.245.26.137 1 1 3157 20201020234853
+223.24.169.2 33 50 1601390 20201031224522
+111.7.100.24 0 2 110942 
+51.222.43.126 1 1 8063 20201029023325
+180.183.66.108 199 520 64680411 20201024230054
+34.123.105.2 1 1 3173 20201018120924
+121.36.137.19 3 3 7440 20201017195127
+223.24.94.220 76 247 29976841 20201017013613
+202.28.119.56 24 65 2558239 20201025143403
+202.28.119.53 134 152 20831958 20201025153124
+54.185.14.63 1 1 3629 20201019082021
+178.94.30.74 1 1 1172 20201020234028
+27.55.77.185 50 66 342239 20201020050938
+83.43.61.41 1 1 3161 20201019013205
+111.7.100.26 0 1 282791 
+202.176.113.87 55 64 9101615 20201020173150
+121.199.22.143 2 2 6579 20201026095842
+23.106.215.30 2 2 11854 20201019222945
+51.15.220.242 2 2 6350 20201023181446
+54.185.34.210 1 1 3153 20201018081220
+37.215.53.13 1 1 1172 20201020230514
+128.90.105.33 1 1 2880 20201018223107
+169.51.73.198 1 1 3156 20201018081004
+165.227.43.208 1 1 1124 20201020074203
+95.211.211.232 1 1 3161 20201018210626
+34.217.71.41 0 1 31179 
+52.186.120.234 4 4 12639 20201023200905
+104.223.93.198 1 1 3169 20201019013703
+179.43.171.74 29 29 94609 20201031201302
+185.17.107.85 6 24 2117190 20201020012714
+202.129.16.150 4 5 381043 20201020012733
+95.236.134.82 3 3 17352 20201018041045
+13.58.141.241 1 1 3162 20201018221924
+3.15.190.54 1 10 1848474 20201022154241
+85.234.125.80 1 1 1172 20201020235033
+209.97.157.175 1 1 8072 20201029204834
+49.237.20.235 23 64 2528667 20201017232248
+45.33.20.249 1 9 577929 20201018095457
+161.202.67.23 1 1 3156 20201018081109
+54.221.27.173 1 1 3152 20201018195200
+62.210.92.175 1 1 3166 20201019191452
+139.196.14.160 1 1 3396 20201026121912
+195.201.41.238 1 1 6358 20201018063244
+194.72.238.12 0 8 574772 
+159.65.210.36 2 3 356812 20201018222731
+104.131.117.187 1 4 64246 20201023181450
+111.7.100.25 2 8 470211 20201026103443
+3.81.210.135 0 1 344077 
+221.229.218.152 8 8 19240 20201031114916
+37.79.42.74 1 1 1172 20201020232752
+34.215.72.128 1 9 577077 20201018081223
+138.197.145.6 1 1 1111 20201018202325
+36.99.136.138 1 1 3166 20201023134046
+222.79.45.70 1 1 6390 20201022104408
+111.7.100.17 3 18 736457 20201026113836
+1.46.98.149 24 26 508474 20201031152855
+51.158.98.206 1 1 3390 20201026204924
+217.138.194.121 4 5 377788 20201020012714
+121.36.167.162 1 1 3189 20201026095842
+39.99.160.5 1 1 3382 20201026095843
+49.237.17.244 6 11 3855941 20201016235728
+111.7.100.18 2 2 6618 20201028180914
+1.46.38.254 1 9 577972 20201024195333
+196.196.85.196 1 1 6349 20201020130221
+211.176.125.70 1 1 3193 20201018181843
+69.25.58.53 2 10 584284 20201018083146
+100.21.42.170 1 8 233090 20201017120016
+206.225.80.193 2 2 606 20201017221510
+89.40.182.7 5 14 940759 20201020012710
+46.4.33.48 1 1 6419 20201017231913
+51.158.169.206 1 1 3466 20201028164026
+69.25.58.52 3 3 19074 20201018141313
+172.105.38.181 1 1 6360 20201018221030
+39.104.132.0 1 1 3187 20201026125029
+18.236.253.244 1 1 3193 20201026042545
+104.131.119.160 1 4 64273 20201026204957
+138.246.253.15 2 2 2433 20201030081920
+202.129.16.152 3 5 707257 20201018222731
+54.39.243.186 2 2 12724 20201026193600
+72.11.157.45 1 2 350449 20201018222730
+223.24.157.150 32 114 5260582 20201023183204
+167.114.232.244 1 1 3173 20201018054938
+34.222.104.48 1 9 577079 20201020234855
+5.62.61.178 2 3 356808 20201020012714
+147.139.133.13 1 1 3171 20201024081716
+156.146.41.129 1 2 350446 20201020012731
+1.46.228.151 1 1 3469 20201030141610
+89.238.139.58 2 2 19240 20201020012713
+125.77.9.169 1 1 6393 20201018232239
+38.145.79.127 1 9 564351 20201019010236
+161.117.228.131 1 1 3154 20201024101152
+223.24.92.202 12 14 101953 20201022134946
+183.88.8.81 4 25 4808742 20201028230354
+1.46.203.195 3 12 1854904 20201025140728
+109.69.66.101 1 1 3155 20201018193600
+111.7.100.27 1 4 81884 20201026103445
+36.99.136.143 1 1 3158 20201023133937
+178.234.78.154 1 1 1172 20201020231806
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 16
+20201016 203 369 68673564 3
+20201017 1135 2171 477946312 24
+20201018 1777 3182 553606659 59
+20201019 1346 4751 485966813 26
+20201020 2440 7078 432265398 33
+20201021 96 183 3396925 7
+20201022 23 37 2049342 11
+20201023 50 159 7993422 17
+20201024 350 714 108347424 10
+20201025 236 331 38469452 9
+20201026 200 385 77957970 20
+20201027 261 450 83058295 8
+20201028 638 1490 459860615 9
+20201029 110 160 55942572 6
+20201030 303 497 160104085 9
+20201031 1183 5433 503169559 13
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 28
+5mn-15mn 7
+0s-30s 190
+2mn-5mn 8
+30s-2mn 10
+15mn-30mn 8
+30mn-1h 13
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 50
+/findPatient 2968 5554881 4 47
+/ward/1 962 12352647 2 0
+/reserve 759 5812271 7 3
+/login 672 1318926 18 21
+/ 610 1842291 208 164
+/register 535 1305402 10 12
+/GetOpt/1 531 448575 0 0
+/home 382 2801480 2 2
+/ward/findPatient 326 1780348 0 4
+/schedule 288 1765732 0 0
+/AdminLTE/dist/js/adminlte.min.js.map 53 1248360 1 0
+/manage-ward/findPatient 33 168459 0 0
+/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js.map 52 4457236 0 0
+/manage-ward/2 8 65676 0 0
+/getValueOpt/3 31 41933 0 0
+/user 121 1126387 0 0
+/reserveadminward 212 2067814 0 0
+/getValueOpt/2 76 83137 0 0
+/AdminLTE/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js.map 45 2664493 0 0
+/GetOpt/undefined 1 1249 0 0
+/ward/2 52 472601 0 0
+/manage-user 4 27742 0 0
+/superadmin 89 543105 1 0
+/AdminLTE/dist/css/adminlte.min.css.map 53 22256520 0 1
+/GetOpt/3 67 72516 0 0
+/manageuser 99 963924 0 0
+/manage-ward/3 2 45377 0 0
+/ward/3 11 94314 0 0
+/chiefnurse-schedule 31 185324 1 0
+/datepicker/css/bootstrap-datepicker.css.map 2 18875 0 0
+/GetOpt/null 11 9926 0 0
+/reservechief 13 138342 0 0
+/AdminLTE/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css.map 45 357019 0 1
+/GetOpt/[object%20HTMLSelectElement] 10 2486 0 0
+/event 5 49153 0 0
+/chiefnurse 89 1719373 0 0
+/getValueOpt/1 192 170767 0 0
+/manage-ward/1 102 2216811 0 0
+/reservenurse 9 80559 0 0
+/GetOpt/%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94 5 6203 0 0
+/adminward 179 17583264 1 0
+/homeuser 110 877995 0 0
+/reserveuser 66 546443 0 0
+/GetOpt/0 49 54666 0 1
+/wp-login.php 5 5860 5 5
+/_ignition/health-check 75 21094 2 1
+/GetOpt/2 197 197526 0 1
+/datepicker/css/bootstrap-datepicker3.css.map 1 24176 0 0
+/wardadmin 92 2110334 2 1
+/nurse 21 239179 0 0
+END_SIDER
