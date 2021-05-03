@@ -56,6 +56,8 @@ class DoctorController extends Controller
             'created_user_id' => Auth::user()->id,
         ]);
 
+        // dd($doctor);
+
         $doctor->save();
 
 

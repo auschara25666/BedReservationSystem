@@ -41,7 +41,6 @@ class ManageUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'prefix' => ['required', 'string', 'max:255'],
             'fname' => ['required', 'string', 'max:255'],
             'lname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -109,10 +108,11 @@ class ManageUserController extends Controller
         $user->permission_id = $request->permission;
         $user->save();
 
-        $title = 'ยืนยันการสมัครใช้งานระบบจองเตียง วอร์ด3จ โรงพยาบาลศรีนครินทร์';
+        $title = 'ยืนยันการสมัครใช้งานระบบจองเตียง โรงพยาบาลศรีนครินทร์';
         $user_detail = [
             'name' => $user->fname." ".$user->lname,
-            'email' => $user->email
+            'email' => $user->email,
+            'ward' => $user->ward->ward_name,
         ];
 
         $sendmail = Mail::to($user_detail['email'])->send(new sendMail($title, $user_detail));
@@ -185,5 +185,25 @@ class ManageUserController extends Controller
         // }
 
         // return back()->with('success', 'ลบ สมาชิก สำเร็จ!!');
+    }
+
+    public function disableadmin(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->rec_status = 0;
+        $user->save();
+
+        // dd($request->id);
+
+        return back()->with('success','ปิดการใช้งาน '.$user->prefix.''.$user->fname.' '.$user->lname.' เรียบร้อย');
+    }
+
+    public function enableadmin(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->rec_status = 1;
+        $user->save();
+
+        return back()->with('success','เปิดการใช้งาน '.$user->prefix.''.$user->fname.' '.$user->lname.' เรียบร้อย');
     }
 }

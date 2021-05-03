@@ -271,7 +271,14 @@
                                             </li>
                                         </ul>
                                     </li>
-
+                                    <li class="">
+                                                <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing"
+                                                    target="_blank" class="waves-effect waves-dark">
+                                                    <span class="pcoded-micon"><i
+                                                            class="feather icon-book"></i></i></span>
+                                                    <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                                </a>
+                                            </li>
                                 </ul>
                             </div>
                         </div>
@@ -544,6 +551,258 @@
                                                                                             ทำการลบผู้ใช้งานชื่อ </p>
                                                                                         <h5 style="color: red;text-align:center;padding-top:15px;">
                                                                                             {{ $userlist->prefix }}{{ $userlist->fname }} {{ $userlist->lname }}
+                                                                                        </h5>
+
+                                                                                    </div>
+                                                                                    <div class="card-block">
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-6 col-md-12">
+                                                                                                <div class="form-group">
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="btn waves-effect waves-light btn-primary btn-block"
+                                                                                                        data-dismiss="modal">ยกเลิก</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="col-lg-6 col-md-12">
+                                                                                                <div class="form-group">
+                                                                                                    <button
+                                                                                                        type="submit"
+                                                                                                        class="btn waves-effect waves-light btn-danger btn-square btn-block">ลบ</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </form> <!-- /.form -->
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- ///////////////// -->
+                                                                    @endforeach
+                                                                </tbody>
+                                                                @endif
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /user ward -->
+                                                </div>
+
+                                                <div class="card">
+
+                                                    <div class="card-header">
+                                                        <h5>จำนวนสมาชิก(ผู้ใช้งานทั่วไป)ทั้งหมด</h5>
+                                                        <h5 style="color:red;">{{ $userall->count() }}</h5>
+                                                        <h5>คน</h5>
+                                                        <button type="button" class="btn btn-primary waves-effect"
+                                                            data-toggle="modal" data-target="#add-Modal"
+                                                            style="float:right;margin-right:50px;">เพิ่มสมาชิก</button>
+                                                    </div>
+                                                    <!-- user ward -->
+                                                    <div class="card-block mb-5">
+                                                        <div class="dt-responsive table-responsive">
+                                                            <table id="scr-vtr-dynamic2"
+                                                                class="table table-striped table-bordered nowrap">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>ชื่อ</th>
+                                                                        <th>อีเมล</th>
+                                                                        <th>เบอร์</th>
+                                                                        <th>สังกัด</th>
+                                                                        <th>ตำแหน่ง</th>
+                                                                        <th>สิทธิ์</th>
+                                                                        <th>สถานะ</th>
+                                                                        <th>ตัวเลือก</th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                @if (is_null($userall))
+
+                                                                @else
+                                                                <tbody>
+                                                                    @foreach ($userall as $luser)
+                                                                    <tr>
+                                                                        <td>{{ $luser->prefix }}{{ $luser->fname }} {{ $luser->lname }}</td>
+                                                                        <td>{{ $luser->email }}</td>
+                                                                        <td>{{ $luser->phone }}</td>
+                                                                        <td>{{ $luser->ward->ward_name ?? ''}}</td>
+                                                                        <td>{{ $luser->role->role }}</td>
+                                                                        <td>{{ $luser->permission->permission ?? 'ยังไม่กำหนดสิทธิ์'}}</td>
+                                                                        <td>
+                                                                            @if ($luser->rec_status == 1)
+                                                                            <span class="badge bg-success"
+                                                                                style="font-size: 16px">อนุมัติแล้ว</span>
+                                                                            @endif
+                                                                            @if ($luser->rec_status == 0)
+                                                                            <span class="badge bg-danger"
+                                                                                style="font-size: 16px">ยังไม่อนุมัติ</span>
+                                                                            @endif
+                                                                        </td>
+
+                                                                        <td>
+                                                                        @if ($luser->rec_status == 1)
+                                                                            <span  data-toggle="modal" data-target="#editUser{{ $luser->id }}" >
+                                                                                <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="เปลี่ยนสิทธิ์">
+                                                                                    {{-- <i
+                                                                                    class="fa fa-check f-w-600 f-16 m-r-15 text-c-white"></i> --}}
+                                                                                    <span style="color:black;">เปลี่ยนสิทธิ์</span>
+                                                                                </button>
+                                                                            </span>
+
+
+
+                                                                            @endif
+                                                                            @if ($luser->rec_status == 0)
+
+
+                                                                                <span  data-toggle="modal" data-target="#editUser{{ $luser->id }}" >
+                                                                                    <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="อนุมัติ">
+                                                                                        <i
+                                                                                        class="fa fa-check f-w-600 f-16 m-r-15 text-c-white"></i>
+                                                                                    </button>
+                                                                                </span>
+
+
+                                                                            @endif
+                                                                                <span  data-toggle="modal" data-target="#delUser{{ $luser->id }}" >
+                                                                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="ลบผู้ใช้">
+                                                                                        <i
+                                                                                        class="fa fa-trash f-w-600 f-16 m-r-15 text-c-white"></i>
+                                                                                    </button>
+                                                                                </span>
+                                                                            </td>
+
+                                                                    </tr>
+
+
+                                                                    <!-- /////////edit/////////// -->
+                                                                    <div class="modal fade"
+                                                                        id="editUser{{ $luser->id }}" tabindex="-1"
+                                                                        role="dialog">
+                                                                        <div class="modal-dialog modal-lg" role="document">
+                                                                            <div class="modal-content">
+                                                                                <form
+                                                                                    action="{{ route('manage-user.update',$luser->id) }}"
+                                                                                    method="post">
+                                                                                    @csrf
+                                                                                    {{ method_field('patch') }}
+                                                                                    <div class="modal-header">
+                                                                                        <h4 class="modal-title">
+                                                                                            แก้ไขสิทธิ์สมาชิก
+                                                                                        </h4>
+                                                                                        <button type="button"
+                                                                                            class="close"
+                                                                                            data-dismiss="modal"
+                                                                                            aria-label="Close">
+                                                                                            <span
+                                                                                                aria-hidden="true">&times;</span>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div class="modal-body">
+                                                                                        <div class="card">
+                                                                                            <div class="card-body text-center">
+                                                                                                <p class="card-text"
+                                                                                                    style="font-size: 20px;">
+                                                                                                    <strong>ชื่อ
+                                                                                                        :</strong>
+                                                                                                        {{ $luser->prefix }}{{ $luser->fname }} {{ $luser->lname }}
+                                                                                                </p>
+                                                                                                <p class="card-text"
+                                                                                                    style="font-size: 20px;">
+                                                                                                    <strong>อีเมล
+                                                                                                        :</strong>
+                                                                                                        {{ $luser->email }}
+                                                                                                </p>
+                                                                                                <p class="card-text"
+                                                                                                    style="font-size: 20px;">
+                                                                                                    <strong>เบอร์
+                                                                                                        :</strong>
+                                                                                                        {{ $luser->phone }}
+                                                                                                </p>
+                                                                                                <p class="card-text"
+                                                                                                    style="font-size: 20px;">
+                                                                                                    <strong>สถานะ
+                                                                                                        :</strong>
+                                                                                                        {{ $luser->role->role }}
+                                                                                                </p>
+                                                                                                <p class="card-text"
+                                                                                                    style="font-size: 20px;">
+                                                                                                    <strong>สังกัด
+                                                                                                        :</strong>
+                                                                                                        {{ $luser->ward->ward_name }}
+                                                                                                </p>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="form-group">
+                                                                                            <p class="text-center">
+                                                                                                <label for="phone" class="control-label" style="font-size: 20px;font-weight: bold"><b>สิทธิ์การใช้งาน</b></label>
+                                                                                            </p>
+                                                                                               <label  style="color: black;background-color:#d1eaf5;">
+                                                                                                        <ul>
+                                                                                                            <li>1.Admin : ผู้ดูแลระบบวอร์ด</li>
+                                                                                                            <li>2.ChiefNurse : พยาบาลหัวหน้าเวร สามารถจัดดสรรเตียงได้ สามารถออกรายงานได้</li>
+                                                                                                            <li>3.Nurse(Ward) : พยาบาลวอร์ดและผู้ช่วยพยาบาลวอร์ด สามารถจัดสรรเตียงได้</li>
+                                                                                                            <li>4.User : แพทย์ พยาบาลและผู้ช่วยพยาบาลทั่วไป (ผู้จอง)</li>
+                                                                                                        </ul>
+                                                                                                    </label>
+                                                                                                    
+                                                                                            <select class="form-control" name="permission">
+                                                                                                <option value="" style="display: none">
+                                                                                                    ..สิทธิ์การใช้งาน..
+                                                                                                </option>
+                                                                                                @forelse ($permission as
+                                                                                                $lper)
+                                                                                                <option value="{{ $lper->id }}" {{ $luser->permission_id == $lper->id ? 'selected' : '' }}>
+                                                                                                    {{ $lper->permission }}
+                                                                                                </option>
+                                                                                                @empty
+
+                                                                                                @endforelse
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <input type="hidden" name="rec_status" value="1">
+
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-success waves-effect waves-light ">บันทึก</button>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-primary waves-effect "
+                                                                                            data-dismiss="modal">ปิด</button>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- //////////////////// -->
+
+                                                                    <!-- ///////delete//////// -->
+                                                                    <div class="modal fade"
+                                                                        id="delUser{{ $luser->id }}" tabindex="-1"
+                                                                        role="dialog">
+                                                                        <div class="modal-dialog" role="document">
+                                                                            <div class="modal-content">
+                                                                                <form class="form-horizontal"
+                                                                                    action="{{ route('manage-user.destroy',$luser->id) }}"
+                                                                                    method="post">
+                                                                                    @csrf
+                                                                                    {{ method_field('delete') }}
+                                                                                    <div class="modal-body">
+                                                                                        <div
+                                                                                            style="display: flex;justify-content: center;align-items: center;padding-top:20px;">
+                                                                                            <img src="admindek/png/warning.png"
+                                                                                                style="width:40%;height:auto;" />
+                                                                                        </div>
+                                                                                        <h3
+                                                                                            style="text-align:center;padding-top:15px;font-weight:bold;">
+                                                                                            ARE YOU SURE ?</h3>
+                                                                                        <p
+                                                                                            style="text-align:center;padding-top:15px;">
+                                                                                            ทำการลบผู้ใช้งานชื่อ </p>
+                                                                                        <h5 style="color: red;text-align:center;padding-top:15px;">
+                                                                                            {{ $luser->prefix }}{{ $luser->fname }} {{ $luser->lname }}
                                                                                         </h5>
 
                                                                                     </div>

@@ -687,6 +687,12 @@ $(document).ready(function () {
       // paging: false,
       order: [0, 'asc']
     });
+    $("#scr-vtr-dynamic2").DataTable({
+      // scrollY: "50vh",
+      // scrollCollapse: true,
+      // paging: false,
+      order: [0, 'asc']
+    });
     /////////////////////////////////////////////////////////////
     $("#empTable").DataTable();
     // $(document).ready( function () {

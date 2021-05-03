@@ -301,7 +301,14 @@
                                             </li>
                                         </ul>
                                     </li>
-
+                                    <li class="">
+                                                <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing"
+                                                    target="_blank" class="waves-effect waves-dark">
+                                                    <span class="pcoded-micon"><i
+                                                            class="feather icon-book"></i></i></span>
+                                                    <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                                </a>
+                                            </li>
                                 </ul>
                             </div>
                         </div>
@@ -464,17 +471,12 @@
                                                                     <label class="input-group-text"><i
                                                                             class="icofont icofont-ui-home"></i></label>
                                                                 </span>
-                                                                {{-- <input type="text" class="form-control" name="ward"
+                                                                <input type="text" class="form-control" readonly
                                                                     placeholder="ระบุสังกัด"
-                                                                    value="{{ Auth::user()->ward->ward_name }}"> --}}
-                                                                    <select name="ward" id="ward" class="form-control" required>
-                                                                        <option style="display: none" value="">...เลือกสังกัด...</option>
-                                                                        @forelse ($wardall as $lward)
-                                                                        <option value="{{ $lward->id }}" {{ Auth::user()->ward_id == $lward->id ? 'selected' : '' }}>{{ $lward->ward_name }}</option>
-                                                                        @empty
+                                                                    value="{{ Auth::user()->ward->ward_name }}">
 
-                                                                        @endforelse
-                                                                    </select>
+                                                                    <input type="hidden" name="ward" value="{{ Auth::user()->ward_id }}">
+
                                                             </div>
                                                         </div>
                                                     </div>

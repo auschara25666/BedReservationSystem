@@ -13,7 +13,7 @@ class Reservation extends Model
 
 
     protected $fillable = [
-        'reserve_status','patient_id','ward_id','opt_id','bed_id','preopt_id',
+        'reserve_status','patient_id','ward_id','opt_id','bed_id','preopt_id','ward_enter',
         'reserve_booking','doctor_id','rec_status','created_user_id','reserve_detail','complication','disease'
     ];
 
@@ -22,6 +22,11 @@ class Reservation extends Model
         return $this->belongsTo('App\User', 'created_user_id');
     }
 
+    public function wardenter()
+    {
+        return $this->belongsTo('App\Ward', 'ward_enter');
+    }
+    
     public function ward()
     {
         return $this->belongsTo('App\Ward', 'ward_id');

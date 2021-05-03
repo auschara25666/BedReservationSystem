@@ -46,8 +46,6 @@ class WardController extends Controller
     {
         $request->validate([
             'ward_name' => ['required', 'string'],
-            'ward_phone' => ['required', 'string'],
-            'ward_phoneext' => ['required', 'string'],
         ]);
 
         $ward = new Ward([

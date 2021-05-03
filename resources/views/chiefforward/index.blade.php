@@ -34,16 +34,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admindek/css/widget.css') }}"> --}}
 
     <style>
-        .blink {
-            animation: blinker 1.5s step-start infinite;
-            color: #1ed7b2;
-        }
+    .blink {
+        animation: blinker 1.5s step-start infinite;
+        color: #1ed7b2;
+    }
 
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
+    @keyframes blinker {
+        50% {
+            opacity: 0;
         }
+    }
     </style>
 
 </head>
@@ -62,7 +62,8 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="/index-chief">
-                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}" alt="Theme-Logo" />
+                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu icon-toggle-right"></i>
@@ -72,7 +73,7 @@
                         </a>
                     </div>
                     <div class="navbar-container container-fluid">
-                    <ul class="nav-left ">
+                        <ul class="nav-left ">
                             <li>
                                 <div style="font-size:16px;">
 
@@ -117,7 +118,8 @@
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
 
-                                            <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }} {{ Auth::user()->lname }}</span>
+                                        <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }}
+                                            {{ Auth::user()->lname }}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu"
@@ -170,13 +172,12 @@
                                             <span class="pcoded-micon"><i class="feather icon-settings"></i></span>
                                             <span class="pcoded-mtext">จัดสรรเตียง
                                                 @if ($reserve->isNotEmpty())
-                                                <img
-                                                src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
-                                                width='25px' />
-                                            @endif
+                                                <img src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
+                                                    width='25px' />
+                                                @endif
                                             </span>
 
-                                            
+
                                         </a>
                                         <ul class="pcoded-submenu">
                                             <li class="">
@@ -186,11 +187,12 @@
                                             </li>
                                             <li class="">
                                                 <a href="/normalreserv" class="waves-effect waves-dark">
-                                                    <span class="pcoded-mtext">รายการจอง 
+                                                    <span class="pcoded-mtext">รายการจอง
                                                         @if ($reserve->isNotEmpty())
-                                                        <span class="badge badge-danger">New  {{ $reserve->count() }}</span>
-                                            @endif
-                                        </span>
+                                                        <span class="badge badge-danger">New
+                                                            {{ $reserve->count() }}</span>
+                                                        @endif
+                                                    </span>
                                                 </a>
                                             </li>
                                             <li class="">
@@ -220,7 +222,12 @@
                                             <span class="pcoded-mtext">สถิติ</span>
                                         </a>
                                     </li>
-
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -234,7 +241,8 @@
                                     <div class="page-header-title">
                                         <i class="feather icon-home bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>หน้าหลัก <span style="color: blue">{{ $ward->ward_name ?? '' }}</span></h5>
+                                            <h5>หน้าหลัก <span style="color: blue">{{ $ward->ward_name ?? '' }}</span>
+                                            </h5>
                                             <span>คำแนะนำการใช้งาน</span>
                                         </div>
                                     </div>
@@ -285,16 +293,32 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-block">
-                                                        <p style="font-size:18px;">1. สามารถดูสถานะเตียงได้ (หน้าสถานะเตียง)</p>
-                                                        <p style="font-size:18px;">2. สามารถ อนุมัติ/ยกเลิก รายการจองเตียงได้ (หน้ารายการจอง)</p>
-                                                        <p style="font-size:18px;">3. สามารถนำผู้ป่วยเข้าเตียงได้โดยไม่ผ่านการจองเตียง (หน้าสถานะเตียง)</p>
-                                                        <p style="font-size:18px;">4. สามารถย้ายเตียงผู้ป่วยได้ (หน้าสถานะเตียง)</p>
-                                                        <p style="font-size:18px;">5. สามารถจำหน่ายผู้ป่วยออกจางเตียงได้ (หน้าสถานะเตียง)</p>
-                                                        <p style="font-size:18px;">6. สามารถบันทึกค่าใช้จ่ายของผู้ป่วยได้ (หน้าสถานะเตียง)</p>
-                                                        <p style="font-size:18px;">7. สามารถดูรายการที่ได้รับการอนุมัติเตียงแล้ว (รายการอนุมัติแล้ว)</p>
-                                                        <p style="font-size:18px;">8. สามารถจองเตียงได้ (หน้าจองเตียง)</p>
-                                                        <p style="font-size:18px;">9. สามารถดูสถิติตามช่วงเวลา และออกรายงานเป็น Excel ได้ (หน้าสถิติ)</p>
-                                                        <p style="font-size:18px;">10. สามารถดู/แก้ไข ข้อมูลผู้ป่วยได้ (หน้าผู้ป่วย)</p>
+                                                        <p style="font-size:18px;">1. สามารถดูสถานะเตียงได้
+                                                            (หน้าสถานะเตียง)</p>
+                                                        <p style="font-size:18px;">2. สามารถ อนุมัติ/ยกเลิก
+                                                            รายการจองเตียงได้ (หน้ารายการจอง)</p>
+                                                        <p style="font-size:18px;">3.
+                                                            สามารถนำผู้ป่วยเข้าเตียงได้โดยไม่ผ่านการจองเตียง
+                                                            (หน้าสถานะเตียง)</p>
+                                                        <p style="font-size:18px;">4. สามารถย้ายเตียงผู้ป่วยได้
+                                                            (หน้าสถานะเตียง)</p>
+                                                        <p style="font-size:18px;">5. สามารถจำหน่ายผู้ป่วยออกจางเตียงได้
+                                                            (หน้าสถานะเตียง)</p>
+                                                        <p style="font-size:18px;">6.
+                                                            สามารถบันทึกค่าใช้จ่ายของผู้ป่วยได้ (หน้าสถานะเตียง)</p>
+                                                        <p style="font-size:18px;">7.
+                                                            สามารถดูรายการที่ได้รับการอนุมัติเตียงแล้ว
+                                                            (รายการอนุมัติแล้ว)</p>
+                                                        <p style="font-size:18px;">8. สามารถจองเตียงได้ (หน้าจองเตียง)
+                                                        </p>
+                                                        <p style="font-size:18px;">9. สามารถดูสถิติตามช่วงเวลา
+                                                            และออกรายงานเป็น Excel ได้ (หน้าสถิติ)</p>
+                                                        <p style="font-size:18px;">10. สามารถดู/แก้ไข ข้อมูลผู้ป่วยได้
+                                                            (หน้าผู้ป่วย)</p>
+                                                        <br><br><br>
+                                                        <h2>แบบประเมินการใช้งานระบบ</h2>
+                                                        <a class="btn btn-primary"
+                                                            href="https://docs.google.com/forms/d/e/1FAIpQLSc4i9uxreaXIaN5MaUod9XAnb9ZJVG5qBwmOEnYo-pefzdEbQ/viewform">แบบประเมิน</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -321,11 +345,11 @@
 
     <script src="{{ asset('admindek/js/waves.min.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
 
-    <script type="d8424a08d31b5b8b406fded2-text/javascript"
-        src="{{ asset('admindek/js/jquery.slimscroll.js') }}"></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/jquery.slimscroll.js') }}">
+    </script>
     <script src="{{ asset('admindek/js/pcoded.min.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
-    <script src="{{ asset('admindek/js/vertical-layout.min.js') }}"
-        type="d8424a08d31b5b8b406fded2-text/javascript"></script>
+    <script src="{{ asset('admindek/js/vertical-layout.min.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript">
+    </script>
 
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/script.min.js') }}"></script>
     <script src="{{ asset('js/clock.js') }}"></script>

@@ -308,6 +308,12 @@
                                             <span class="pcoded-mtext">ผู้ป่วย</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -383,42 +389,96 @@
                                                             <div class="col-md-12">
                                                                 <div id="wizard">
                                                                     <section>
+
+
+
                                                                         <form role="form" class="wizard-form"
-                                                                            name="myform"
-                                                                            action="{{ route('reserve.store') }}"
-                                                                            id="example-advanced-form" method="POST"
-                                                                            onsubmit="return checkForm(this);">
+                                                                            name="myform" action="/reservuser"
+                                                                            id="example-advanced-form" method="POST">
                                                                             @csrf
 
-                                                                            <h3> หัตถการ </h3>
+                                                                            <h3> Ward / หัตถการ </h3>
+
                                                                             <fieldset>
                                                                                 <h3
                                                                                     style="display: flex;justify-content: center;align-items: center;">
-                                                                                    เลือกหัตถการ </h3>
+                                                                                    Ward ต้นทางที่จอง </h3>
                                                                                 <div class="form-group row">
                                                                                     <div class="col-md-2"></div>
                                                                                     <div class="col-md-8">
                                                                                         <select
                                                                                             class="js-example-basic-single col-sm-12 required"
-                                                                                            name="opt_id" id="opt_id"
-                                                                                            pe>
-                                                                                            <option value="" disabled
-                                                                                                selected
-                                                                                                style="align-items: center;">
-                                                                                                ..กรุณาเลือกหัตถการ..
-                                                                                            </option>
+                                                                                            name="ward_enter" id="ward_enter">
+                                                                                            <option value=""
+                                                                                                style="align-items: center;display: none"
+                                                                                                disabled selected>
+                                                                                                ..เลือก Ward ต้นทาง..</option>
+                                                                                            @if (is_null($ward))
 
-                                                                                            @forelse ($opt as $lopt)
+                                                                                            @else
+                                                                                            @foreach ($ward as $lward)
                                                                                             <option
-                                                                                                value="{{ $lopt->id }}"
-                                                                                                {{ $lopt->id == old('opt_id') ? 'selected' : '' }}>
-                                                                                                {{ $lopt->opt_name }}
+                                                                                                value="{{ $lward->id }}">
+                                                                                                {{ $lward->ward_name }}
                                                                                             </option>
-                                                                                            @empty
-                                                                                            @endforelse
+                                                                                            @endforeach
+                                                                                            @endif
+
                                                                                         </select>
                                                                                     </div>
                                                                                     <div class="col-md-2"></div>
+                                                                                </div>
+                                                                                <div style="display: flex;justify-content: center;align-items: center;">
+                                                                                <img src="{{ asset('admindek/image/arrowdown.png') }}" width="7%" />
+                                                                                </div>
+                                                                                <h3
+                                                                                    style="display: flex;justify-content: center;align-items: center;">
+                                                                                    Ward ปลายทางที่ต้องการจอง </h3>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-md-2"></div>
+                                                                                    <div class="col-md-8">
+                                                                                        <select
+                                                                                            class="js-example-basic-single col-sm-12 required"
+                                                                                            name="ward" id="ward">
+                                                                                            <option value=""
+                                                                                                style="align-items: center;display: none"
+                                                                                                disabled selected>
+                                                                                                ..เลือก Ward ปลายทาง..</option>
+                                                                                            @if (is_null($ward))
+
+                                                                                            @else
+                                                                                            @foreach ($ward as $lward)
+                                                                                            <option
+                                                                                                value="{{ $lward->id }}">
+                                                                                                {{ $lward->ward_name }}
+                                                                                            </option>
+                                                                                            @endforeach
+                                                                                            @endif
+
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="col-md-2"></div>
+                                                                                </div>
+
+                                                                                <h3
+                                                                                    style="display: flex;justify-content: center;align-items: center;">
+                                                                                    หัตถการ </h3>
+                                                                                <span
+                                                                                    style="display: flex;justify-content: center;align-items: center;color:blue;">
+                                                                                    * กรุณาเลือก Ward ปลายทางก่อน * ระบบจะแสดงหัตถการของวอร์ดปลายทางตามที่ท่านเลือก
+                                                                                    </span>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-md-2"></div>
+                                                                                    <div class="col-md-8">
+                                                                                        <select
+                                                                                            class="js-example-basic-single col-sm-12 required"
+                                                                                            name="opt_id" id="opt_id">
+
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="col-md-2"></div>
+
+
                                                                                 </div>
 
 
@@ -476,9 +536,10 @@
                                                                                                 <input type="text"
                                                                                                     name="hn"
                                                                                                     class="form-control hn required"
-                                                                                                    placeholder="ระบุ HN"
+                                                                                                    placeholder="กรอก HN"
                                                                                                     autocomplete="off"
                                                                                                     onkeyup="this.value = this.value.toUpperCase();"
+                                                                                                    value="{{ old('hn') }}"
                                                                                                     maxlength="6"
                                                                                                     minlength="6">
                                                                                             </div>
@@ -500,7 +561,9 @@
                                                                                             </div>
                                                                                             <div
                                                                                                 class="col-sm-12 pa_prefix_div">
-                                                                                                <select class="form-control" required
+                                                                                                <select
+                                                                                                    class="form-control"
+                                                                                                    required
                                                                                                     name="prefix"
                                                                                                     id="prefix"
                                                                                                     required>
@@ -508,9 +571,10 @@
                                                                                                     <option value=""
                                                                                                         style="display: none"
                                                                                                         selected>
-                                                                                                        ..เลือกคำนำหน้า..
+                                                                                                        เลือกคำนำหน้า
                                                                                                     </option>
-                                                                                                    @forelse ($prefix as $lprefix)
+                                                                                                    @forelse ($prefix as
+                                                                                                    $lprefix)
                                                                                                     <option
                                                                                                         value="{{ $lprefix->prefix }}">
                                                                                                         {{ $lprefix->prefix }}
@@ -538,7 +602,7 @@
                                                                                                     class="form-control required"
                                                                                                     name="fname"
                                                                                                     id="fname"
-                                                                                                    placeholder="ระบุชื่อผู้ป่วย">
+                                                                                                    placeholder="กรอกชื่อผู้ป่วย">
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -557,7 +621,7 @@
                                                                                                     class="form-control required"
                                                                                                     name="lname"
                                                                                                     id="lname"
-                                                                                                    placeholder="ระบุนามสกุลผู้ป่วย">
+                                                                                                    placeholder="กรอกนามสกุลผู้ป่วย">
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -566,44 +630,55 @@
                                                                                 <!--  -->
                                                                                 <div class="row">
                                                                                     <div class="col-sm-12 col-xl-3">
-                                                                                        <div class="form-group row">
+                                                                                       <div class="form-group row">
                                                                                             <div class="col-sm-12">
                                                                                                 <label class="block"><i
-                                                                                                        class="fa fa-user"></i>&nbsp;วันเกิดผู้ป่วย
-                                                                                                    (Date of birth)
+                                                                                                        class="fa fa-transgender-alt "></i>&nbsp;เพศผู้ป่วย
+                                                                                                    (Sex)
                                                                                                 </label>&nbsp;<label
                                                                                                     style="color:red;">*</label>
                                                                                             </div>
                                                                                             <div
-                                                                                                class="col-sm-12 pa_age_div">
+                                                                                                class="col-sm-12 pa_sex_div">
+                                                                                                <select
+                                                                                                    class="js-example-basic-single required"
+                                                                                                    name="pa_sex"
+                                                                                                    id="pa_sex"
+                                                                                                    style="width: 100%;">
+                                                                                                    <option value=""
+                                                                                                        disabled
+                                                                                                        selected>
+                                                                                                        เลือกเพศ
+                                                                                                    </option>
+                                                                                                    <option value="ชาย">
+                                                                                                        ชาย</option>
+                                                                                                    <option
+                                                                                                        value="หญิง">
+                                                                                                        หญิง</option>
+                                                                                                </select>
 
-                                                                                                <input id="dropper-age"
-                                                                                                    class="form-control required"
-                                                                                                    type="text"
-                                                                                                    placeholder="เลือกวันเกิดผู้ป่วย"
-                                                                                                    name="pa_age" 
-                                                                                                    data-date-format="dd/mm/yyyy"
-                                                                                                    autocomplete="off" 
-                                                                                                    onchange="getDateAge(this.value)"
-                                                                                                    />
                                                                                             </div>
                                                                                         </div>
-                                                                                        
+
                                                                                     </div>
                                                                                     <div class="col-sm-12 col-xl-3">
                                                                                         <div class="form-group row">
                                                                                             <div class="col-sm-12">
                                                                                                 <label class="block"><i
-                                                                                                        class="fa fa-user"></i>&nbsp;อายุ (ปี)
+                                                                                                        class="fa fa-user"></i>&nbsp;อายุ
+                                                                                                    (ปี) (Age)</label>&nbsp;<label
+                                                                                                    style="color:red;">*
+                                                                                                    </label>
                                                                                             </div>
                                                                                             <div
-                                                                                                class="col-sm-4 age_div">
+                                                                                                class="col-sm-12 age_div">
 
-                                                                                                <input 
-                                                                                                    class="form-control"
-                                                                                                    type="text" id="age"
-                                                                                                    readonly
-                                                                                                    autocomplete="off" />
+                                                                                                <input
+                                                                                                    class="form-control required"
+                                                                                                    type="number" id="pa_age" name="pa_age"
+                                                                                                    min="1" max="150"
+                                                                                                    autocomplete="off" placeholder="กรอกอายุ"
+                                                                                                    OnKeyPress="return chkNumberAge(this)"/>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -625,48 +700,17 @@
                                                                                                     class="form-control required"
                                                                                                     name="pa_phone"
                                                                                                     id="pa_phone"
-                                                                                                    placeholder="ระบุเบอร์โทรศัพท์ผู้ป่วย"
+                                                                                                    placeholder="กรอกเบอร์โทรศัพท์ผู้ป่วย"
                                                                                                     OnKeyPress="return chkNumber(this)">
 
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                   
                                                                                 </div>
                                                                                 <!--  -->
                                                                                 <div class="row">
-                                                                                    <div class="col-sm-12 col-xl-6">
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label class="block"><i
-                                                                                                        class="fa fa-transgender-alt "></i>&nbsp;เพศผู้ป่วย
-                                                                                                    (Sex)
-                                                                                                </label>&nbsp;<label
-                                                                                                    style="color:red;">*</label>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="col-sm-12 pa_sex_div">
-                                                                                                <select
-                                                                                                    class="js-example-basic-single required"
-                                                                                                    name="pa_sex"
-                                                                                                    id="pa_sex"
-                                                                                                    style="width: 700px;">
-                                                                                                    <option value=""
-                                                                                                        disabled
-                                                                                                        selected>
-                                                                                                        เลือกเพศ
-                                                                                                    </option>
-                                                                                                    <option value="ชาย">
-                                                                                                        ชาย</option>
-                                                                                                    <option
-                                                                                                        value="หญิง">
-                                                                                                        หญิง</option>
-                                                                                                </select>
-
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="col-sm-12 col-xl-6">
+                                                                                     <div class="col-sm-12 col-xl-3">
                                                                                         <div class="form-group row">
                                                                                             <div class="col-sm-12">
                                                                                                 <label class="block"><i
@@ -678,7 +722,7 @@
                                                                                                 <select
                                                                                                     class="js-example-basic-single required"
                                                                                                     name="pay" id="pay"
-                                                                                                    style="width: 700px;">
+                                                                                                    style="width: 100%;">
                                                                                                     <option value=""
                                                                                                         disabled
                                                                                                         selected>
@@ -699,9 +743,42 @@
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
-                                                                                {{--  --}}
-                                                                                <div class="row">
+                                                                                    
+                                                                                    <div class="col-sm-12 col-xl-3">
+                                                                                        <div class="form-group row">
+                                                                                            <div class="col-sm-12">
+                                                                                                <label class="block"><i
+                                                                                                        class="fa fa-user-md"></i>&nbsp;อาจารย์แพทย์เจ้าของไข้
+                                                                                                </label>&nbsp;<label
+                                                                                                    style="color:red;">*</label>
+                                                                                            </div>
+                                                                                            <div class="col-sm-12">
+                                                                                                <select
+                                                                                                    class="js-example-basic-single required"
+                                                                                                    name="doctor_id"
+                                                                                                    id="doctor_id"
+                                                                                                    style="width: 100%;">
+                                                                                                    <option value=""
+                                                                                                        disabled
+                                                                                                        selected>
+                                                                                                        เลือกอาจารย์แพทย์
+                                                                                                    </option>
+                                                                                                    @if (is_null($doc))
+                                                                                                    @else
+                                                                                                    @foreach ($doc as
+                                                                                                    $ldoc)
+                                                                                                    <option
+                                                                                                        value="{{ $ldoc->id }}">
+                                                                                                        {{ $ldoc->prefix }}{{ $ldoc->fname }}
+                                                                                                        {{ $ldoc->lname }}
+                                                                                                    </option>
+                                                                                                    @endforeach
+                                                                                                    @endif
+                                                                                                </select>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
                                                                                     <div class="col-sm-12 col-xl-6">
                                                                                         <div class="form-group row">
                                                                                             <div class="col-sm-12">
@@ -716,50 +793,12 @@
                                                                                                     class="form-control required"
                                                                                                     name="disease"
                                                                                                     id="disease"
-                                                                                                    placeholder="ระบุโรค">
-
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-12 col-xl-6">
-                                                                                        <div class="form-group row">
-                                                                                            <div class="col-sm-12">
-                                                                                                <label class="block"><i
-                                                                                                        class="fa fa-user-md"></i>&nbsp;อาจารย์แพทย์เจ้าของไข้
-                                                                                                </label>&nbsp;<label
-                                                                                                    style="color:red;">*</label>
-                                                                                            </div>
-                                                                                            <div class="col-sm-12">
-                                                                                                <select
-                                                                                                    class="js-example-basic-single required"
-                                                                                                    name="doctor_id"
-                                                                                                    id="doctor_id"
-                                                                                                    style="width: 700px;">
-                                                                                                    <option value=""
-                                                                                                        disabled
-                                                                                                        selected>
-                                                                                                        เลือกอาจารย์แพทย์
-                                                                                                    </option>
-                                                                                                    @if (is_null($doc))
-                                                                                                    @else
-                                                                                                    @foreach ($doc as
-                                                                                                    $ldoc)
-                                                                                                    <option
-                                                                                                        value="{{ $ldoc->id }}">
-                                                                                                        {{ $ldoc->prefix }}{{ $ldoc->fname }} {{ $ldoc->lname }}
-                                                                                                    </option>
-                                                                                                    @endforeach
-                                                                                                    @endif
-                                                                                                </select>
+                                                                                                    placeholder="กรอกวินิจฉัยโรค">
 
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <!--  -->
-
-
-
 
                                                                             </fieldset>
 
@@ -812,7 +851,7 @@
                                                                                                     class="form-control required"
                                                                                                     id="booking_name"
                                                                                                     placeholder="ระบุชื่อผู้รับผิดชอบที่สามารถติดต่อกลับได้"
-                                                                                                    value='{{ Auth::user()->prefix }}{{ Auth::user()->fname }} {{ Auth::user()->lname }}'
+                                                                                                    value="{{ Auth::user()->prefix }}{{ Auth::user()->fname }} {{ Auth::user()->lname }}"
                                                                                                     readonly>
 
                                                                                             </div>
@@ -860,7 +899,7 @@
                                                                                             </div>
                                                                                             <div class="col-sm-12">
                                                                                                 <input type="text"
-                                                                                                    class="form-control required"
+                                                                                                    class="form-control"
                                                                                                     name="" id=""
                                                                                                     readonly
                                                                                                     placeholder="ระบุเบอร์โทรติดต่อ"
@@ -907,14 +946,19 @@
     </div>
 
 
-    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
 
-<script type="d8424a08d31b5b8b406fded2-text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.27/jquery.autocomplete.min.js"></script>
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.27/jquery.autocomplete.min.js">
+    </script>
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('js/materialize.js') }}"></script>
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('js/autocomplete.js') }}"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 
     <!-- <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/jquery.min.js') }}"></script>
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/jquery-ui.min.js') }}"></script> -->
@@ -923,38 +967,39 @@
 
     <script src="{{ asset('admindek/js/waves.min.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
 
-    <script type="d8424a08d31b5b8b406fded2-text/javascript"
-        src="{{ asset('admindek/js/jquery.slimscroll.js') }}"></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/jquery.slimscroll.js') }}">
+    </script>
 
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/modernizr.js') }}"></script>
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/css-scrollbars.js') }}"></script>
 
-    <script type="d8424a08d31b5b8b406fded2-text/javascript"
-        src="{{ asset('admindek/js/select2.full.min.js') }}"></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/select2.full.min.js') }}">
+    </script>
 
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/bootstrap-multiselect.js') }}">
     </script>
-    <script type="d8424a08d31b5b8b406fded2-text/javascript"
-        src="{{ asset('admindek/js/jquery.multi-select.js') }}"></script>
-    <script type="d8424a08d31b5b8b406fded2-text/javascript"
-        src="{{ asset('admindek/js/jquery.quicksearch.js') }}"></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/jquery.multi-select.js') }}">
+    </script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/jquery.quicksearch.js') }}">
+    </script>
 
     <script src="{{ asset('admindek/js/underscore-min.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
     <script src="{{ asset('admindek/js/moment.min.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
-    {{-- <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/validate.js') }}" ></script> --}}
+    {{-- <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/validate.js') }}" ></script>
+    --}}
 
-    <script type="d8424a08d31b5b8b406fded2-text/javascript"
-        src="{{ asset('admindek/js/moment-with-locales.min.js') }}"></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/moment-with-locales.min.js') }}">
+    </script>
     <script type="d8424a08d31b5b8b406fded2-text/javascript"
         src="{{ asset('admindek/js/bootstrap-datepicker.min.js') }}"></script>
     <script type="d8424a08d31b5b8b406fded2-text/javascript"
         src="{{ asset('admindek/js/bootstrap-datetimepicker.min.js') }}"></script>
 
-    <script type="d8424a08d31b5b8b406fded2-text/javascript"
-        src="{{ asset('admindek/js/daterangepicker.js') }}"></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/daterangepicker.js') }}">
+    </script>
 
-    <script type="d8424a08d31b5b8b406fded2-text/javascript"
-        src="{{ asset('admindek/js/datedropper.min.js') }}"></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/datedropper.min.js') }}">
+    </script>
 
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/spectrum.js') }}"></script>
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/jscolor.js') }}"></script>
@@ -965,16 +1010,17 @@
     <script src="{{ asset('js/clock.js') }}"></script>
 
     <script src="{{ asset('admindek/js/jquery.cookie.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
-<script src="{{ asset('admindek/js/jquery.steps.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
-<script src="{{ asset('admindek/js/jquery.validate.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
-<script src="{{ asset('admindek/js/form-wizard.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
+    <script src="{{ asset('admindek/js/jquery.steps.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
+    <script src="{{ asset('admindek/js/jquery.validate.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript">
+    </script>
+    <script src="{{ asset('admindek/js/form-wizard.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
 
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/custom-picker.js') }}"></script>
 
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/select2-custom.js') }}"></script>
     <script src="{{ asset('admindek/js/pcoded.min.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript"></script>
-    <script src="{{ asset('admindek/js/vertical-layout.min.js') }}"
-        type="d8424a08d31b5b8b406fded2-text/javascript"></script>
+    <script src="{{ asset('admindek/js/vertical-layout.min.js') }}" type="d8424a08d31b5b8b406fded2-text/javascript">
+    </script>
     <script src="{{ asset('admindek/js/jquery.mcustomscrollbar.concat.min.js') }}"
         type="d8424a08d31b5b8b406fded2-text/javascript">
     </script>
@@ -995,26 +1041,31 @@
     <script src="{{ asset('admindek/js/rocket-loader.min.js') }}" data-cf-settings="d8424a08d31b5b8b406fded2-|49"
         defer=""></script>
 
+    {{-- <script type='text/javascript'>
+    function calculate_age(dob) {
+        var diff_ms = Date.now() - dob.getTime();
+        var age_dt = new Date(diff_ms);
 
-        <script type='text/javascript'>
+        return Math.abs(age_dt.getUTCFullYear() - 1970);
+    }
 
-function calculate_age(dob) { 
-     var diff_ms = Date.now() - dob.getTime();
-     var age_dt = new Date(diff_ms); 
+    function getDateAge(text) {
+        var TextDate = text.split("/");
+        console.log(calculate_age(new Date(TextDate[2], TextDate[1], TextDate[0])));
+        document.getElementById("age").value = calculate_age(new Date(TextDate[2], TextDate[1], TextDate[0]));
+    }
+    </script> --}}
 
-     return Math.abs(age_dt.getUTCFullYear() - 1970);
-     }
+    <script>
+    function success() {
+        Swal.fire({
+            icon: 'success',
+            title: 'ทำรายการจองเตียง สำเร็จแล้ว!',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    }
 
- function getDateAge(text) {
- var TextDate = text.split("/");
- console.log(calculate_age(new Date(TextDate[2],TextDate[1],TextDate[0])));
- document.getElementById("age").value = calculate_age(new Date(TextDate[2],TextDate[1],TextDate[0]));
- }
-
- </script>
-
-
-<script>
 
     function chkNumber(ele) {
         var vchar = String.fromCharCode(event.keyCode);
@@ -1028,17 +1079,42 @@ function calculate_age(dob) {
         ele.onKeyPress = vchar;
     }
 
-    function minmax(value, min, max)
-{
-    if(parseInt(value) < min || isNaN(parseInt(value)))
-        return min;
-    else if(parseInt(value) > max)
-        return max;
-    else return value;
-}
+    function minmax(value, min, max) {
+        if (parseInt(value) < min || isNaN(parseInt(value)))
+            return min;
+        else if (parseInt(value) > max)
+            return max;
+        else return value;
+    }
+    </script>
 
-
-</script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript">
+    $(document).ready(function() {
+        $('#ward').on('change', function() {
+            let id = $('#ward').val();
+            $('#opt_id').empty();
+            $('#opt_id').append(`<option style="display:none">....</option>`);
+            console.log(id);
+            $.ajax({
+                type: 'GET',
+                url: 'GetOpt/' + id,
+                success: function(response) {
+                    var response = JSON.parse(response);
+                    $('#opt_id').empty();
+                    $('#opt_id').append(
+                        `<option value="" style="display: none" selected disabled >กรุณาเลือกหัตถการ</option>`
+                    );
+                    response.forEach(element => {
+                        $('#opt_id').append(
+                            `<option value="${element['id']}">${element['opt_name']}</option>`
+                        );
+                    });
+                }
+            });
+        });
+    });
+    </script>
 
 </body>
+
 </html>

@@ -64,7 +64,8 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="/index-admin">
-                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}" alt="Theme-Logo" />
+                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu icon-toggle-right"></i>
@@ -74,7 +75,7 @@
                         </a>
                     </div>
                     <div class="navbar-container container-fluid">
-                    <ul class="nav-left ">
+                        <ul class="nav-left ">
                             <li>
                                 <div style="font-size:16px;">
 
@@ -167,8 +168,9 @@
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         {{-- <img src="{{ asset('admindek/jpg/avatar-4.jpg') }}" class="img-radius"
-                                            alt="User-Profile-Image"> --}}
-                                            <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }} {{ Auth::user()->lname }}</span>
+                                        alt="User-Profile-Image"> --}}
+                                        <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }}
+                                            {{ Auth::user()->lname }}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu"
@@ -221,10 +223,9 @@
                                             <span class="pcoded-micon"><i class="feather icon-settings"></i></span>
                                             <span class="pcoded-mtext">จัดสรรวอร์ด
                                                 @if ($userunsub->isNotEmpty())
-                                                <img
-                                                src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
-                                                width='25px' />
-                                            @endif
+                                                <img src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
+                                                    width='25px' />
+                                                @endif
                                             </span>
                                         </a>
                                         <ul class="pcoded-submenu">
@@ -260,15 +261,23 @@
                                             </li>
                                             <li class="">
                                                 <a href="/manageuserwards" class="waves-effect waves-dark">
-                                                    <span class="pcoded-mtext">รออนุมัติสิทธิ์ 
+                                                    <span class="pcoded-mtext">รออนุมัติสิทธิ์
                                                         @if ($userunsub->isNotEmpty())
-                                                        <span class="badge badge-danger">New  {{ $userunsub->count() }}</span>
-                                                         @endif
+                                                        <span class="badge badge-danger">New
+                                                            {{ $userunsub->count() }}</span>
+                                                        @endif
                                                     </span>
                                                 </a>
                                         </ul>
                                     </li>
-
+                                    <li class="">
+                                                <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing"
+                                                    target="_blank" class="waves-effect waves-dark">
+                                                    <span class="pcoded-micon"><i
+                                                            class="feather icon-book"></i></i></span>
+                                                    <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                                </a>
+                                            </li>
                                 </ul>
                             </div>
                         </div>
@@ -355,16 +364,22 @@
                                                                         <td>{{ $listpay->name }}</td>
                                                                         <td>
 
-                                                                            <span  data-toggle="modal" data-target="#editPay{{ $listpay->id }}" >
-                                                                                <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="แก้ไข">
+                                                                            <span data-toggle="modal"
+                                                                                data-target="#editPay{{ $listpay->id }}">
+                                                                                <button class="btn btn-warning"
+                                                                                    data-toggle="tooltip"
+                                                                                    data-placement="top" title="แก้ไข">
                                                                                     <i
-                                                                                    class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-white"></i>
+                                                                                        class="icon feather icon-edit f-w-600 f-16 m-r-15 text-c-white"></i>
                                                                                 </button>
                                                                             </span>
-                                                                            <span  data-toggle="modal" data-target="#delPay{{ $listpay->id }}" >
-                                                                                <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="ลบ">
+                                                                            <span data-toggle="modal"
+                                                                                data-target="#delPay{{ $listpay->id }}">
+                                                                                <button class="btn btn-danger"
+                                                                                    data-toggle="tooltip"
+                                                                                    data-placement="top" title="ลบ">
                                                                                     <i
-                                                                                    class="feather icon-trash-2 f-w-600 f-16 text-c-white"></i>
+                                                                                        class="feather icon-trash-2 f-w-600 f-16 text-c-white"></i>
                                                                                 </button>
                                                                             </span>
                                                                         </td>
@@ -443,7 +458,8 @@
                                                                                         <p
                                                                                             style="text-align:center;padding-top:15px;">
                                                                                             ทำการลบสิทธิ์การรักษา</p>
-                                                                                        <h5 style="color: red;text-align:center;padding-top:15px;">
+                                                                                        <h5
+                                                                                            style="color: red;text-align:center;padding-top:15px;">
                                                                                             {{ $listpay->name }}</h5>
 
 
@@ -515,7 +531,8 @@
                                 <div class="form-group">
                                     <label for="name" class="control-label">สิทธิการรักษา
                                         :</label>
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="พิมพ์ชื่อสิทธิการรักษา" required />
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        placeholder="พิมพ์ชื่อสิทธิการรักษา" required />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -598,7 +615,7 @@
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
                 type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
             <script type="d28fd8086f5eb18f81d8672a-text/javascript">
-                window.dataLayer = window.dataLayer || [];
+            window.dataLayer = window.dataLayer || [];
 
             function gtag() {
                 dataLayer.push(arguments);

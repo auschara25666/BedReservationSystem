@@ -221,7 +221,13 @@
                     var message = this.findDefined(this.customMessage(element.name, rule.method), 
                                 this.customDataMessage(element, rule.method), 
                                 !this.settings.ignoreTitle && element.title || undefined, 
-                                $.validator.messages[rule.method], "<strong style='color:red;'>** กรุณาเลือกวอร์ด **" 
+                                $.validator.messages[rule.method], "<strong style='color:red;'>** กรุณาเลือกวอร์ดปลายทาง **" 
+                                + "</strong>"), theregex = /\$?\{(\d+)\}/g; 
+                } else if(element.name === "ward_enter"){
+                    var message = this.findDefined(this.customMessage(element.name, rule.method), 
+                                this.customDataMessage(element, rule.method), 
+                                !this.settings.ignoreTitle && element.title || undefined, 
+                                $.validator.messages[rule.method], "<strong style='color:red;'>** กรุณาเลือกวอร์ดต้นทาง **" 
                                 + "</strong>"), theregex = /\$?\{(\d+)\}/g; 
                 } else if(element.name === "doctor_id"){
                     var message = this.findDefined(this.customMessage(element.name, rule.method), 
@@ -233,7 +239,7 @@
                     var message = this.findDefined(this.customMessage(element.name, rule.method), 
                                 this.customDataMessage(element, rule.method), 
                                 !this.settings.ignoreTitle && element.title || undefined, 
-                                $.validator.messages[rule.method], "<strong style='color:red;'>** กรุณาเลือกวันเกิดผู้ป่วย **" 
+                                $.validator.messages[rule.method], "<strong style='color:red;'>** กรุณากรอกอายุผู้ป่วย **" 
                                 + "</strong>"), theregex = /\$?\{(\d+)\}/g; 
                 } else if(element.name === "reserve_booking"){
                     var message = this.findDefined(this.customMessage(element.name, rule.method), 

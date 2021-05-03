@@ -250,6 +250,12 @@
                                             <span class="pcoded-mtext">สถิติ</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -613,36 +619,46 @@
 
                             var event_status = response['data'][i].event_status;
                             var opt_id = response['data'][i].id;
-
+                            var idopt = response['data'][i].id;
 
                             if(event_status == "3" && valueChoiceOPT == opt_id){
+                                
+                                if(idopt != null){
                             var date = response['data'][i].date;
                             var hn = response['data'][i].hn;
                             var prefix = response['data'][i].prefix;
                             var pa_fname = response['data'][i].fname;
                             var pa_lname = response['data'][i].lname;
-                            var pa_birthday = response['data'][i].birthday;
-                            
+                            var pa_age = response['data'][i].age;
+                            if (pa_age == null){ pa_age = "-";}
                             var opt_name = response['data'][i].opt_name;
+                            if (opt_name == null){ opt_name = "-";}
                             var complication = response['data'][i].complication;
                             if (complication == null){ complication = "-";}
                             var total = response['data'][i].total;
+
+
+                            // if (pa_birthday == null) {
+                            //     var age_pa = '-';
+                            // } else {
+                            //     ////cut BD
+                            // var cutBD = pa_birthday.split('-');
+                            //     function calculate_age(dob) {
+                            //     var diff_ms = Date.now() - dob.getTime();
+                            //     var age_dt = new Date(diff_ms); 
+                            //     return Math.abs(age_dt.getUTCFullYear() - 1970);
+                            //     }
+                            //     var age_pa = calculate_age(new Date(cutBD[0],cutBD[1],cutBD[2]));
+                            // ////
+                            // }
                             
-                            ////cut BD
-                            var cutBD = pa_birthday.split('-');
-                                function calculate_age(dob) {
-                                var diff_ms = Date.now() - dob.getTime();
-                                var age_dt = new Date(diff_ms); 
-                                return Math.abs(age_dt.getUTCFullYear() - 1970);
-                                }
-                                var age_pa = calculate_age(new Date(cutBD[0],cutBD[1],cutBD[2]));
-                            ////
+                            
 
                             var tr_str = "<tr>" +
                                 "<td align='center'>" + (n + 1) + "</td>" +
                                 "<td align='center'>" + hn + "</td>" +
                                 "<td align='center'>" + prefix + pa_fname + "&nbsp;" + pa_lname + "</td>" +
-                                "<td align='center'>" + age_pa + "</td>" +
+                                "<td align='center'>" + pa_age + "</td>" +
                                 "<td align='center'>" + opt_name + "</td>" +
                                 "<td align='center'>" + complication + "</td>" +
                                 "<td align='center'>" + total + "</td>" +
@@ -651,36 +667,47 @@
                             $("#empTable tbody").append(tr_str);
 
                             n++;
-
+                                }else{
+                                continue;
+                            }
                         }
                         if (event_status == "3" && valueChoiceOPT == "0"){
+                            
+
+                            if(idopt != null){
+
                             var date = response['data'][i].date;
                             var hn = response['data'][i].hn;
                             var prefix = response['data'][i].prefix;
                             var pa_fname = response['data'][i].fname;
                             var pa_lname = response['data'][i].lname;
-                            var pa_birthday = response['data'][i].birthday;
-                            
+                            var pa_age = response['data'][i].age;
+                            if (pa_age == null){ pa_age = "-";}
                             var opt_name = response['data'][i].opt_name;
+                            if (opt_name == null){ opt_name = "-";}
                             var complication = response['data'][i].complication;
                             if (complication == null){ complication = "-";}
                             var total = response['data'][i].total;
                             
-                            ////cut BD
-                            var cutBD = pa_birthday.split('-');
-                                function calculate_age(dob) {
-                                var diff_ms = Date.now() - dob.getTime();
-                                var age_dt = new Date(diff_ms); 
-                                return Math.abs(age_dt.getUTCFullYear() - 1970);
-                                }
-                                var age_pa = calculate_age(new Date(cutBD[0],cutBD[1],cutBD[2]));
-                            ////
+                            // if (pa_birthday == null) {
+                            //     var age_pa = '-';
+                            // } else {
+                            //     ////cut BD
+                            // var cutBD = pa_birthday.split('-');
+                            //     function calculate_age(dob) {
+                            //     var diff_ms = Date.now() - dob.getTime();
+                            //     var age_dt = new Date(diff_ms); 
+                            //     return Math.abs(age_dt.getUTCFullYear() - 1970);
+                            //     }
+                            //     var age_pa = calculate_age(new Date(cutBD[0],cutBD[1],cutBD[2]));
+                            // ////
+                            // }
 
                             var tr_str = "<tr>" +
                                 "<td align='center'>" + (n + 1) + "</td>" +
                                 "<td align='center'>" + hn + "</td>" +
                                 "<td align='center'>" + prefix + pa_fname + "&nbsp;" + pa_lname + "</td>" +
-                                "<td align='center'>" + age_pa + "</td>" +
+                                "<td align='center'>" + pa_age + "</td>" +
                                 "<td align='center'>" + opt_name + "</td>" +
                                 "<td align='center'>" + complication + "</td>" +
                                 "<td align='center'>" + total + "</td>" +
@@ -688,6 +715,9 @@
 
                                 $("#empTable tbody").append(tr_str);
                             n++;
+                            }else{
+                                continue;
+                            }
                         }
                 
             
@@ -746,28 +776,34 @@
                             var prefix = response['data'][i].prefix;
                             var pa_fname = response['data'][i].fname;
                             var pa_lname = response['data'][i].lname;
-                            var pa_birthday = response['data'][i].birthday;
+                            var pa_age = response['data'][i].age;
+                            if (pa_age == null){ pa_age = "-";}
                             var disease = response['data'][i].disease;
                             if (disease == null){ disease = "-";}
                             var complication = response['data'][i].complication;
                             if (complication == null){ complication = "-";}
                             var total = response['data'][i].total;
+
                             
-                            ////cut BD
-                            var cutBD = pa_birthday.split('-');
-                                function calculate_age(dob) {
-                                var diff_ms = Date.now() - dob.getTime();
-                                var age_dt = new Date(diff_ms); 
-                                return Math.abs(age_dt.getUTCFullYear() - 1970);
-                                }
-                                var age_pa = calculate_age(new Date(cutBD[0],cutBD[1],cutBD[2]));
-                            ////
+                            // if (pa_birthday == null) {
+                            //     var age_pa = '-';
+                            // } else {
+                            //     ////cut BD
+                            // var cutBD = pa_birthday.split('-');
+                            //     function calculate_age(dob) {
+                            //     var diff_ms = Date.now() - dob.getTime();
+                            //     var age_dt = new Date(diff_ms); 
+                            //     return Math.abs(age_dt.getUTCFullYear() - 1970);
+                            //     }
+                            //     var age_pa = calculate_age(new Date(cutBD[0],cutBD[1],cutBD[2]));
+                            // ////
+                            // }
 
                             var tr_str = "<tr>" +
                                 "<td align='center'>" + (n + 1) + "</td>" +
                                 "<td align='center'>" + hn + "</td>" +
                                 "<td align='center'>" + prefix + pa_fname + "&nbsp;" + pa_lname + "</td>" +
-                                "<td align='center'>" + age_pa + "</td>" +
+                                "<td align='center'>" + pa_age + "</td>" +
                                 "<td align='center'>" + disease + "</td>" +
                                 "<td align='center'>" + complication + "</td>" +
                                 "<td align='center'>" + total + "</td>" +
@@ -855,21 +891,30 @@
                                 for (var i = 0; i < len; i++) {
                                     var event_status = response['data'][i].event_status;
                                     var opt_id = response['data'][i].id;
+                                    var idopt = response['data'][i].id;
                                     if(event_status == "3" && valueChoiceOPT == opt_id){
+                                        if(idopt != null){
                                         var getdate = document.getElementById('search').value;
                                         var split = getdate.split(' - ');
                                         var datF = "วันที่ " + split[0];
                                         var datT = " ถึงวันที่ " + split[1];
                                         var TitleGraph = datF + datT;
                                         countDis += 1;
+                                        }else{
+                                            continue;
+                                        }
                                     }
                                     if (event_status == "3" && valueChoiceOPT == "0"){
+                                        if(idopt != null){
                                         var getdate = document.getElementById('search').value;
                                         var split = getdate.split(' - ');
                                         var datF = "วันที่ " + split[0];
                                         var datT = " ถึงวันที่ " + split[1];
                                         var TitleGraph = datF + datT;
                                         countDis += 1;
+                                        }else{
+                                            continue;
+                                        }
                                     }
                                 }
                             }else{

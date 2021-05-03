@@ -32,13 +32,13 @@ class ChiefNurseController extends Controller
         $ward = Ward::find(Auth::user()->ward_id);
 
 
-        $reserve = Patient::join('reservations', 'patients.id', '=', 'reservations.patient_id')
+        $reserve = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
+        ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->where('reservations.ward_id', Auth::user()->ward_id)
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
-        ->where('reservations.ward_id', $ward->id)
         ->where('reservations.reserve_status', 'ยื่นจอง')
-        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))
-        ->whereIn('patients.pay_id', [1, 2, 3, 4, 5, 6, 7, 8])->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
+        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))->get();
 
         return view('chiefforward.index', compact('ward','reserve'));
     }
@@ -55,9 +55,9 @@ class ChiefNurseController extends Controller
         $bedwait = Bed::where('ward_id', $ward->id)->where('bed_status', 'รอเข้า')->get();
         $outbed = Bed::where('ward_id', $ward->id)->where('bed_status', 'เตรียมออก')->get();
 
-        $opt = Operative::where('ward_id', $ward->id)->get();
-        $doc = Doctor::where('ward_id', $ward->id)->get();
-        $pay = Payment::where('ward_id', $ward->id)->get();
+        $opt = Operative::all();
+        $doc = Doctor::all();
+        $pay = Payment::all();
         $prefix = Prefix::all();
 
         $pre = Preoperative::all();
@@ -65,13 +65,13 @@ class ChiefNurseController extends Controller
         // dd($bedwait);
 
 
-        $reserve = Patient::join('reservations', 'patients.id', '=', 'reservations.patient_id')
+        $reserve = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
+        ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->where('reservations.ward_id', Auth::user()->ward_id)
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
-        ->where('reservations.ward_id', $ward->id)
         ->where('reservations.reserve_status', 'ยื่นจอง')
-        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))
-        ->whereIn('patients.pay_id', [1, 2, 3, 4, 5, 6, 7, 8])->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
+        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))->get();
 
         return view('chiefforward.bedstatus', compact('bed', 'bedavailable', 'bedocc', 'bedout','bedwait','outbed','pay', 'ward','pre','opt','doc','reserve','prefix'));
     }
@@ -86,12 +86,11 @@ class ChiefNurseController extends Controller
 
         $reserve = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
         ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->where('reservations.ward_id', Auth::user()->ward_id)
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
-        ->where('reservations.ward_id', $ward->id)
         ->where('reservations.reserve_status', 'ยื่นจอง')
         ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))
-        ->whereIn('patients.pay_id', [1, 2, 3, 4, 5, 6, 7, 8])
         ->select('reservations.id','reservations.patient_id','reservations.opt_id','payments.name','reservations.reserve_booking','reservations.reserve_status','reservations.created_user_id','reservations.doctor_id')->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
 
         // dd($reserveapply);
@@ -100,9 +99,9 @@ class ChiefNurseController extends Controller
         $pre = Preoperative::all();
 
         //edit reserve
-        $pay = Payment::where('ward_id', $ward->id)->get();
-        $opt = Operative::where('ward_id', $ward->id)->get();
-        $doc = Doctor::where('ward_id', $ward->id)->get();
+        $pay = Payment::all();
+        $opt = Operative::all();
+        $doc = Doctor::all();
 
         return view('chiefforward.normalreserv', compact('ward', 'reserve', 'reall', 'pay', 'opt', 'doc', 'pre','bed'));
     }
@@ -115,29 +114,18 @@ class ChiefNurseController extends Controller
         $bed = Bed::where('ward_id', $ward->id)->get();
         $bedavailable = Bed::where('ward_id', $ward->id)->where('bed_status', 'ว่าง')->get();
 
-        // $reserveapply = Reservation::join('reservations', 'patients.id', '=', 'reservations.patient_id')
-        // ->where('reservations.rec_status', '=', '1')
-        // ->where('reservations.deleted_at', '=', NULL)
-        // ->where('reservations.bed_id', '!=', NULL)
-        // ->where('reservations.ward_id', $ward->id)
-        // ->where('reservations.reserve_status', 'อนุมัติเตียง')
-        // ->orwhere('reservations.reserve_status', 'เข้าไม่ผ่านระบบ')
-        // ->orwhere('reservations.reserve_status', 'ยกเลิกจอง')->get();
-
         $reserveapply = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
         ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->where('reservations.ward_id','=', Auth::user()->ward_id)
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
         ->where('reservations.bed_id', '!=', NULL)
-        ->where('reservations.ward_id', $ward->id)
-        ->where('reservations.reserve_status', 'อนุมัติเตียง')
-        ->orwhere('reservations.reserve_status', 'เข้าไม่ผ่านระบบ')
-        ->orwhere('reservations.reserve_status', 'ยกเลิกจอง')
+        ->whereIn('reservations.reserve_status', ['อนุมัติเตียง','เข้าเตียง','เตรียมออก','เข้าไม่ผ่านระบบ','ยกเลิกจอง'])
         ->select('reservations.id','reservations.patient_id','reservations.preopt_id','reservations.opt_id','reservations.bed_id','reservations.reserve_detail','payments.name','reservations.reserve_booking','reservations.reserve_status','reservations.created_user_id','reservations.doctor_id')->get();
 
 
 
-        // dd($reserveapply);
+        // dd(Auth::user()->ward_id);
         // dd($reserve);
         $reall = Reservation::all();
         $pre = Preoperative::all();
@@ -145,17 +133,17 @@ class ChiefNurseController extends Controller
         // dd($reall);
 
         //edit reserve
-        $pay = Payment::where('ward_id', $ward->id)->get();
-        $opt = Operative::where('ward_id', $ward->id)->get();
-        $doc = Doctor::where('ward_id', $ward->id)->get();
+        $pay = Payment::all();
+        $opt = Operative::all();
+        $doc = Doctor::all();
 
-        $reserve = Patient::join('reservations', 'patients.id', '=', 'reservations.patient_id')
+        $reserve = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
+        ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->where('reservations.ward_id', Auth::user()->ward_id)
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
-        ->where('reservations.ward_id', $ward->id)
         ->where('reservations.reserve_status', 'ยื่นจอง')
-        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))
-        ->whereIn('patients.pay_id', [1, 2, 3, 4, 5, 6, 7, 8])->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
+        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))->get();
 
         return view('chiefforward.approvedreserv', compact('ward','bed', 'bedavailable','reall', 'pay', 'opt', 'doc', 'pre', 'reserveapply','reserve'));
     }
@@ -164,7 +152,7 @@ class ChiefNurseController extends Controller
     {
         $user = User::find(Auth::user()->id);
         $ward = Ward::find(Auth::user()->ward_id);
-        $opt = Operative::where('ward_id',  $ward->id)->get();
+        $opt = Operative::all();
 
         return view('chiefforward.operative', compact('opt'));
     }
@@ -172,23 +160,22 @@ class ChiefNurseController extends Controller
     public function formreserv()
     {
         $user = User::find(Auth::user()->id);
-        $ward = Ward::find(Auth::user()->ward_id);
+        $ward = Ward::all();
         // $opt = Operative::find($id);
-        $opt = Operative::where('ward_id',  $ward->id)->get();
-        $doc = Doctor::where('ward_id',  $ward->id)->get();
-        $pay = Payment::where('ward_id',  $ward->id)->get();
+        $opt = Operative::all();
+        $doc = Doctor::all();
+        $pay = Payment::all();
         $pa = Patient::all();
         $prefix = Prefix::all();
 
 
-        $reserve = Patient::join('reservations', 'patients.id', '=', 'reservations.patient_id')
+        $reserve = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
+        ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->where('reservations.ward_id', Auth::user()->ward_id)
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
-        ->where('reservations.ward_id', $ward->id)
         ->where('reservations.reserve_status', 'ยื่นจอง')
-        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))
-        ->whereIn('patients.pay_id', [1, 2, 3, 4, 5, 6, 7, 8])->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
-
+        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))->get();
         return view('chiefforward.formreserv', compact('opt','doc', 'pay', 'ward', 'pa','reserve','prefix'));
     }
 
@@ -198,21 +185,20 @@ class ChiefNurseController extends Controller
         $user = User::find(Auth::user()->id);
         $ward = Ward::find(Auth::user()->ward_id);
         $opt = Operative::all();
-        $doc = Doctor::where('ward_id',  $ward->id)->get();
-        $pay = Payment::where('ward_id',  $ward->id)->get();
+        $doc = Doctor::all();
+        $pay = Payment::all();
         $pa = Patient::all();
         $prefix = Prefix::all();
 
 
 
-        $reserve = Patient::join('reservations', 'patients.id', '=', 'reservations.patient_id')
+        $reserve = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
+        ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->where('reservations.ward_id', Auth::user()->ward_id)
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
-        ->where('reservations.ward_id', $ward->id)
         ->where('reservations.reserve_status', 'ยื่นจอง')
-        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))
-        ->whereIn('patients.pay_id', [1, 2, 3, 4, 5, 6, 7, 8])->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
-
+        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))->get();
         return view('chiefforward.patient', compact('opt', 'doc', 'pay', 'ward', 'pa','reserve','prefix'));
     }
 
@@ -224,14 +210,13 @@ class ChiefNurseController extends Controller
 
         $ward = Ward::find(Auth::user()->ward_id);
 
-        $reserve = Patient::join('reservations', 'patients.id', '=', 'reservations.patient_id')
+        $reserve = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
+        ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->where('reservations.ward_id', Auth::user()->ward_id)
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
-        ->where('reservations.ward_id', $ward->id)
         ->where('reservations.reserve_status', 'ยื่นจอง')
-        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))
-        ->whereIn('patients.pay_id', [1, 2, 3, 4, 5, 6, 7, 8])->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
-
+        ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))->get();
         return view('chiefforward.profile',compact('wardall','reserve','prefix'));
     }
 

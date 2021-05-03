@@ -320,6 +320,12 @@
                                             <span class="pcoded-mtext">จองเตียง</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -412,7 +418,8 @@
                                                                         <th style="width: 15px;">สถานะ</th>
                                                                         <th>เตียง</th>
                                                                         <th>รายละเอียด</th>
-                                                                        <th style="width: 20%;">ตัวเลือก</th>
+                                                                        <th>ผู้จอง</th>
+                                                                        <th style="width: 10%;">ตัวเลือก</th>
                                                                     </tr>
                                                                 </thead>
                                                                 @if(is_null($reserveapply))
@@ -424,7 +431,7 @@
 
                                                                     @foreach ($reserveapply as $lreserveapply)
 
-                                                                    <tr>
+                                                                    <tr class="text-center">
                                                                         {{-- <th>{{ $lreserveapply->id }}</th> --}}
                                                                         <td>{{ $number }}</td>
                                                                         <td>{{ $lreserveapply->patient->hn ?? 'ไม่มี HN' }}</td>
@@ -439,16 +446,44 @@
                                                                             }}
                                                                         </td>
                                                                         <td class="text-center">
+                                                                        @if ($lreserveapply->reserve_status =='อนุมัติเตียง')
                                                                             <small class="badge badge-success"
-                                                                                style="font-size:15px;">{{
-                                                                                $lreserveapply->reserve_status
-                                                                                }}</small>
+                                                                                style="font-size:15px;">{{ $lreserveapply->reserve_status }}</small>
+                                                                            @endif
+                                                                            @if ($lreserveapply->reserve_status =='เข้าเตียง')
+                                                                            <small class="badge badge-success"
+                                                                                style="font-size:15px;">{{ $lreserveapply->reserve_status }}</small>
+                                                                            @endif
+                                                                            @if ($lreserveapply->reserve_status =='เตรียมออก')
+                                                                            <small class="badge badge-warning"
+                                                                                style="font-size:15px;color: back;">{{ $lreserveapply->reserve_status }}</small>
+                                                                            @endif
                                                                         </td>
                                                                         <td>{{ $lreserveapply->bed_id }}</td>
                                                                         <td>{{ $lreserveapply->reserve_detail }}</td>
+                                                                        <td>{{ $lreserveapply->user->prefix }}{{ $lreserveapply->user->fname }} {{ $lreserveapply->user->lname }}</td>
                                                                         <td>
+                                                                            <div class="dropdown">
+                                                                                <button type="button"
+                                                                                    class="btn btn-primary dropdown-toggle"
+                                                                                    data-toggle="dropdown">
+                                                                                    เมนู
+                                                                                </button>
+                                                                                {{-- @if ($lreserveapply->created_user_id == Auth::user()->id) --}}
+                                                                                <div class="dropdown-menu">
+                                                                                    <a class="dropdown-item"
+                                                                                        data-toggle="modal"
+                                                                                        href="#check{{ $lreserveapply->id }}">รายการตรวจ</a>
+                                                                                        <a class="dropdown-item"
+                                                                                        data-toggle="modal"
+                                                                                        href="#canReserve{{ $lreserveapply->id }}">ยกเลิกรายการจอง</a>
+                                                                                </div>
+                                                                                 {{-- @endif  --}}
+                                                                            </div>
+                                                                        </td>
+                                                                        {{-- <td>
                                                                             <div class="btn-group text-center">
-
+                                                                                @if ($lreserveapply->created_user_id == Auth::user()->id)
                                                                                 <span data-toggle="modal"
                                                                                     data-target="#check{{ $lreserveapply->id }}">
                                                                                     <button
@@ -459,6 +494,7 @@
                                                                                         <i class="far fa-list-alt"></i>
                                                                                     </button>
                                                                                 </span>
+                                                                                @endif
 
                                                                                 <span data-toggle="modal"
                                                                                     data-target="#canReserve{{ $lreserveapply->id }}">
@@ -475,7 +511,7 @@
 
                                                                             </div>
 
-                                                                        </td>
+                                                                        </td> --}}
                                                                     </tr>
                                                                     @php $number = $number + 1; @endphp
 

@@ -63,7 +63,8 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="/index-superadmin">
-                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}" alt="Theme-Logo" />
+                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu icon-toggle-right"></i>
@@ -166,8 +167,9 @@
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         {{-- <img src="{{ asset('admindek/jpg/avatar-4.jpg') }}" class="img-radius"
-                                            alt="User-Profile-Image"> --}}
-                                            <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }} {{ Auth::user()->lname }}</span>
+                                        alt="User-Profile-Image"> --}}
+                                        <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }}
+                                            {{ Auth::user()->lname }}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu"
@@ -242,7 +244,7 @@
                                     <div class="page-header-title">
                                         <i class="fa fa-bed bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>จัดสรร Ward</h5>
+                                            <h5>จัดสรรวอร์ด</h5>
                                             <span>เพิ่ม / ลบ / แก้ไข</span>
                                         </div>
                                     </div>
@@ -253,7 +255,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="/index-superadmin"><i class="feather icon-home"></i></a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">จัดสรร Ward</a> </li>
+                                            <li class="breadcrumb-item"><a href="#!">จัดสรรวอร์ด</a> </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -285,10 +287,10 @@
                                                 <div class="card">
 
                                                     <div class="card-header">
-                                                        <h5>จัดสรร Ward</h5>
+                                                        <h5>จัดสรรวอร์ด</h5>
                                                         <button type="button" class="btn btn-primary waves-effect"
                                                             data-toggle="modal" data-target="#add-Modal"
-                                                            style="float:right;margin-right:50px;">เพิ่ม Ward</button>
+                                                            style="float:right;margin-right:50px;">เพิ่มวอร์ด</button>
                                                     </div>
 
                                                     <div class="card-block">
@@ -299,78 +301,107 @@
                                                                     <tr>
                                                                         <th>วอร์ด</th>
                                                                         <th>เตียง</th>
-                                                                        <th>แพทย์</th>
-                                                                        <th>หัตถการ</th>
                                                                         <th>เบอร์ภายนอก</th>
                                                                         <th>เบอร์ภายใน</th>
                                                                         <th>แก้ไข</th>
-
                                                                     </tr>
                                                                 </thead>
                                                                 @if (is_null($ward))
                                                                 @else
-                                                                <tbody>
+                                                                <tbody class="text-center">
                                                                     @foreach ($ward as $list)
                                                                     @php
-                                                                        $bed = \App\Bed::where('ward_id',$list->id)->get();
-                                                                        $doctor = \App\Doctor::where('ward_id',$list->id)->get();
-                                                                        $opt = \App\Operative::where('ward_id',$list->id)->get();
+                                                                    $bed = \App\Bed::where('ward_id',$list->id)->get();
                                                                     @endphp
                                                                     <tr>
                                                                         <td style="font-size: 20px;color:#1c2951;">
-
                                                                             {{ $list->ward_name }}
-
                                                                         </td>
                                                                         <td>{{ $bed->count() }}</td>
-                                                                        <td>{{ $doctor->count() }}</td>
-                                                                        <td>{{ $opt->count() }}</td>
                                                                         <td>{{ $list->ward_phone ?? '' }}
                                                                         <td>{{ $list->ward_phoneext ?? '' }}
                                                                         </td>
                                                                         <td class="text-center">
-                                                                            
+
                                                                             <span data-toggle="modal"
                                                                                 data-target="#editphone{{ $list->id }}">
                                                                                 <button class="btn btn-warning"
                                                                                     data-toggle="tooltip"
                                                                                     data-placement="top"
-                                                                                    title="แก้ไขเบอร์วอร์ด">
+                                                                                    title="แก้ไขวอร์ด">
                                                                                     <i
                                                                                         class="icon feather icon-phone f-w-600 f-16 m-r-15 text-c-white"></i>
                                                                                 </button>
                                                                             </span>
+                                                                            <!-- <span data-toggle="modal"
+                                                                                data-target="#delWard{{ $list->id }}">
+                                                                                <button class="btn btn-danger"
+                                                                                    data-toggle="tooltip"
+                                                                                    data-placement="top"
+                                                                                    title="ลบวอร์ด">
+                                                                                    <i
+                                                                                        class="icon feather icon-trash f-w-600 f-16 m-r-15 text-c-white"></i>
+                                                                                </button>
+                                                                            </span> -->
                                                                         </td>
                                                                     </tr>
 
                                                                     <!-- edit ward phone -->
-                                                                    <div class="modal fade" id="editphone{{ $list->id }}" tabindex="-1" role="dialog">
-                                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                    <div class="modal fade"
+                                                                        id="editphone{{ $list->id }}" tabindex="-1"
+                                                                        role="dialog">
+                                                                        <div class="modal-dialog modal-dialog-centered"
+                                                                            role="document">
                                                                             <div class="modal-content">
                                                                                 <form action="/editphone" method="post">
                                                                                     @csrf
                                                                                     <div class="modal-body">
-                                                                                        <h3 style="text-align:center;padding-top:15px;font-weight:bold;">แก้ไขวอร์ด <span style="color: red;">{{ $list->ward_name }}</span></h3>
-                                                                                        <div class="input-group mb-3 input-group-sm">
-                                                                                            <div class="input-group-prepend">
-                                                                                              <span class="input-group-text">ชื่อวอร์ด</span>
-                                                                                           </div>
-                                                                                           <input type="text" name="ward_name" class="form-control" readonly required value="{{ $list->ward_name }}">
-                                                                                         </div>
-                                                                                        <div class="input-group mb-3 input-group-sm">
-                                                                                            <div class="input-group-prepend">
-                                                                                              <span class="input-group-text">เบอร์ภายนอก</span>
-                                                                                           </div>
-                                                                                           <input type="text" name="phone" class="form-control" required placeholder="กรุณากรอกเบอร์วอร์ด" value="{{ $list->ward_phone }}">
-                                                                                         </div>
-                                                                                        <div class="input-group mb-3 input-group-sm">
-                                                                                            <div class="input-group-prepend">
-                                                                                              <span class="input-group-text">เบอร์ภายใน</span>
-                                                                                           </div>
-                                                                                           <input type="text" name="phoneext" class="form-control" required placeholder="กรุณากรอกเบอร์วอร์ด" value="{{ $list->ward_phoneext }}">
-                                                                                         </div>
+                                                                                        <h3
+                                                                                            style="text-align:center;padding-top:15px;font-weight:bold;">
+                                                                                            แก้ไขวอร์ด <span
+                                                                                                style="color: red;">{{ $list->ward_name }}</span>
+                                                                                        </h3>
+                                                                                        <div
+                                                                                            class="input-group mb-3 input-group-sm">
+                                                                                            <div
+                                                                                                class="input-group-prepend">
+                                                                                                <span
+                                                                                                    class="input-group-text">ชื่อวอร์ด</span>
+                                                                                            </div>
+                                                                                            <input type="text"
+                                                                                                name="ward_name"
+                                                                                                class="form-control"
+                                                                                                readonly required
+                                                                                                value="{{ $list->ward_name }}">
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="input-group mb-3 input-group-sm">
+                                                                                            <div
+                                                                                                class="input-group-prepend">
+                                                                                                <span
+                                                                                                    class="input-group-text">เบอร์ภายนอก</span>
+                                                                                            </div>
+                                                                                            <input type="text"
+                                                                                                name="phone"
+                                                                                                class="form-control"
+                                                                                                placeholder="กรุณากรอกเบอร์วอร์ด"
+                                                                                                value="{{ $list->ward_phone }}">
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="input-group mb-3 input-group-sm">
+                                                                                            <div
+                                                                                                class="input-group-prepend">
+                                                                                                <span
+                                                                                                    class="input-group-text">เบอร์ภายใน</span>
+                                                                                            </div>
+                                                                                            <input type="text"
+                                                                                                name="phoneext"
+                                                                                                class="form-control"
+                                                                                                placeholder="กรุณากรอกเบอร์วอร์ด"
+                                                                                                value="{{ $list->ward_phoneext }}">
+                                                                                        </div>
                                                                                         <input type="hidden" name="id"
-                                                                                        value="{{ $list->id }}">
+                                                                                            value="{{ $list->id }}">
                                                                                     </div>
                                                                                     <div class="card-block">
                                                                                         <div class="row">
@@ -396,6 +427,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <!-- /edit ward phone -->
+                                                                    
 
                                                                     <!-- ///////delete//////// -->
                                                                     <div class="modal fade" id="delWard{{ $list->id }}"
@@ -445,31 +477,34 @@
                                                                                                         class="btn waves-effect waves-light btn-danger btn-square btn-block">ลบ</button>
                                                                                                 </div>
                                                                                             </div>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </form>
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <!-- ///////////////// -->
+                                                                    @endforeach
+                                                                </tbody>
+                                                                @endif
+                                                            </table>
                                                         </div>
                                                     </div>
-                                                    <!-- ///////////////// -->
-                                                    @endforeach
-                                                    </tbody>
-                                                    @endif
-                                                    </table>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div id="styleSelector">
+                            </div>
                         </div>
-                    </div>
-                    <div id="styleSelector">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- /////////add/////////// -->
     <div class="modal fade" id="add-Modal" tabindex="-1" role="dialog">
@@ -493,12 +528,12 @@
                         <div class="form-group">
                             <label for="ward_phone" class="control-label">เบอร์ภายนอก
                                 :</label>
-                            <input type="text" class="form-control" name="ward_phone" id="ward_phone" required />
+                            <input type="text" class="form-control" name="ward_phone" id="ward_phone" />
                         </div>
                         <div class="form-group">
                             <label for="ward_phoneext" class="control-label">เบอร์ภายใน
                                 :</label>
-                            <input type="text" class="form-control" name="ward_phoneext" id="ward_phoneext" required />
+                            <input type="text" class="form-control" name="ward_phoneext" id="ward_phoneext" />
                         </div>
                     </div>
 
@@ -513,29 +548,40 @@
     <!-- //////////////////// -->
 
 
-    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/jquery.min.js') }}"></script>
-    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/jquery-ui.min.js') }}"></script>
-    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/popper.min.js') }}"></script>
-    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/bootstrap.min.js') }}"></script>
+    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/jquery.min.js') }}">
+    </script>
+    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/jquery-ui.min.js') }}">
+    </script>
+    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/popper.min.js') }}">
+    </script>
+    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/bootstrap.min.js') }}">
+    </script>
 
-    <script src="{{ asset('admindek/js/waves.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
+    <script src="{{ asset('admindek/js/waves.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
+    </script>
 
     <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/jquery.slimscroll.js') }}">
     </script>
 
-    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/modernizr.js') }}"></script>
-    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/css-scrollbars.js') }}"></script>
+    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/modernizr.js') }}">
+    </script>
+    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/css-scrollbars.js') }}">
+    </script>
 
-    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/sweetalert.min.js') }}"></script>
+    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/sweetalert.min.js') }}">
+    </script>
     <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/modal.js') }}"></script>
 
     <script src="{{ asset('admindek/js/jquery.datatables.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
     </script>
     <script src="{{ asset('admindek/js/datatables.buttons.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
     </script>
-    <script src="{{ asset('admindek/js/jszip.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
-    <script src="{{ asset('admindek/js/pdfmake.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
-    <script src="{{ asset('admindek/js/vfs_fonts.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
+    <script src="{{ asset('admindek/js/jszip.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
+    </script>
+    <script src="{{ asset('admindek/js/pdfmake.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
+    </script>
+    <script src="{{ asset('admindek/js/vfs_fonts.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
+    </script>
     <script src="{{ asset('admindek/js/buttons.print.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
     </script>
     <script src="{{ asset('admindek/js/buttons.html5.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
@@ -549,11 +595,14 @@
     <script src="{{ asset('js/clock.js') }}"></script>
     <script src="{{ asset('admindek/js/data-table-custom.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
     </script>
-    <script src="{{ asset('admindek/js/classie.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
-    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/modaleffects.js') }}"></script>
+    <script src="{{ asset('admindek/js/classie.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
+    </script>
+    <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('admindek/js/modaleffects.js') }}">
+    </script>
 
 
-    <script src="{{ asset('admindek/js/pcoded.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
+    <script src="{{ asset('admindek/js/pcoded.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
+    </script>
     <script src="{{ asset('admindek/js/vertical-layout.min.js') }}" type="d28fd8086f5eb18f81d8672a-text/javascript">
     </script>
     <script src="{{ asset('admindek/js/jquery.mcustomscrollbar.concat.min.js') }}"
@@ -564,7 +613,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
         type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
     <script type="d28fd8086f5eb18f81d8672a-text/javascript">
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
     function gtag() {
         dataLayer.push(arguments);

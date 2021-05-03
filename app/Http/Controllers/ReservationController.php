@@ -79,12 +79,12 @@ class ReservationController extends Controller
 
     public function getopt($id)
     {
-        echo json_encode(Operative::where('ward_id', $id)->get());
+        echo json_encode(Operative::all());
     }
 
     public function getvalueopt($id)
     {
-        echo json_encode(Operative::where('id', $id)->get());
+        echo json_encode(Operative::all());
     }
 
     /**
@@ -106,35 +106,8 @@ class ReservationController extends Controller
     public function store(Request $request)
     {
 
-    //     $request->validate([
-
-    //         'hn' => 'required',
-    //         'pa_name' => 'required',
-    //         'pa_age' => 'required',
-    //         'pa_phone' => 'required',
-    //         'disease' => 'required',
-    //         'pay' => 'required',
-    //         'ward' => 'required',
-    //         'opt_id' => 'required',
-    //         'reserve_booking' => 'required',
-    //         'doctor_id' => 'required',
-    //         'ward_created' => 'required',
-    //         'booking_name' => 'required',
-    //         'booking_phone' => 'required',
-    //     ],
-    //     [
-    //         'hn.required' => 'กรุณากรอกรหัส HN.',
-    //     ]
-
-    // );
-    // $input = $request->all();
-
-
         $book = explode("/", $request->reserve_booking);
         $reserve_booking = $book[2] . "-" . $book[1] . "-" . $book[0];
-
-        $age = explode("/", $request->pa_age);
-        $paage = $age[2] . "-" . $age[1] . "-" . $age[0];
 
         $patient = Patient::where('hn', $request->hn)->first();
 
@@ -145,7 +118,7 @@ class ReservationController extends Controller
                 'prefix' => $request->prefix,
                 'fname' => $request->fname,
                 'lname' => $request->lname,
-                'birthday' => $paage,
+                'age' => $request->pa_age,
                 'sex' => $request->pa_sex,
                 'phone' => $request->pa_phone,
                 'pay_id' => $request->pay,
@@ -162,16 +135,41 @@ class ReservationController extends Controller
                 'reserve_status' => 'ยื่นจอง',
                 'patient_id' => $pat->id,
                 'ward_id' => $request->ward_in,
+                'ward_enter' => $request->ward_enter,
                 'opt_id' => $request->opt_id,
                 'reserve_booking' => $reserve_booking,
                 'doctor_id' => $request->doctor_id,
                 'disease' => $request->disease,
                 'rec_status' => '1',
                 'created_user_id' => Auth::user()->id,
-
             ]);
 
             $reserve->save();
+
+
+            $reser = Reservation::where('reserve_status','ยื่นจอง')
+                                ->where('ward_id', $request->ward_in)
+                                ->where('ward_enter', $request->ward_enter)
+                                ->where('opt_id', $request->opt_id)
+                                ->where('reserve_booking', $reserve_booking)
+                                ->where('doctor_id', $request->doctor_id)
+                                ->where('disease', $request->disease)
+                                ->where('created_user_id', Auth::user()->id)
+                    ->where('created_at',\Carbon\Carbon::now())
+                                ->where('patient_id', $pa->id)->first();
+
+
+            $event = new Event([
+                'event_status' => '1',// 1 = ยื่่นจอง
+                'date' => \Carbon\Carbon::now(),
+                'detail' => "ยื่นจอง",
+                'reserve_id' => $reser->id,
+                'rec_status' => '1',
+                'created_user_id' => Auth::user()->id,
+            ]);
+
+            $event->save();
+
             return back()->with('success', 'ทำรายการจอง สำเร็จ!!');
 
         } else {
@@ -197,6 +195,7 @@ class ReservationController extends Controller
                     'reserve_status' => 'ยื่นจอง',
                     'patient_id' => $patient->id,
                     'ward_id' => $request->ward_in,
+                    'ward_enter' => $request->ward_enter,
                     'opt_id' => $request->opt_id,
                     'reserve_booking' => $reserve_booking,
                     'doctor_id' => $request->doctor_id,
@@ -206,19 +205,35 @@ class ReservationController extends Controller
                 ]);
                 
                 $reserve->save();
+
+
+                // $reser = Reservation::where('reserve_status','ยื่นจอง')
+                //         ->where('ward_id', $request->ward_in)
+                //         ->where('ward_enter', $request->ward_enter)
+                //         ->where('opt_id', $request->opt_id)
+                //         ->where('reserve_booking', $reserve_booking)
+                //         ->where('doctor_id', $request->doctor_id)
+                //         ->where('disease', $request->disease)
+                //         ->where('created_user_id', Auth::user()->id)
+                //     ->where('created_at',\Carbon\Carbon::now())
+                //         ->where('patient_id', $pa->id)->first();
+
+                $event = new Event([
+                    'event_status' => '1',// 1 = ยื่่นจอง
+                    'date' => \Carbon\Carbon::now(),
+                    'detail' => "ยื่่นจอง",
+                    'reserve_id' => $reserve->id,
+                    'rec_status' => '1',
+                    'created_user_id' => Auth::user()->id,
+                ]);
+
+                $event->save();
                 return back()->with('success', 'ทำรายการจอง สำเร็จ!!');
             }
             
 
             
         }
-
-        // $user = User::find(Auth::user()->id);
-        // $user->ward = Auth::user()->ward;
-        // $user->save();
-        // $reserve->save();
-        // dd($request);
-        // return back()->with('success', 'ทำรายการจอง สำเร็จ!!');
 
     }
 
@@ -227,10 +242,6 @@ class ReservationController extends Controller
 
         $book = explode("/", $request->reserve_booking);
         $reserve_booking = $book[2] . "-" . $book[1] . "-" . $book[0];
-
-        $age = explode("/", $request->pa_age);
-        $paage = $age[2] . "-" . $age[1] . "-" . $age[0];
-
 
         $patient = Patient::where('hn', $request->hn)->first();
 
@@ -241,7 +252,7 @@ class ReservationController extends Controller
                 'prefix' => $request->prefix,
                 'fname' => $request->fname,
                 'lname' => $request->lname,
-                'birthday' => $paage,
+                'age' => $request->pa_age,
                 'sex' => $request->pa_sex,
                 'phone' => $request->pa_phone,
                 'pay_id' => $request->pay,
@@ -258,6 +269,7 @@ class ReservationController extends Controller
                 'reserve_status' => 'ยื่นจอง',
                 'patient_id' => $pat->id,
                 'ward_id' => $request->ward,
+                'ward_enter' => $request->ward_enter,
                 'opt_id' => $request->opt_id,
                 'reserve_booking' => $reserve_booking,
                 'doctor_id' => $request->doctor_id,
@@ -268,6 +280,34 @@ class ReservationController extends Controller
             ]);
 
             $reserve->save();
+
+
+
+
+            // $reser = Reservation::where('reserve_status','ยื่นจอง')
+            //         ->where('ward_id', $request->ward_in)
+            //         ->where('ward_enter', $request->ward_enter)
+            //         ->where('opt_id', $request->opt_id)
+            //         ->where('reserve_booking', $reserve_booking)
+            //         ->where('doctor_id', $request->doctor_id)
+            //         ->where('disease', $request->disease)
+            //         ->where('created_user_id', Auth::user()->id)
+            //         ->where('created_at',\Carbon\Carbon::now())
+            //         ->where('patient_id', $pat->id)->first();
+
+
+            $event = new Event([
+                'event_status' => '1',// 1 = ยื่่นจอง
+                'date' => \Carbon\Carbon::now(),
+                'detail' => "ยื่่นจอง",
+                'reserve_id' => $reserve->id,
+                'rec_status' => '1',
+                'created_user_id' => Auth::user()->id,
+            ]);
+
+            $event->save();
+
+
             return back()->with('success', 'ทำรายการจอง สำเร็จ!!');
 
         } else {
@@ -282,17 +322,18 @@ class ReservationController extends Controller
                 // dd('ผู้ป่วยรายนี้ได้ทำการจองในวันที่กล่าวแล้ว');
                 return back()->with('alerterror', 'ผู้ป่วยรหัส HN นี้ ได้ทำการจองในวันที่กล่าวแล้ว กรุณาตรวจสอบข้อมูล');
             } else {
-                $patient = Patient::find($patient->id);
-                $patient->hn = $request->hn;
-                $patient->rec_status = '1';
-                $patient->pay_id = $request->pay;
+                $pat = Patient::find($pa->id);
+                $pat->hn = $request->hn;
+                $pat->rec_status = '1';
+                $pat->pay_id = $request->pay;
 
                 // $patient->save();
 
                 $reserve = new Reservation([
                     'reserve_status' => 'ยื่นจอง',
-                    'patient_id' => $patient->id,
+                    'patient_id' => $pat->id,
                     'ward_id' => $request->ward,
+                    'ward_enter' => $request->ward_enter,
                     'opt_id' => $request->opt_id,
                     'reserve_booking' => $reserve_booking,
                     'doctor_id' => $request->doctor_id,
@@ -302,19 +343,38 @@ class ReservationController extends Controller
                 ]);
                 
                 $reserve->save();
+
+
+
+                // $reser = Reservation::where('reserve_status','ยื่นจอง')
+                //         ->where('created_at',\Carbon\Carbon::now())
+                //         ->where('ward_id', $request->ward_in)
+                //         ->where('ward_enter', $request->ward_enter)
+                //         ->where('opt_id', $request->opt_id)
+                //         ->where('reserve_booking', $reserve_booking)
+                //         ->where('doctor_id', $request->doctor_id)
+                //         ->where('disease', $request->disease)
+                //         ->where('created_user_id', Auth::user()->id)
+                //         ->where('patient_id', $pat->id)->first();
+
+
+                $event = new Event([
+                    'event_status' => '1',// 1 = ยื่่นจอง
+                    'date' => \Carbon\Carbon::now(),
+                    'detail' => "ยื่่นจอง",
+                    'reserve_id' => $reserve->id,
+                    'rec_status' => '1',
+                    'created_user_id' => Auth::user()->id,
+                ]);
+
+                $event->save();
+
                 return back()->with('success', 'ทำรายการจอง สำเร็จ!!');
             }
             
 
             
         }
-
-        // $user = User::find(Auth::user()->id);
-        // $user->ward = Auth::user()->ward;
-        // $user->save();
-        // $reserve->save();
-        // dd($request);
-        // return back()->with('success', 'ทำรายการจอง สำเร็จ!!');
 
     }
 
@@ -351,8 +411,18 @@ class ReservationController extends Controller
             $bedold->bed_status = 'ว่าง';
             $bednew->bed_status = 'รอเข้า';
 
+            $event = new Event([
+                'event_status' => '5',// 5 = ย้ายเตียง
+                'date' => \Carbon\Carbon::now(),
+                'detail' => "ย้ายเตียง จาก".$bedold->bed_number." ไปเตียง ".$bednew->bed_number,
+                'reserve_id' => $request->reserve_id,
+                'rec_status' => '1',
+                'created_user_id' => Auth::user()->id,
+            ]);
+
             $bedold->save();
             $bednew->save();
+            $event->save();
 
         } elseif( $bedold->bed_status == 'ไม่ว่าง') {
 
@@ -361,8 +431,19 @@ class ReservationController extends Controller
             $bedold->bed_status = 'ว่าง';
             $bednew->bed_status = 'ไม่ว่าง';
 
+            $event = new Event([
+                'event_status' => '5',// 5 = ย้ายเตียง
+                'date' => \Carbon\Carbon::now(),
+                'detail' => "ย้ายเตียง จาก".$bedold->bed_number." ไปเตียง ".$bednew->bed_number,
+                'reserve_id' => $request->reserve_id,
+                'rec_status' => '1',
+                'created_user_id' => Auth::user()->id,
+            ]);
+
             $bedold->save();
             $bednew->save();
+            $event->save();
+
         }
         
 
@@ -389,35 +470,62 @@ class ReservationController extends Controller
             $reserve = Reservation::find($id);
             if ($request->preopt == '') {
                 $reserve->preopt_id = null;
+
+                $event = new Event([
+                    'event_status' => '3',// 3 = รายการเตรียมตรวจ
+                    'date' => \Carbon\Carbon::now(),
+                    'detail' => "รายการเตรียมตรวจ ไม่มี",
+                    'reserve_id' => $id,
+                    'rec_status' => '1',
+                    'created_user_id' => Auth::user()->id,
+                ]);
+
+                $reserve->save();
+                $event->save();
+    
+                return back()->with('success', 'บันทึกรายการเตรียมตรวจ สำเร็จ !!');
+
             } else {
                 $reserve->preopt_id = implode(",", $request->preopt);
+
+                $event = new Event([
+                    'event_status' => '3',// 3 = รายการเตรียมตรวจ
+                    'date' => \Carbon\Carbon::now(),
+                    'detail' => "รายการเตรียมตรวจ ".implode(",", $request->preopt),
+                    'reserve_id' => $id,
+                    'rec_status' => '1',
+                    'created_user_id' => Auth::user()->id,
+                ]);
+
+                $reserve->save();
+                $event->save();
+    
+                return back()->with('success', 'บันทึกรายการเตรียมตรวจ สำเร็จ !!');
             }
             // dd($reserve);
-
-            $reserve->save();
-            return back()->with('success', 'บันทึกรายการเตรียมตรวจ สำเร็จ !!');
 
         } else {
             $book = explode("/", $request->reserve_booking);
             $reserve_booking = $book[2] . "-" . $book[1] . "-" . $book[0];
 
-            $age = explode("/", $request->pa_age);
-            $paage = $age[2] . "-" . $age[1] . "-" . $age[0];
 
             $reserve = Reservation::find($id);
             $reserve->ward_id = $request->ward_in;
+            $reserve->ward_enter = $request->ward_enter;
             $reserve->opt_id = $request->opt_id;
             $reserve->reserve_booking = $reserve_booking;
             $reserve->doctor_id = $request->doctor_id;
+            $reserve->disease = $request->disease; 
+            $reserve->pay_id = $request->pay; 
 
             $pat = Patient::where('hn', $request->hn)->first();
             $patient = Patient::find($pat->id);
-            $patient->hn = $request->hn;
-            $patient->prefix = $request->prefix;
-            $patient->fname = $request->fname;
-            $patient->lname = $request->lname;
-            $patient->birthday = $paage;
-            $patient->sex = $request->pa_sex;
+            // $patient->hn = $request->hn;
+            // $patient->prefix = $request->prefix;
+            // $patient->fname = $request->fname;
+            // $patient->lname = $request->lname;
+            // $patient->birthday = $paage;
+            // $patient->sex = $request->pa_sex;
             $patient->phone = $request->pa_phone;
 
             // $user = User::find(Auth::user()->id);
@@ -440,8 +548,25 @@ class ReservationController extends Controller
      */
     public function destroy(Request $request,$id)
     {
-       $reserve = Reservation::find($id)->delete();
+       $reserve = Reservation::find($id);
        $reserve->reserve_status = 'ลบการจอง';
+       $reserve->rec_status = 0;
+
+
+       $event = new Event([
+        'event_status' => '8',// 8= ลบรายการจอง
+        'date' => \Carbon\Carbon::now(),
+        'detail' => "ลบรายการจอง",
+        'reserve_id' => $id,
+        'rec_status' => '1',
+        'created_user_id' => Auth::user()->id,
+        ]);
+
+        $reserve->save();
+        $event->save();
+        $reserve = Reservation::find($id)->delete();
+
+
        return redirect()->back()->with('success', 'ทำการ ลบรายการจอง สำเร็จ!!');
     }
 
@@ -449,7 +574,7 @@ class ReservationController extends Controller
     {
 
         $event = new Event([
-            'event_status' => '4',
+            'event_status' => '7', // 7 = ยกเลิกรายการจอง
             'date' => \Carbon\Carbon::now(),
             'detail' => "ยกเลิกการจอง เพราะ".$request->detail_can,
             'reserve_id' => $request->reserve_id,
@@ -473,9 +598,6 @@ class ReservationController extends Controller
 
         return back()->with('success', 'ทำการ ยกเลิกรายการจอง สำเร็จ!!');
 
-    //     return response()->json([
-    //         'success'  => 'ยกเลิกรายการจอง สำเร็จ!!'
-    //     ]);
     }
 
 }

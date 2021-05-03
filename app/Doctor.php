@@ -12,7 +12,7 @@ class Doctor extends Model
 
 
     protected $fillable = [
-        'perfix','fname','lname','ward_id','dept_id','rec_status','created_user_id'
+        'prefix','fname','lname','ward_id','dept_id','rec_status','created_user_id'
     ];
 
     // public function ward()

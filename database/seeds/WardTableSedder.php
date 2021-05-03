@@ -15,7 +15,7 @@ class WardTableSedder extends Seeder
         Ward::create([
             'ward_name' => 'หอผู้ป่วย 3จ',
             'ward_phone' => '043-258965',
-            'ward_phoneำปะ' => '043-258965',
+            'ward_phoneext' => '63492,63493,67197',
         ]);
         Ward::create([
             'ward_name' => 'หอผู้ป่วย 4ง',

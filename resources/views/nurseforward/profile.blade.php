@@ -245,6 +245,12 @@
                                             <span class="pcoded-mtext">ผู้ป่วย</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

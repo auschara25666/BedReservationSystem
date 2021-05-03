@@ -15,7 +15,7 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id')->comment('รหัสเหตุการณ์');
-            $table->char('event_status')->default('1')->comment('สถานะเหตุการณ์');
+            $table->char('event_status',1)->default('0')->comment('สถานะเหตุการณ์');
             $table->date('date')->nullable()->comment('วันเวลาที่สร้างเหตุการณ์');
             $table->text('detail')->nullable()->comment('รายละเอียดการอนุมัติ');
             $table->bigInteger('reserve_id')->nullable()->unsigned()->comment('รหัสการจอง');
@@ -26,7 +26,7 @@ class CreateEventsTable extends Migration
             $table->softDeletes();
 
             $table->foreign('reserve_id')->references('id')->on('reservations');
-            $table->foreign('created_user_id')->references('user_id')->on('users');
+            $table->foreign('created_user_id')->references('id')->on('users');
         });
     }
 

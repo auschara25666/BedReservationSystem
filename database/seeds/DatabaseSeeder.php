@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             PaymentTableSeeder::class,
             DoctorTableSeeder::class,
             OperativeTableSeeder::class,
+            PreoperativeTableSeeder::class,
         ]);
     }
 }

@@ -19,7 +19,7 @@ class CreatePatientsTable extends Migration
             $table->string('prefix',20)->nullable()->comment('คำนำหน้า');
             $table->string('fname',100)->nullable()->comment('ชื่อจริงผู้ป่วย');
             $table->string('lname',100)->nullable()->comment('นามสกุลผู้ป่วย');
-            $table->date('birthday')->nullable()->comment('วันเกิดผู้ป่วย');
+            $table->string('age',3)->nullable()->comment('อายุผู้ป่วย');
             $table->string('sex',10)->nullable()->comment('เพศผู้ป่วย');
             $table->string('phone',20)->nullable()->comment('เบอร์ผู้ป่วย');
             $table->bigInteger('pay_id')->nullable()->unsigned()->comment('รหัสสิทธิการรักษา');
@@ -29,8 +29,8 @@ class CreatePatientsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('pay_id')->references('payment_id')->on('payments');
-            $table->foreign('created_user_id')->references('user_id')->on('users');
+            $table->foreign('pay_id')->references('id')->on('payments');
+            $table->foreign('created_user_id')->references('id')->on('users');
         });
     }
 

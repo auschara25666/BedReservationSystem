@@ -92,7 +92,7 @@
             width: 28px;
             border-radius: 4px;
             border: 1px solid #ccc;
-            float: right
+            /* float: right; */
         }
 
         .checkbox span {
@@ -351,6 +351,12 @@
                                             <span class="pcoded-mtext">สถิติ</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -418,7 +424,7 @@
                                                                         <th style="width: 15px;">รหัส HN ผู้ป่วย</th>
                                                                         <th>ชื่อผู้ป่วย</th>
                                                                         <th>สิทธิ์การรักษา</th>
-                                                                        <th>วันเกิด</th>
+                                                                        <th>อายุ</th>
                                                                         <th>เบอร์</th>
                                                                         <th style="width: 10%;">ตัวเลือก</th>
                                                                     </tr>
@@ -435,8 +441,7 @@
                                                                         <td>{{ $lpa->hn ?? 'ไม่มี HN' }}</td>
                                                                         <td>{{ $lpa->prefix }}{{ $lpa->fname }} {{ $lpa->lname }}</td>
                                                                         <td>{{ $lpa->pay->name ?? ''}}</td>
-                                                                        <td>{{ \Carbon\Carbon::parse($lpa->birthday)->format('d/m/Y') ?? 'ไม่มีวันเกิด'}} (อายุ {{ \Carbon\Carbon::parse($lpa->birthday)->age }} ปี)
-                                                                        </td>
+                                                                        <td>{{ $lpa->age ?? '0' }} ปี</td>
                                                                         <td>{{ $lpa->phone ?? 'ไม่มีเบอร์'}}</td>
                                                                         <td>
 
@@ -534,16 +539,9 @@
                                                                                             <div
                                                                                                 class="input-group-prepend">
                                                                                                 <span
-                                                                                                    class="input-group-text">วันเกิดผู้ป่วย</span>
+                                                                                                    class="input-group-text">อายุผู้ป่วย</span>
                                                                                             </div>
-                                                                                            <input 
-                                                                                                class="form-control birthdate required"
-                                                                                                type="text"
-                                                                                                placeholder="เลือกวันเกิดผู้ป่วย"
-                                                                                                name="pa_age"
-                                                                                                value="{{ \Carbon\Carbon::parse($lpa->birthday)->format('d/m/Y') ?? 'ไม่มีวันเกิด'}}"
-                                                                                                data-date-format="dd/mm/yyyy"
-                                                                                                autocomplete="off" />
+                                                                                            <input type="text" name="pa_age" class="form-control" value="{{ $lpa->age }}" required>
                                                                                         </div>
 
                                                                                         <div class="input-group mb-3">
@@ -572,6 +570,7 @@
                                                                                             <select class="form-control"
                                                                                                 name="pa_sex"
                                                                                                 id="pa_sex">
+                                                                                                <option value="" style="display: none;">เลือกเพศ</option>
                                                                                                 <option value="ชาย"
                                                                                                     {{ $lpa->sex == 'ชาย'? 'selected' : '' }}>
                                                                                                     ชาย</option>

@@ -42,7 +42,7 @@ class AdminWardController extends Controller
     public function managebed()
     {
         $ward = Ward::find(Auth::user()->ward_id);
-        $bed = Bed::where('ward_id', $ward->id)->get();
+        $bed = Bed::all();
         $userunsub = User::where('rec_status', 0)->where('permission_id', 5)->orwhere('permission_id', NULL)->whereIn('role_id', [3, 4, 5, 6, 7])->get();
 
         return view('adminforward.managebed', compact('ward', 'bed','userunsub'));
@@ -61,7 +61,7 @@ class AdminWardController extends Controller
     public function doctor()
     {
         $ward = Ward::find(Auth::user()->ward_id);
-        $doctor = Doctor::where('ward_id', $ward->id)->get();
+        $doctor = Doctor::all();
         $dept = Department::all();
         $prefix = Prefix::all();
 
@@ -73,7 +73,7 @@ class AdminWardController extends Controller
     public function operative()
     {
         $ward = Ward::find(Auth::user()->ward_id);
-        $operative = Operative::where('ward_id', $ward->id)->get();
+        $operative = Operative::all();
 
         $userunsub = User::where('rec_status', 0)->where('permission_id', 5)->orwhere('permission_id', NULL)->whereIn('role_id', [3, 4, 5, 6, 7])->get();
 
@@ -84,7 +84,7 @@ class AdminWardController extends Controller
     public function healrole()
     {
         $ward = Ward::find(Auth::user()->ward_id);
-        $pay = Payment::where('ward_id', $ward->id)->get();
+        $pay = Payment::all();
         $userunsub = User::where('rec_status', 0)->where('permission_id', 5)->orwhere('permission_id', NULL)->whereIn('role_id', [3, 4, 5, 6, 7])->get();
 
         return view('adminforward.healrole', compact('ward', 'pay','userunsub'));
@@ -93,7 +93,10 @@ class AdminWardController extends Controller
     public function userwards()
     {
         $ward = Ward::find(Auth::user()->ward_id);
-        $userward = User::where('rec_status', 1)->whereIn('permission_id', [3, 4,5])->whereIn('role_id', [3, 4, 5, 6, 7])->get();
+        $userward = User::where('rec_status', 1)->where('ward_id', $ward->id)->whereIn('permission_id', [3, 4])->whereIn('role_id', [3, 4, 5, 6, 7])->get();
+
+        $userall = User::where('rec_status', 1)->where('permission_id', 5)->whereIn('role_id', [3, 4, 5, 6, 7])->get();
+
         // $userward = User::where('rec_status', 1)->where('ward_id', Auth::user()->ward_id)->whereIn('permission_id', [3, 4])->whereIn('role_id', [3, 4, 5, 6, 7])->get();
         $userunsub = User::where('rec_status', 0)->where('permission_id', 5)->orwhere('permission_id', NULL)->whereIn('role_id', [3, 4, 5, 6, 7])->get();
 
@@ -106,7 +109,7 @@ class AdminWardController extends Controller
         // $user = User::where('rec_status','=', '1')->get();
         $user = User::where('rec_status','=', '1')->where('permission_id', 5)->orwhere('permission_id', NULL)->whereIn('role_id', [3, 4, 5, 6, 7])->get();
 
-        return view('adminforward.userwards', compact('ward', 'userward', 'role', 'user', 'permission', 'wardall','prefix','userunsub'));
+        return view('adminforward.userwards', compact('ward', 'userward','userall', 'role', 'user', 'permission', 'wardall','prefix','userunsub'));
     }
 
     public function manageuserwards()
@@ -160,9 +163,9 @@ class AdminWardController extends Controller
         $pre = Preoperative::all();
 
         //edit reserve
-        $pay = Payment::where('ward_id', $ward->id)->get();
-        $opt = Operative::where('ward_id', $ward->id)->get();
-        $doc = Doctor::where('ward_id', $ward->id)->get();
+        $pay = Payment::all();
+        $opt = Operative::all();
+        $doc = Doctor::all();
 
         return view('adminward.ward', compact('bed', 'bedavailable', 'bedocc', 'bedun', 'bedout', 'ward', 'reserve', 'reservevip', 'reserveapply', 'reall', 'pay', 'opt', 'doc', 'pre', 'reservecan'));
     }
@@ -170,10 +173,10 @@ class AdminWardController extends Controller
     public function reserveadminward()
     {
         $ward = Ward::where('ward_name', Auth::user()->ward)->first();
-        $opt = Operative::where('ward_id',  $ward->id)->get();
-        $doc = Doctor::where('ward_id',  $ward->id)->get();
-        $pay = Payment::where('ward_id',  $ward->id)->get();
-        $pa = Patient::where('ward_id',  $ward->id)->get();
+        $opt = Operative::all();
+        $doc = Doctor::all();
+        $pay = Payment::all();
+        $pa = Patient::all();
         return view('adminward.reservation', compact('opt', 'doc', 'pay', 'ward', 'pa'));
     }
 

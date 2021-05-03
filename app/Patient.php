@@ -13,7 +13,7 @@ class Patient extends Model
 
     
     protected $fillable = [
-        'hn','prefix','fname','lname', 'birthday', 'sex','phone', 'pay_id',
+        'hn','prefix','fname','lname', 'age', 'sex','phone', 'pay_id',
         'rec_status', 'created_user_id','ward_id'
     ];
 

@@ -43,6 +43,12 @@ view()->composer('auth.register', function ($view) {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// error
+Route::get('/error500', function () {
+    return view('/pageError/error500');
+});
+
+
 Route::group(['middleware' => ['auth']], function () {
 
 
@@ -155,15 +161,28 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('search', 'ReservationController@index');
     Route::get('/autocomplete', 'ReservationController@search')->name('autocomplete');
+    Route::post('/movebed', 'ReservationController@movebed')->name('movebed');
+    Route::post('/cancelreserve', 'ReservationController@cancelreserve')->name('cancelreserve');
+    Route::post('reservuser', 'ReservationController@reservuser')->name('reservuser');
+    Route::get('GetOpt/{id}', 'ReservationController@getopt')->name('getopt');
+    Route::get('getValueOpt/{id}', 'ReservationController@getvalueopt')->name('getvalueopt');
 
     Route::post('/savepre', 'PreoperativeController@store')->name('savepre');
-    Route::post('/cancelreserve', 'ReservationController@cancelreserve')->name('cancelreserve');
+
+
     Route::post('/manageprofile', 'ManageUserController@manageprofile')->name('manageprofile');
+    Route::post('/disableadmin', 'ManageUserController@disableadmin')->name('disableadmin');
+    Route::post('/enableadmin', 'ManageUserController@enableadmin')->name('enableadmin');
+
     Route::post('/enterbed', 'EventController@enterbed')->name('enterbed');
     Route::post('/stay', 'EventController@stay')->name('stay');
-    Route::post('/movebed', 'ReservationController@movebed')->name('movebed');
+    
 
     Route::post('/editbed', 'BedController@editbed')->name('editbed');
+
+    Route::post('editphone', 'WardController@update')->name('editphone');
+
+    Route::get('/findPatient', 'PatientController@getPatient')->name('getPatient');
 
     Route::resource('bed', 'BedController');
     Route::resource('doctor', 'DoctorController');
@@ -178,12 +197,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('patient', 'PatientController');
     Route::resource('expenses', 'ExpensesController');
 
-    Route::post('editphone', 'WardController@update')->name('editphone');
-    Route::post('reservuser', 'ReservationController@reservuser')->name('reservuser');
-    Route::get('GetOpt/{id}', 'ReservationController@getopt')->name('getopt');
-    Route::get('getValueOpt/{id}', 'ReservationController@getvalueopt')->name('getvalueopt');
-
-    Route::get('/findPatient', 'PatientController@getPatient')->name('getPatient');
 
 
 

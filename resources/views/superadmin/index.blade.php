@@ -107,55 +107,7 @@
 
                         <ul class="nav-right">
                             <li class="header-notification">
-                                {{-- <div class="dropdown-primary dropdown">
-                                    <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="feather icon-bell"></i>
-                                        <span class="badge bg-c-red">5</span>
-                                    </div>
-                                    <ul class="show-notification notification-view dropdown-menu"
-                                        data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                                        <li>
-                                            <h6>Notifications</h6>
-                                            <label class="label label-danger">New</label>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="img-radius" src="admindek/jpg/avatar-4.jpg"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">John Doe</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="img-radius" src="admindek/jpg/avatar-3.jpg"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="img-radius" src="admindek/jpg/avatar-4.jpg"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div> --}}
+
                             </li>
 
                             <li class="user-profile header-notification">
@@ -289,14 +241,14 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-block">
-                                                        <p style="font-size:18px;">1. สามารถ "เพิ่ม Ward" ได้</p>
-                                                        <p style="font-size:18px;">2. สามารถ "แก้ไขเบอร์โทรศัพท์ Ward"
+                                                        <p style="font-size:18px;">1. สามารถ "เพิ่มวอร์ด" ได้</p>
+                                                        <p style="font-size:18px;">2. สามารถ "แก้ไขเบอร์โทรศัพท์วอร์ด"
                                                             ได้</p>
                                                         <p style="font-size:18px;">3. สามารถ "เพิ่มผู้ใช้ (Admin ของ
-                                                            Ward)" ได้</p>
+                                                           วอร์ด)" ได้</p>
                                                         <p style="font-size:18px;">4. สามารถ "แก้ไขผู้ใช้ (Admin ของ
-                                                            Ward)" ได้</p>
-                                                        <p style="font-size:18px;">5. สามารถ "ลบผู้ใช้ (Admin ของ Ward)"
+                                                           วอร์ด)" ได้</p>
+                                                        <p style="font-size:18px;">5. สามารถ "ลบผู้ใช้ (Admin ของวอร์ด)"
                                                             ได้</p>
                                                     </div>
                                                 </div>

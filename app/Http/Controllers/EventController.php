@@ -42,9 +42,9 @@ class EventController extends Controller
     {
         $ward_id = Ward::find(Auth::user()->ward_id);
         $event = new Event([
-            'event_status' => '2',
+            'event_status' => '2',// 2 = อนุมัติเตียง
             'date' => \Carbon\Carbon::now(),
-            'detail' => "เข้าได้ตอน ".$request->detailtime.", ติดต่อ ".$request->detailphone,
+            'detail' => "อนุมัติเตียง",
             'reserve_id' => $request->reserve_id,
             'rec_status' => '1',
             'created_user_id' => Auth::user()->id,
@@ -82,7 +82,21 @@ class EventController extends Controller
         $bed = Bed::find($request->bed_id);
         $bed->bed_status = 'ไม่ว่าง';
 
+        $reserve = Reservation::find($request->reserve_id);
+        $reserve->reserve_status = "เข้าเตียง";
+
+        $event = new Event([
+            'event_status' => '4',// 4 = เข้าเตียง
+            'date' => \Carbon\Carbon::now(),
+            'detail' => "เข้าเตียง ".$bed->bed_number,
+            'reserve_id' => $request->reserve_id,
+            'rec_status' => '1',
+            'created_user_id' => Auth::user()->id,
+        ]);
+
         $bed->save();
+        $reserve->save();
+        $event->save();
 
         return redirect()->back()->with('success','รายการจอง เข้าเตียงเสร็จสิ้น !!');
     }
@@ -136,10 +150,10 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         $event = new Event([
-            'event_status' => '3',
+            'event_status' => '5', // 5 = จำหน่าย
             'date' => \Carbon\Carbon::now(),
-            'detail' => "ออก ".\Carbon\Carbon::now()->format('d/m/Y'),
-            'reserve_id' => $request->reserve_id,
+            'detail' => "จำหน่าย ".\Carbon\Carbon::now()->format('d/m/Y'),
+            'reserve_id' => $id,
             'rec_status' => '1',
             'created_user_id' => Auth::user()->id,
         ]);
@@ -171,19 +185,29 @@ class EventController extends Controller
      */
     public function destroy(Request $request,$id)
     {
-        $reserve = Reservation::find($id);
-        $reserve->rec_status = '0';
-        $reserve->reserve_status = 'ยกเลิกการจอง';
-        $reserve->deleted_at = \Carbon\Carbon::now();
+        $event = new Event([
+            'event_status' => '7', // 7 = ยกเลิกรายการจอง
+            'date' => \Carbon\Carbon::now(),
+            'detail' => "ยกเลิกการจอง เพราะ".$request->detail_can,
+            'reserve_id' => $request->reserve_id,
+            'rec_status' => '1',
+            'created_user_id' => Auth::user()->id,
+        ]);
+
+        $reserve = Reservation::find($request->reserve_id);
+        $reserve->reserve_status = 'ยกเลิกจอง';
+        $reserve->reserve_detail = $request->detail_can;
+        
 
         $bed = Bed::find($reserve->bed_id);
         $bed->bed_status = 'ว่าง';
 
+        // dd($request);
+        
+        $event->save();
         $reserve->save();
         $bed->save();
 
-        return redirect()->back()->with('success','ยกเลิกรายการจอง สำเร็จ !!');
-        // dd($reserve);
-        // dd($bed);
+        return back()->with('success', 'ทำการ ยกเลิกรายการจอง สำเร็จ!!');
     }
 }

@@ -39,23 +39,25 @@ class UserController extends Controller
 
         $reserve = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
         ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->join('users', 'users.id', '=', 'reservations.created_user_id')
         ->where('reservations.rec_status', '=', '1')
-        ->where('reservations.created_user_id', '=', Auth::user()->id)
+        ->where('users.ward_id', '=', Auth::user()->ward_id)
         ->where('reservations.deleted_at', '=', NULL)
         ->where('reservations.reserve_status', 'ยื่นจอง')
         ->where('reservations.reserve_booking', '>=' ,Carbon::now()->subDays(1))
-        ->select('reservations.id','reservations.ward_id','reservations.patient_id','reservations.opt_id','payments.name','reservations.reserve_booking','reservations.reserve_status','reservations.created_user_id','reservations.doctor_id')->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
+        ->select('reservations.id','reservations.ward_id','reservations.patient_id','reservations.disease','reservations.opt_id','payments.name','reservations.reserve_booking','reservations.reserve_status','reservations.created_user_id','reservations.doctor_id')->orderBy('reservations.reserve_booking','asc')->orderBy('patients.pay_id','desc')->get();
 
 
         //edit reserve
         $pay = Payment::all();
         $opt = Operative::all();
         $doc = Doctor::all();
+        $ward = Ward::all();
 
         $prefix = Prefix::all();
 
 
-        return view('user.reserv',compact('reserve','pay','opt','doc','prefix'));
+        return view('user.reserv',compact('reserve','pay','opt','doc','prefix','ward'));
     }
 
     public function approvedreserv()
@@ -69,10 +71,11 @@ class UserController extends Controller
 
         $reserveapply = Reservation::join('patients', 'reservations.patient_id', '=', 'patients.id')
         ->join('payments', 'patients.pay_id', '=', 'payments.id')
+        ->join('users', 'users.id', '=', 'reservations.created_user_id')
         ->where('reservations.rec_status', '=', '1')
         ->where('reservations.deleted_at', '=', NULL)
-        ->where('reservations.created_user_id', '=', Auth::user()->id)
-        ->where('reservations.reserve_status', 'อนุมัติเตียง')
+        ->where('users.ward_id', '=', Auth::user()->ward_id)
+        ->whereIn('reservations.reserve_status', ['อนุมัติเตียง','เข้าเตียง','เตรียมออก'])
         ->select('reservations.id','reservations.patient_id','reservations.preopt_id','reservations.opt_id','reservations.bed_id','reservations.reserve_detail','payments.name','reservations.reserve_booking','reservations.reserve_status','reservations.created_user_id','reservations.doctor_id')->get();
 
 

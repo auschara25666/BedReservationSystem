@@ -67,115 +67,115 @@
 
 
     <style>
-        @keyframes check {
-            0% {
-                height: 0;
-                width: 0;
-            }
-
-            25% {
-                height: 0;
-                width: 10px;
-            }
-
-            50% {
-                height: 20px;
-                width: 10px;
-            }
+    @keyframes check {
+        0% {
+            height: 0;
+            width: 0;
         }
 
-        .checkbox {
-            background-color: #fff;
-            display: inline-block;
-            height: 28px;
-            margin: 0 .25em;
-            width: 28px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            float: right
+        25% {
+            height: 0;
+            width: 10px;
         }
 
-        .checkbox span {
-            display: block;
-            height: 28px;
-            position: relative;
-            width: 28px;
-            padding: 0
-        }
-
-        .checkbox span:after {
-            -moz-transform: scaleX(-1) rotate(135deg);
-            -ms-transform: scaleX(-1) rotate(135deg);
-            -webkit-transform: scaleX(-1) rotate(135deg);
-            transform: scaleX(-1) rotate(135deg);
-            -moz-transform-origin: left top;
-            -ms-transform-origin: left top;
-            -webkit-transform-origin: left top;
-            transform-origin: left top;
-            border-right: 4px solid #fff;
-            border-top: 4px solid #fff;
-            content: '';
-            display: block;
+        50% {
             height: 20px;
-            left: 3px;
-            position: absolute;
-            top: 15px;
-            width: 10px
+            width: 10px;
         }
+    }
 
-        .checkbox span:hover:after {
-            border-color: #999
-        }
+    .checkbox {
+        background-color: #fff;
+        display: inline-block;
+        height: 28px;
+        margin: 0 .25em;
+        width: 28px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        /* float: right */
+    }
 
-        .checkbox input {
-            display: none
-        }
+    .checkbox span {
+        display: block;
+        height: 28px;
+        position: relative;
+        width: 28px;
+        padding: 0
+    }
 
-        .checkbox input:checked+span:after {
-            -webkit-animation: check .8s;
-            -moz-animation: check .8s;
-            -o-animation: check .8s;
-            animation: check .8s;
-            border-color: #555
-        }
+    .checkbox span:after {
+        -moz-transform: scaleX(-1) rotate(135deg);
+        -ms-transform: scaleX(-1) rotate(135deg);
+        -webkit-transform: scaleX(-1) rotate(135deg);
+        transform: scaleX(-1) rotate(135deg);
+        -moz-transform-origin: left top;
+        -ms-transform-origin: left top;
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+        border-right: 4px solid #fff;
+        border-top: 4px solid #fff;
+        content: '';
+        display: block;
+        height: 20px;
+        left: 3px;
+        position: absolute;
+        top: 15px;
+        width: 10px
+    }
 
-        .checkbox input:checked+.default:after {
-            border-color: #444
-        }
+    .checkbox span:hover:after {
+        border-color: #999
+    }
 
-        .checkbox input:checked+.primary:after {
-            border-color: #2196F3
-        }
+    .checkbox input {
+        display: none
+    }
 
-        .checkbox input:checked+.success:after {
-            border-color: #8bc34a
-        }
+    .checkbox input:checked+span:after {
+        -webkit-animation: check .8s;
+        -moz-animation: check .8s;
+        -o-animation: check .8s;
+        animation: check .8s;
+        border-color: #555
+    }
 
-        .checkbox input:checked+.info:after {
-            border-color: #3de0f5
-        }
+    .checkbox input:checked+.default:after {
+        border-color: #444
+    }
 
-        .checkbox input:checked+.warning:after {
-            border-color: #FFC107
-        }
+    .checkbox input:checked+.primary:after {
+        border-color: #2196F3
+    }
 
-        .checkbox input:checked+.danger:after {
-            border-color: #f44336
-        }
+    .checkbox input:checked+.success:after {
+        border-color: #8bc34a
+    }
+
+    .checkbox input:checked+.info:after {
+        border-color: #3de0f5
+    }
+
+    .checkbox input:checked+.warning:after {
+        border-color: #FFC107
+    }
+
+    .checkbox input:checked+.danger:after {
+        border-color: #f44336
+    }
 
 
 
-        .dtr-title {
-            padding-left: 150px;
-        }
+    .dtr-title {
+        padding-left: 150px;
+    }
 
-        .table.dataTable>tbody>tr.child ul.dtr-details>li {
-            border-bottom: none;
-        }
+    .table.dataTable>tbody>tr.child ul.dtr-details>li {
+        border-bottom: none;
+    }
 
-        .child {
-            background: #FFFFCC;
-        }
+    .child {
+        background: #FFFFCC;
+    }
     </style>
 </head>
 
@@ -193,7 +193,8 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="/index-nurse">
-                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}" alt="Theme-Logo" />
+                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu icon-toggle-right"></i>
@@ -249,7 +250,8 @@
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
 
-                                            <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }} {{ Auth::user()->lname }}</span>
+                                        <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }}
+                                            {{ Auth::user()->lname }}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu"
@@ -301,10 +303,9 @@
                                             <span class="pcoded-micon"><i class="feather icon-settings"></i></span>
                                             <span class="pcoded-mtext">จัดสรรเตียง
                                                 @if ($reserve->isNotEmpty())
-                                            <img
-                                            src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
-                                            width='25px' />
-                                        @endif
+                                                <img src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
+                                                    width='25px' />
+                                                @endif
                                             </span>
                                         </a>
                                         <ul class="pcoded-submenu">
@@ -320,11 +321,12 @@
                                             </li> --}}
                                             <li class="">
                                                 <a href="/normalreserv-nurse" class="waves-effect waves-dark">
-                                                    <span class="pcoded-mtext">รายการจอง 
+                                                    <span class="pcoded-mtext">รายการจอง
                                                         @if ($reserve->isNotEmpty())
-                                                        <span class="badge badge-danger">New  {{ $reserve->count() }}</span>
-                                            @endif
-                                                                                        </a>
+                                                        <span class="badge badge-danger">New
+                                                            {{ $reserve->count() }}</span>
+                                                        @endif
+                                                </a>
                                             </li>
                                             <li class="">
                                                 <a href="/approvedreserv-nurse" class="waves-effect waves-dark">
@@ -346,6 +348,12 @@
                                         <a href="/managepatient-nurse" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="feather icon-user"></i></i></span>
                                             <span class="pcoded-mtext">ผู้ป่วย</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
                                         </a>
                                     </li>
 
@@ -415,7 +423,7 @@
                                                                         <th style="width: 15px;">รหัส HN ผู้ป่วย</th>
                                                                         <th>ชื่อผู้ป่วย</th>
                                                                         <th>สิทธิ์การรักษา</th>
-                                                                        <th>วันเกิด</th>
+                                                                        <th>อายุ</th>
                                                                         <th>เบอร์</th>
                                                                         <th style="width: 10%;">ตัวเลือก</th>
                                                                     </tr>
@@ -432,8 +440,7 @@
                                                                         <td>{{ $lpa->hn ?? 'ไม่มี HN' }}</td>
                                                                         <td>{{ $lpa->prefix }}{{ $lpa->fname }} {{ $lpa->lname }}</td>
                                                                         <td>{{ $lpa->pay->name ?? ''}}</td>
-                                                                        <td>{{ \Carbon\Carbon::parse($lpa->birthday)->format('d/m/Y') ?? 'ไม่มีวันเกิด'}} (อายุ {{ \Carbon\Carbon::parse($lpa->birthday)->age }} ปี)
-                                                                        </td>
+                                                                        <td>{{ $lpa->age ?? '0' }} ปี</td>
                                                                         <td>{{ $lpa->phone ?? 'ไม่มีเบอร์'}}</td>
                                                                         <td>
 
@@ -531,16 +538,9 @@
                                                                                             <div
                                                                                                 class="input-group-prepend">
                                                                                                 <span
-                                                                                                    class="input-group-text">วันเกิดผู้ป่วย</span>
+                                                                                                    class="input-group-text">อายุผู้ป่วย</span>
                                                                                             </div>
-                                                                                            <input 
-                                                                                                class="form-control birthdate required"
-                                                                                                type="text"
-                                                                                                placeholder="เลือกวันเกิดผู้ป่วย"
-                                                                                                name="pa_age"
-                                                                                                value="{{ \Carbon\Carbon::parse($lpa->birthday)->format('d/m/Y') ?? 'ไม่มีวันเกิด'}}"
-                                                                                                data-date-format="dd/mm/yyyy"
-                                                                                                autocomplete="off" />
+                                                                                            <input type="text" name="pa_age" class="form-control" value="{{ $lpa->age }}" required>
                                                                                         </div>
 
                                                                                         <div class="input-group mb-3">
@@ -569,6 +569,7 @@
                                                                                             <select class="form-control"
                                                                                                 name="pa_sex"
                                                                                                 id="pa_sex">
+                                                                                                <option value="" style="display: none;">เลือกเพศ</option>
                                                                                                 <option value="ชาย"
                                                                                                     {{ $lpa->sex == 'ชาย'? 'selected' : '' }}>
                                                                                                     ชาย</option>
@@ -733,14 +734,14 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
         type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
     <script type="d28fd8086f5eb18f81d8672a-text/javascript">
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-        gtag('config', 'UA-23581568-13');
+    gtag('config', 'UA-23581568-13');
     </script>
 
     <script src="{{ asset('admindek/js/rocket-loader.min.js') }}" data-cf-settings="d28fd8086f5eb18f81d8672a-|49"
@@ -749,17 +750,17 @@
 
 
     <script>
-        function chkNumber(ele) {
-            var vchar = String.fromCharCode(event.keyCode);
-            if ((vchar < '0' || vchar > '9') && (vchar != ',')) return false;
-            ele.onKeyPress = vchar;
-        }
+    function chkNumber(ele) {
+        var vchar = String.fromCharCode(event.keyCode);
+        if ((vchar < '0' || vchar > '9') && (vchar != ',')) return false;
+        ele.onKeyPress = vchar;
+    }
 
-        function chkNumberAge(ele) {
-            var vchar = String.fromCharCode(event.keyCode);
-            if (vchar < '0' || vchar > '9') return false;
-            ele.onKeyPress = vchar;
-        }
+    function chkNumberAge(ele) {
+        var vchar = String.fromCharCode(event.keyCode);
+        if (vchar < '0' || vchar > '9') return false;
+        ele.onKeyPress = vchar;
+    }
     </script>
 </body>
 

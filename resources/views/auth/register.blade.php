@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <select class="form-control" name="prefix" id="prefix" required>
-                        <option value="" style="display: none" selected disabled>..เลือกคำนำหน้า..</option>
+                        <option style="display: none" value="">..เลือกคำนำหน้า..</option>
                         @forelse ($prefix as $lprefix)
                             <option value="{{ $lprefix->prefix }}">{{ $lprefix->prefix }}</option>
                         @empty
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="form-group col-md-6">
-            <label for="name" class="cols-sm-2 control-label">ชื่อจริง <label style="color: red;">*</label></label>
+            <label for="fname" class="cols-sm-2 control-label">ชื่อจริง <label style="color: red;">*</label></label>
             <div class="cols-sm-10">
                 <div class="input-group">
                     <div class="input-group-append" style="margin-right: -1px;margin-left: 0px;">
@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="form-group col-md-6">
-            <label for="name" class="cols-sm-2 control-label">นามสกุล <label style="color: red;">*</label></label>
+            <label for="lname" class="cols-sm-2 control-label">นามสกุล <label style="color: red;">*</label></label>
             <div class="cols-sm-10">
                 <div class="input-group">
                     <div class="input-group-append" style="margin-right: -1px;margin-left: 0px;">
@@ -69,7 +69,7 @@
                             <span class="fa fa-user fa"></span>
                         </div>
                     </div>
-                    <input type="text" class="form-control" name="lname" id="lname" placeholder="กรอกนามสกุล" />
+                    <input type="text" class="form-control" name="lname" id="lname" placeholder="กรอกนามสกุล" required/>
                 </div>
             </div>
         </div>

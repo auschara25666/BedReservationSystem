@@ -8,6 +8,12 @@ $(document).ready(function () {
     startDate: new Date(),
     // endDate: "+5m",
   });
+  $('#dropper-default-approve').datepicker({
+    clearBtn: true,
+    format: "dd/mm/yyyy",
+    language:'th-TH',
+    // endDate: "+5m",
+  });
   $('#dropper-age').datepicker({
     clearBtn: true,
     format: "dd/mm/yyyy",

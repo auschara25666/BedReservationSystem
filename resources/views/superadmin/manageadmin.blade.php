@@ -64,7 +64,8 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="/index-superadmin">
-                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}" alt="Theme-Logo" />
+                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu icon-toggle-right"></i>
@@ -193,7 +194,7 @@
                                     <div class="page-header-title">
                                         <i class="fa fa-bed bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>สมาชิก (Admin ของ Ward)</h5>
+                                            <h5>สมาชิก (Admin ของวอร์ด)</h5>
                                             <span>เพิ่ม / ลบ / แก้ไข</span>
                                         </div>
                                     </div>
@@ -204,7 +205,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="/index-superadmin"><i class="feather icon-home"></i></a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">สมาชิก (Admin ของ Ward)</a>
+                                            <li class="breadcrumb-item"><a href="#!">สมาชิก (Admin ของวอร์ด)</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -237,7 +238,7 @@
                                                 <div class="card">
 
                                                     <div class="card-header">
-                                                        <h5>สมาชิก (Admin ของ Ward)</h5>
+                                                        <h5>สมาชิก (Admin ของวอร์ด)</h5>
                                                         <button type="button" class="btn btn-primary waves-effect"
                                                             data-toggle="modal" data-target="#add-Modal"
                                                             style="float:right;margin-right:50px;">เพิ่มผู้ใช้</button>
@@ -256,14 +257,14 @@
                                                                         <th>ตำแหน่ง</th>
                                                                         <th>สิทธิ์การใช้งาน</th>
                                                                         <th>สถานะ</th>
-                                                                        <th>แก้ไข / ลบ</th>
+                                                                        <th style="width: 10%">เปิด/ปิด การใช้งาน</th>
 
                                                                     </tr>
                                                                 </thead>
                                                                 @if (is_null($user))
 
                                                                 @else
-                                                                <tbody>
+                                                                <tbody class="text-center">
                                                                     @foreach ($user as $userlist)
                                                                     <tr>
                                                                         <td>{{ $userlist->prefix }}{{ $userlist->fname }}
@@ -275,30 +276,52 @@
                                                                         <td>{{ $userlist->permission->permission }}</td>
                                                                         <td>
                                                                             @if ($userlist->rec_status == 1)
-                                                                                <label class="label label-success" style="font-size: 16px;">ใช้งาน</label>
+                                                                            <label class="label label-success"
+                                                                                style="font-size: 16px;">ใช้งาน</label>
                                                                             @endif
                                                                             @if ($userlist->rec_status == 0)
-                                                                                <label class="label label-danger" style="font-size: 16px;">ปิดการใช้งาน</label>
+                                                                            <label class="label label-danger"
+                                                                                style="font-size: 16px;">ปิดการใช้งาน</label>
                                                                             @endif
                                                                         </td>
                                                                         @if ($userlist->rec_status == 1)
-                                                                        
 
+                                                                        <td>
+                                                                            <form action="/disableadmin" method="POST">
+                                                                                @csrf
+
+                                                                                <input type="hidden" name="id"
+                                                                                        value="{{ $userlist->id }}">
+
+                                                                                <button type="submit" class="btn btn-danger"
+                                                                                    data-toggle="tooltip"
+                                                                                    data-placement="top"
+                                                                                    title="ปิดการใช้งานผู้ใช้">
+                                                                                    <i
+                                                                                        class="fa fa-times f-w-600 f-16 m-r-15 text-c-white"></i>
+                                                                                </button>
+                                                                            </form>
+                                                                                
+                                                                        </td>
                                                                         @endif
                                                                         @if ($userlist->rec_status == 0)
 
                                                                         <td>
+                                                                            <form action="/enableadmin" method="POST">
+                                                                                @csrf
 
-                                                                            <span data-toggle="modal"
-                                                                                data-target="#editUser{{ $userlist->id }}">
-                                                                                <button class="btn btn-success"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="อนุมัติ">
-                                                                                    <i
-                                                                                        class="fa fa-check f-w-600 f-16 m-r-15 text-c-white"></i>
-                                                                                </button>
-                                                                            </span>
+                                                                                <input type="hidden" name="id"
+                                                                                        value="{{ $userlist->id }}">
+
+                                                                                        <button type="submit" class="btn btn-success"
+                                                                                        data-toggle="tooltip"
+                                                                                        data-placement="top"
+                                                                                        title="เปิดการใช้งานผู้ใช้">
+                                                                                        <i
+                                                                                            class="fa fa-check f-w-600 f-16 m-r-15 text-c-white"></i>
+                                                                                    </button>
+                                                                            </form>
+
                                                                         </td>
 
                                                                         @endif
@@ -329,7 +352,7 @@
                                                                                                 aria-hidden="true">&times;</span>
                                                                                         </button>
                                                                                     </div>
-                                                                                    
+
 
                                                                                     <div class="modal-body">
                                                                                         <div class="card">
@@ -339,7 +362,8 @@
                                                                                                     style="font-size: 20px;">
                                                                                                     <strong>ชื่อ
                                                                                                         :</strong>
-                                                                                                        {{ $userlist->prefix }}{{ $userlist->fname }} {{ $userlist->lname }}
+                                                                                                    {{ $userlist->prefix }}{{ $userlist->fname }}
+                                                                                                    {{ $userlist->lname }}
                                                                                                 </p>
                                                                                                 <p class="card-text"
                                                                                                     style="font-size: 20px;">
@@ -367,114 +391,132 @@
                                                                                                 </p>
                                                                                             </div>
                                                                                         </div>
-                                                                                       
-                                                                    <div class="form-group">
-                                                                        <label for="phone"
-                                                                            class="control-label"><b>สิทธิ์การใช้งาน
-                                                                                :</b></label>
-                                                                        <label  style="color: black;background-color:#d1eaf5;">
-                                                                            <ul>
-                                                                                <li>Admin : ผู้ดูแลระบบวอร์ด</li>
-                                                                                
-                                                                            </ul>
-                                                                        </label>
-                                                                        <select class="form-control" name="permission">
-                                                                            <option value="" style="display: none">
-                                                                                ..สิทธิ์การใช้งาน..
-                                                                            </option>
-                                                                            @forelse ($permission as
-                                                                            $lper)
-                                                                            @if( $lper->id == 2)
-                                                                            <option value="{{ $lper->id }}"
-                                                                                {{ $userlist->permission_id == $lper->id ? 'selected' : '' }}>
-                                                                                {{ $lper->permission }}
-                                                                            </option>
-                                                                            @endif
-                                                                            @empty
 
-                                                                            @endforelse
-                                                                        </select>
+                                                                                        <div class="form-group">
+                                                                                            <label for="phone"
+                                                                                                class="control-label"><b>สิทธิ์การใช้งาน
+                                                                                                    :</b></label>
+                                                                                            <label
+                                                                                                style="color: black;background-color:#d1eaf5;">
+                                                                                                <ul>
+                                                                                                    <li>Admin :
+                                                                                                        ผู้ดูแลระบบวอร์ด
+                                                                                                    </li>
+
+                                                                                                </ul>
+                                                                                            </label>
+                                                                                            <select class="form-control"
+                                                                                                name="permission">
+                                                                                                <option value=""
+                                                                                                    style="display: none">
+                                                                                                    ..สิทธิ์การใช้งาน..
+                                                                                                </option>
+                                                                                                @forelse ($permission as
+                                                                                                $lper)
+                                                                                                @if( $lper->id == 2)
+                                                                                                <option
+                                                                                                    value="{{ $lper->id }}"
+                                                                                                    {{ $userlist->permission_id == $lper->id ? 'selected' : '' }}>
+                                                                                                    {{ $lper->permission }}
+                                                                                                </option>
+                                                                                                @endif
+                                                                                                @empty
+
+                                                                                                @endforelse
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <input type="hidden"
+                                                                                            name="rec_status" value="1">
+
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-success waves-effect waves-light ">อนุมัติ</button>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-primary waves-effect "
+                                                                                            data-dismiss="modal">ปิด</button>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <input type="hidden" name="rec_status" value="1">
-                                                                   
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit"
-                                                            class="btn btn-success waves-effect waves-light ">อนุมัติ</button>
-                                                        <button type="button" class="btn btn-primary waves-effect "
-                                                            data-dismiss="modal">ปิด</button>
-                                                    </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- //////////////////// -->
+                                                                    <!-- //////////////////// -->
 
 
-                                    <!-- ///////delete//////// -->
-                                    <div class="modal fade" id="delUser{{ $userlist->id }}" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <form method="POST"
-                                                    action="{{ route('manage-user.destroy',$userlist->id) }}">
-                                                    @csrf
-                                                    {{ method_field('delete') }}
-                                                    <div class="modal-body">
-                                                        <div
-                                                            style="display: flex;justify-content: center;align-items: center;padding-top:20px;">
-                                                            <img src="admindek/png/warning.png"
-                                                                style="width:40%;height:auto;" />
+                                                                    <!-- ///////delete//////// -->
+                                                                    <div class="modal fade"
+                                                                        id="delUser{{ $userlist->id }}" tabindex="-1"
+                                                                        role="dialog">
+                                                                        <div class="modal-dialog" role="document">
+                                                                            <div class="modal-content">
+                                                                                <form method="POST"
+                                                                                    action="{{ route('manage-user.destroy',$userlist->id) }}">
+                                                                                    @csrf
+                                                                                    {{ method_field('delete') }}
+                                                                                    <div class="modal-body">
+                                                                                        <div
+                                                                                            style="display: flex;justify-content: center;align-items: center;padding-top:20px;">
+                                                                                            <img src="admindek/png/warning.png"
+                                                                                                style="width:40%;height:auto;" />
+                                                                                        </div>
+                                                                                        <h3
+                                                                                            style="text-align:center;padding-top:15px;font-weight:bold;">
+                                                                                            ARE YOU SURE ?</h3>
+                                                                                        <p
+                                                                                            style="text-align:center;padding-top:15px;">
+                                                                                            คุณต้องการลบ ผู้ใช้ :
+                                                                                            {{ $userlist->name }} ?</p>
+
+                                                                                    </div>
+
+                                                                                    <input type="hidden" name="cancel"
+                                                                                        value="cancel">
+                                                                                    <input type="hidden" name="id"
+                                                                                        value="{{ $userlist->id }}">
+                                                                                    <div class="card-block">
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-6 col-md-12">
+                                                                                                <div class="form-group">
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="btn waves-effect waves-light btn-primary btn-block"
+                                                                                                        data-dismiss="modal">ยกเลิก</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="col-lg-6 col-md-12">
+                                                                                                <div class="form-group">
+                                                                                                    <button
+                                                                                                        type="submit"
+                                                                                                        class="btn waves-effect waves-light btn-danger btn-square btn-block">ลบ</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
                                                         </div>
-                                                        <h3
-                                                            style="text-align:center;padding-top:15px;font-weight:bold;">
-                                                            ARE YOU SURE ?</h3>
-                                                        <p style="text-align:center;padding-top:15px;">
-                                                            คุณต้องการลบ ผู้ใช้ :
-                                                            {{ $userlist->name }} ?</p>
-
                                                     </div>
-
-                                                    <input type="hidden" name="cancel" value="cancel">
-                                                    <input type="hidden" name="id" value="{{ $userlist->id }}">
-                                                    <div class="card-block">
-                                                        <div class="row">
-                                                            <div class="col-lg-6 col-md-12">
-                                                                <div class="form-group">
-                                                                    <button type="button"
-                                                                        class="btn waves-effect waves-light btn-primary btn-block"
-                                                                        data-dismiss="modal">ยกเลิก</button>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-6 col-md-12">
-                                                                <div class="form-group">
-                                                                    <button type="submit"
-                                                                        class="btn waves-effect waves-light btn-danger btn-square btn-block">ลบ</button>
-                                                                </div>
-                                                            </div>
-                                                </form>
+                                                    <!-- ///////////////// -->
+                                                    @endforeach
+                                                    </tbody>
+                                                    @endif
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- ///////////////// -->
-                            @endforeach
-                            </tbody>
-                            @endif
-                            </table>
                         </div>
+                    </div>
+                    <div id="styleSelector">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    <div id="styleSelector">
-    </div>
-    </div>
-    </div>
-    </div>
     </div>
 
 
@@ -493,8 +535,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="name" class="cols-sm-2 control-label">คำนำหน้า
-                                <label style="color: red;">*</label></label>
+                            <label for="name" class="cols-sm-2 control-label">คำนำหน้า</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-append" style="margin-right: -1px;margin-left: 0px;">
@@ -502,18 +543,17 @@
                                             <span class="fa fa-user fa"></span>
                                         </div>
                                     </div>
-                                    <select class="form-control" name="prefix" id="prefix"
-                                                                    required>
+                                    <select class="form-control" name="prefix" id="prefix">
 
-                                                                    <option value="" style="display: none" selected>
-                                                                        ..เลือกคำนำหน้า..</option>
-                                                                    @forelse ($prefix as $lprefix)
-                                                                    <option value="{{ $lprefix->prefix }}" >
-                                                                        {{ $lprefix->prefix }}</option>
-                                                                    @empty
+                                        <option value="" style="display: none" selected>
+                                            ..เลือกคำนำหน้า..</option>
+                                        @forelse ($prefix as $lprefix)
+                                        <option value="{{ $lprefix->prefix }}">
+                                            {{ $lprefix->prefix }}</option>
+                                        @empty
 
-                                                                    @endforelse
-                                                                </select>
+                                        @endforelse
+                                    </select>
 
                                 </div>
                             </div>
@@ -623,7 +663,7 @@
                         <div class="form-group">
                             <label for="phone" class="control-label"><b>สิทธิ์การใช้งาน
                                     :</b></label>
-                            <label  style="color: black;background-color:#d1eaf5;">
+                            <label style="color: black;background-color:#d1eaf5;">
                                 <ul>
                                     <li>Admin : ผู้ดูแลระบบวอร์ด</li>
                                 </ul>

@@ -60,34 +60,34 @@
 
 
     <style>
-        .blink {
-            animation: blinker 1.5s step-start infinite;
-            color: #1ed7b2;
-        }
+    .blink {
+        animation: blinker 1.5s step-start infinite;
+        color: #1ed7b2;
+    }
 
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
+    @keyframes blinker {
+        50% {
+            opacity: 0;
         }
+    }
 
-        .select2-container--default .select2-selection--single .select2-selection__rendered {
-            /* background-color: white; */
-            color: black;
-            padding: 6px 30px 6px 20px;
-        }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        /* background-color: white; */
+        color: black;
+        padding: 6px 30px 6px 20px;
+    }
 
-        form input.invalid {
-            border-color: #dc3545;
-        }
+    form input.invalid {
+        border-color: #dc3545;
+    }
 
-        form .invalid-feedback {
-            color: #dc3545;
-            font-size: 14px;
-            line-height: 21px;
-            margin-top: 4px;
-            text-align: left;
-        }
+    form .invalid-feedback {
+        color: #dc3545;
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 4px;
+        text-align: left;
+    }
     </style>
 </head>
 
@@ -105,7 +105,8 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="/index-admin">
-                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}" alt="Theme-Logo" />
+                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu icon-toggle-right"></i>
@@ -263,10 +264,9 @@
                                             <span class="pcoded-micon"><i class="feather icon-settings"></i></span>
                                             <span class="pcoded-mtext">จัดสรรวอร์ด
                                                 @if ($userunsub->isNotEmpty())
-                                                <img
-                                                src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
-                                                width='25px' />
-                                            @endif
+                                                <img src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
+                                                    width='25px' />
+                                                @endif
                                             </span>
                                         </a>
                                         <ul class="pcoded-submenu">
@@ -302,15 +302,24 @@
                                             </li>
                                             <li class="">
                                                 <a href="/manageuserwards" class="waves-effect waves-dark">
-                                                    <span class="pcoded-mtext">รออนุมัติสิทธิ์ 
+                                                    <span class="pcoded-mtext">รออนุมัติสิทธิ์
                                                         @if ($userunsub->isNotEmpty())
-                                                        <span class="badge badge-danger">New  {{ $userunsub->count() }}</span>
-                                            @endif
+                                                        <span class="badge badge-danger">New
+                                                            {{ $userunsub->count() }}</span>
+                                                        @endif
                                                     </span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
+                                    <li class="">
+                                                <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing"
+                                                    target="_blank" class="waves-effect waves-dark">
+                                                    <span class="pcoded-micon"><i
+                                                            class="feather icon-book"></i></i></span>
+                                                    <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                                </a>
+                                            </li>
                                 </ul>
                             </div>
                         </div>
@@ -430,8 +439,9 @@
                                                                     <!-- /////////edit/////////// -->
                                                                     <div class="modal fade"
                                                                         id="editDoctor{{ $listdoctor->id }}"
-                                                                         role="dialog" aria-hidden="true">
-                                                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                                        role="dialog" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-lg modal-dialog-centered"
+                                                                            role="document">
                                                                             <div class="modal-content">
                                                                                 <form class="form-horizontal"
                                                                                     action="{{ route('doctor.update',$listdoctor->id) }}"
@@ -466,7 +476,8 @@
                                                                                                     selected>
                                                                                                     ..เลือกคำนำหน้า..
                                                                                                 </option>
-                                                                                                @forelse ($prefix as $lprefix)
+                                                                                                @forelse ($prefix as
+                                                                                                $lprefix)
                                                                                                 <option
                                                                                                     value="{{ $lprefix->prefix }}"
                                                                                                     {{ $listdoctor->prefix == $lprefix->prefix ? 'selected' : '' }}>
@@ -477,9 +488,13 @@
                                                                                                 @endforelse
                                                                                             </select>
                                                                                             <input type="text"
-                                                                                                class="form-control" name="fname" required value="{{ $listdoctor->fname }}"
+                                                                                                class="form-control"
+                                                                                                name="fname" required
+                                                                                                value="{{ $listdoctor->fname }}"
                                                                                                 placeholder="ชื่อจริง">
-                                                                                            <input type="text" name="lname" required value="{{ $listdoctor->lname }}"
+                                                                                            <input type="text"
+                                                                                                name="lname" required
+                                                                                                value="{{ $listdoctor->lname }}"
                                                                                                 class="form-control"
                                                                                                 placeholder="นามสกุล">
                                                                                         </div>
@@ -498,7 +513,12 @@
                                                                                                         class="js-example-basic-single col-sm-12"
                                                                                                         name="dept_id"
                                                                                                         style="width:100%">
-                                                                                                        <option value="" disabled style="display: none" selected>..กรุณาเลือกสายการรักษา..</option>
+                                                                                                        <option value=""
+                                                                                                            disabled
+                                                                                                            style="display: none"
+                                                                                                            selected>
+                                                                                                            ..กรุณาเลือกสายการรักษา..
+                                                                                                        </option>
 
                                                                                                         @if (is_null($dept))
 
@@ -572,7 +592,9 @@
                                                                                             ทำการลบอาจารย์แพทย์ชื่อ</p>
                                                                                         <h5
                                                                                             style="color: red;text-align:center;padding-top:15px;">
-                                                                                            {{ $listdoctor->prefix }}{{ $listdoctor->fname }} {{ $listdoctor->lname }}</h5>
+                                                                                            {{ $listdoctor->prefix }}{{ $listdoctor->fname }}
+                                                                                            {{ $listdoctor->lname }}
+                                                                                        </h5>
                                                                                         <input type="hidden" name="ward"
                                                                                             value="{{ $ward->id }}">
                                                                                     </div>
@@ -643,35 +665,25 @@
                             </div>
                             <div class="modal-body">
                                 <div class="input-group mb-3">
-                                    <div
-                                        class="input-group-prepend">
-                                        <span
-                                            class="input-group-text">ชื่ออาจารย์แพทย์</span>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">ชื่ออาจารย์แพทย์</span>
                                     </div>
-                                    <select class="form-control"
-                                        name="prefix"
-                                        id="prefix" required>
+                                    <select class="form-control" name="prefix" id="prefix" required>
 
-                                        <option value=""
-                                            style="display: none"
-                                            selected>
+                                        <option value="" style="display: none" selected>
                                             ..เลือกคำนำหน้า..
                                         </option>
                                         @forelse ($prefix as $lprefix)
-                                        <option
-                                            value="{{ $lprefix->prefix }}" >
+                                        <option value="{{ $lprefix->prefix }}">
                                             {{ $lprefix->prefix }}
                                         </option>
                                         @empty
 
                                         @endforelse
                                     </select>
-                                    <input type="text"
-                                        class="form-control" name="fname" required
+                                    <input type="text" class="form-control" name="fname" required
                                         placeholder="ชื่อจริง">
-                                    <input type="text" name="lname" required
-                                        class="form-control"
-                                        placeholder="นามสกุล">
+                                    <input type="text" name="lname" required class="form-control" placeholder="นามสกุล">
                                 </div>
                                 <div class="col-sm-12 col-xl-12">
                                     <div class="form-group row">
@@ -813,14 +825,14 @@
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
                 type="d28fd8086f5eb18f81d8672a-text/javascript"></script>
             <script type="d28fd8086f5eb18f81d8672a-text/javascript">
-                window.dataLayer = window.dataLayer || [];
+            window.dataLayer = window.dataLayer || [];
 
-                function gtag() {
-                    dataLayer.push(arguments);
-                }
-                gtag('js', new Date());
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-                gtag('config', 'UA-23581568-13');
+            gtag('config', 'UA-23581568-13');
             </script>
             <script src="{{ asset('admindek/js/rocket-loader.min.js') }}"
                 data-cf-settings="d28fd8086f5eb18f81d8672a-|49" defer=""></script>

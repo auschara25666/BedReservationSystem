@@ -38,34 +38,6 @@ class PatientController extends Controller
         return $hover;
     }
 
-    // public function search(Request $request){
-
-    //     if($request->ajax()) {
-
-    //         $data = Patient::where('hn', 'LIKE', $request->hn.'%')
-    //             ->get();
-
-    //         $output = '';
-
-    //         if (count($data)>0) {
-
-    //             $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
-
-    //             foreach ($data as $row){
-
-    //                 $output .= '<li class="list-group-item">'.$row->hn.'</li>';
-    //             }
-
-    //             $output .= '</ul>';
-    //         }
-    //         else {
-
-    //             $output .= '<li class="list-group-item">'.'No results'.'</li>';
-    //         }
-
-    //         return $output;
-    //     }
-    // }
 
     /**
      * Show the form for creating a new resource.
@@ -99,7 +71,7 @@ class PatientController extends Controller
                     'prefix' => $request->prefix,
                     'fname' => $request->fname,
                     'lname' => $request->lname,
-                    'birthday' => $request->pa_birthday,
+                    'age' => $request->age,
                     'sex' => $request->pa_sex,
                     'phone' => $request->pa_phone,
                     'pay_id' => $request->pay,
@@ -113,9 +85,10 @@ class PatientController extends Controller
 
             $pat = Patient::where('hn', $request->hn)->first();
 
-             $reserve = new Reservation([
+            $reserve = new Reservation([
                 'reserve_status' => 'เข้าไม่ผ่านระบบ',
                 'patient_id' => $pat->id,
+                'ward_enter' => Auth::user()->ward_id,
                 'ward_id' => Auth::user()->ward_id,
                 'opt_id' => $request->opt_id,
                 'reserve_booking' => $reserve_booking,
@@ -125,21 +98,22 @@ class PatientController extends Controller
                 'created_user_id' => Auth::user()->id,
                 'bed_id' => $request->bed_id,
             ]);
+                
+                $reserve->save();
 
-            $reserve->save();
-
-            $reser = Reservation::where('reserve_status','เข้าไม่ผ่านระบบ')
+                $reser = Reservation::where('reserve_status','เข้าไม่ผ่านระบบ')
                                 ->where('ward_id', Auth::user()->ward_id)
+                                ->where('ward_enter', Auth::user()->ward_id)
                                 ->where('opt_id', $request->opt_id)
                                 ->where('reserve_booking', $reserve_booking)
                                 ->where('doctor_id', $request->doctor_id)
                                 ->where('created_user_id', Auth::user()->id)
                                 ->where('bed_id',$request->bed_id)
-                                ->where('patient_id', $pat->id)->first();
-            // // dd($reser->id);
+                                ->where('patient_id', $pa->id)->first();
+            // dd($reser->id);
 
             $event = new Event([
-                'event_status' => '2',
+                'event_status' => '4', //4 = เข้าเตียง
                 'date' => \Carbon\Carbon::now(),
                 'detail' => "เข้าไม่ผ่านระบบจอง ติดต่อ ".Auth::user()->ward->ward_phone,
                 'reserve_id' => $reser->id,
@@ -179,6 +153,7 @@ class PatientController extends Controller
                  $reserve = new Reservation([
                 'reserve_status' => 'เข้าไม่ผ่านระบบ',
                 'patient_id' => $pa->id,
+                'ward_enter' => Auth::user()->ward_id,
                 'ward_id' => Auth::user()->ward_id,
                 'opt_id' => $request->opt_id,
                 'reserve_booking' => $reserve_booking,
@@ -193,6 +168,7 @@ class PatientController extends Controller
 
                 $reser = Reservation::where('reserve_status','เข้าไม่ผ่านระบบ')
                                 ->where('ward_id', Auth::user()->ward_id)
+                                ->where('ward_enter', Auth::user()->ward_id)
                                 ->where('opt_id', $request->opt_id)
                                 ->where('reserve_booking', $reserve_booking)
                                 ->where('doctor_id', $request->doctor_id)
@@ -202,7 +178,7 @@ class PatientController extends Controller
             // dd($reser->id);
 
             $event = new Event([
-                'event_status' => '2',
+                'event_status' => '4', //4 = เข้าเตียง
                 'date' => \Carbon\Carbon::now(),
                 'detail' => "เข้าไม่ผ่านระบบจอง ติดต่อ ".Auth::user()->ward->ward_phone,
                 'reserve_id' => $reser->id,
@@ -215,85 +191,23 @@ class PatientController extends Controller
             $bed->bed_status = 'รอเข้า';
 
             // dd($request);
-            $reserve->save();
-            $event->save();
-            $bed->save();
 
+            // if($reserve->save() && $event->save()&& $bed->save()){
+                $reserve->save();
+                $event->save();
+                $bed->save();
                 return back()->with('success', 'ทำรายการจอง สำเร็จ!!');
-            }
+            // }else{
+            //     return back()->with('alerterror','ทำรายการจองไม่สำเร็จ');
+            // }
             
 
             
         }
+        }
 
 
-        // $book = explode("/", $request->reserve_booking);
-        // $reserve_booking = $book[2] . "-" . $book[1] . "-" . $book[0];
-
-        // $pa = new Patient([
-        //     'hn' => $request->hn,
-        //     'prefix' => $request->prefix,
-        //     'fname' => $request->fname,
-        //     'lname' => $request->lname,
-        //     'birthday' => $request->pa_birthday,
-        //     'sex' => $request->pa_sex,
-        //     'phone' => $request->pa_phone,
-        //     'disease' => $request->disease,
-        //     'pay_id' => $request->pay,
-        //     'rec_status' => '1',
-        //     'created_user_id' => Auth::user()->id,
-
-        // ]);
-
-        // $pa->save();
-
-        //     $pat = Patient::where('hn', $request->hn)->first();
-
-        // $reserve = new Reservation([
-        //         'reserve_status' => 'เข้าไม่ผ่านระบบ',
-        //         'patient_id' => $pat->id,
-        //         'ward_id' => Auth::user()->ward_id,
-        //         'opt_id' => $request->opt_id,
-        //         'reserve_booking' => $reserve_booking,
-        //         'doctor_id' => $request->doctor_id,
-        //         'rec_status' => '1',
-        //         'created_user_id' => Auth::user()->id,
-        //         'bed_id' => $request->bed_id,
-        //     ]);
-
-        //     $reserve->save();
-
-        //     $reser = Reservation::where('reserve_status','เข้าไม่ผ่านระบบ')
-        //                         ->where('ward_id', Auth::user()->ward_id)
-        //                         ->where('opt_id', $request->opt_id)
-        //                         ->where('reserve_booking', $reserve_booking)
-        //                         ->where('doctor_id', $request->doctor_id)
-        //                         ->where('created_user_id', Auth::user()->id)
-        //                         ->where('bed_id',$request->bed_id)
-        //                         ->where('patient_id', $pat->id)->first();
-        //     // dd($reser->id);
-
-        //     $event = new Event([
-        //         'event_status' => '2',
-        //         'date' => \Carbon\Carbon::now(),
-        //         'detail' => "เข้าไม่ผ่านระบบจอง ติดต่อ ".Auth::user()->ward->ward_phone,
-        //         'reserve_id' => $reser->id,
-        //         'rec_status' => '1',
-        //         'created_user_id' => Auth::user()->id,
-
-        //     ]);
-
-
-        //     $bed = Bed::find($request->bed_id);
-        //     $bed->bed_status = 'รอเข้า';
-
-        //     // dd($request);
-        //     // $reserve->save();
-        //     $event->save();
-        //     $bed->save();
-
-
-        //     return back()->with('success', 'ทำรายการจอง สำเร็จ!!');    
+        
     }
 
     /**
@@ -328,8 +242,6 @@ class PatientController extends Controller
     public function update(Request $request , $id)
     {
 
-        $age = explode("/", $request->pa_age);
-        $paage = $age[2] . "-" . $age[1] . "-" . $age[0];
 
         $patient = Patient::find($id);
                 $patient->hn = $request->hn;
@@ -339,7 +251,7 @@ class PatientController extends Controller
                 $patient->phone = $request->pa_phone;
                 $patient->sex = $request->pa_sex;
                 $patient->pay_id = $request->pay_id;
-                $patient->birthday = $paage;
+                $patient->age = $request->pa_age;
 
                 $patient->save();
 

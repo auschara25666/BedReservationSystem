@@ -238,6 +238,12 @@
                                             <span class="pcoded-mtext">จองเตียง</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -308,16 +314,16 @@
                                                                     style="max-width: 200px"
                                                                     placeholder="เลือกวันที่..."
                                                                     data-date-format="dd/mm/yyyy" title="เลือกวันที่">
-
-
                                                             </div>
                                                         </div>
-
-
                                                     </div>
 
-
                                                     <div class="card-block">
+                                                        <div style="display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;">
+                                                        <span class="badge badge-warning" style="font-size: 18px;color: black;">หากต้องการแก้ไขข้อมูลการจอง ให้ทำการยกเลิกรายการเก่าของท่าน แล้วทำการจองเข้ามาใหม่</span>
+                                                        </div>
                                                         <div class="dt-responsive table-responsive">
                                                             <table id="scr-vtr-dynamic-normal"
                                                                 class="table table-striped table-bordered nowrap">
@@ -332,7 +338,8 @@
                                                                         <th style="width: 10%;">วันที่ต้องการเข้าเตียง
                                                                         </th>
                                                                         <th style="width: 15px;">สถานะ</th>
-                                                                        <th style="width: 20%;">ตัวเลือก</th>
+                                                                        <th>ผู้จอง</th>
+                                                                        <th style="width: 10%;">ตัวเลือก</th>
 
                                                                     </tr>
                                                                 </thead>
@@ -345,7 +352,7 @@
 
                                                                     @foreach ($reserve as $lreserve)
 
-                                                                    <tr>
+                                                                    <tr class="text-center">
 
                                                                         <td>{{ $number }}</td>
                                                                         <td>{{ $lreserve->patient->hn }}</td>
@@ -363,17 +370,20 @@
                                                                                 style="font-size:15px;">{{
                                                                                 $lreserve->reserve_status }}</small>
                                                                         </td>
+                                                                        <td>{{ $lreserve->user->prefix }}{{ $lreserve->user->fname }} {{ $lreserve->user->lname }}</td>
                                                                         <td>
                                                                             <div class="btn-group text-center">
-                                                                                <span data-toggle="modal"
-                                                                                    data-target="#editReserve{{ $lreserve->id }}">
+                                                                                
+                                                                                
+                                                                                <!-- <span data-toggle="modal"
+                                                                                    data-target="#">
                                                                                     <button class="btn btn-warning"
                                                                                         data-toggle="tooltip"
                                                                                         data-placement="top"
-                                                                                        title="แก้ไข">
+                                                                                        title="กำลังแก้ไขส่วนนี้ ยังใช้งานไม่ได้">
                                                                                         แก้ไข
                                                                                     </button>
-                                                                                </span>
+                                                                                </span> -->
 
                                                                                 <span data-toggle="modal"
                                                                                     data-target="#canReserve{{ $lreserve->id }}">
@@ -398,9 +408,9 @@
                                                                         role="dialog">
                                                                         <div class="modal-dialog" role="document">
                                                                             <div class="modal-content">
-                                                                                <form action="/cancelreserve"
-                                                                                    method="POST">
-                                                                                    @csrf
+                                                                            <form action="{{ route('reserve.destroy',$lreserve->id) }}" method="POST">
+                                                                                @csrf
+                                                                                @method('DELETE')
                                                                                     <div class="modal-body">
                                                                                         <div
                                                                                             style="display: flex;justify-content: center;align-items: center;padding-top:20px;">
@@ -593,16 +603,17 @@
                                                                                             </div>
                                                                                             <!-- </div> -->
                                                                                             <!--  -->
+                                                                                            {{-- <div class="row"> --}}
                                                                                             <div
-                                                                                                class="col-sm-12 col-xl-6">
+                                                                                                class="col-sm-12 col-xl-3">
                                                                                                 <div
                                                                                                     class="form-group row">
                                                                                                     <div
                                                                                                         class="col-sm-12">
                                                                                                         <label
                                                                                                             class="block"><i
-                                                                                                                class="fa fa-user"></i>&nbsp;อายุผู้ป่วย
-                                                                                                            (Age)
+                                                                                                                class="fa fa-user"></i>&nbsp;วันเกิดผู้ป่วย
+                                                                                                            (Date of birth)
                                                                                                             *</label>
                                                                                                     </div>
                                                                                                     <div
@@ -616,12 +627,60 @@
                                                                                                             name="pa_age"
                                                                                                             value="{{ \Carbon\Carbon::parse($lreserve->patient->birthday)->format('d/m/Y') }}"
                                                                                                             data-date-format="dd/mm/yyyy"
-                                                                                                            autocomplete="off" />
+                                                                                                            autocomplete="off" onchange="getDateAge(this.value)"/>
                                                                                                         <span
                                                                                                             id="messages"></span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
+                                                                                            <div class="col-sm-12 col-xl-3">
+                                                                                                <div class="form-group row">
+                                                                                                    <div class="col-sm-12">
+                                                                                                        <label class="block"><i
+                                                                                                                class="fa fa-user"></i>&nbsp;อายุ (ปี)
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="col-sm-4 age_div">
+        
+                                                                                                        <input 
+                                                                                                            class="form-control"
+                                                                                                            type="text" id="age"
+                                                                                                            readonly
+                                                                                                            autocomplete="off" />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="col-sm-12 col-xl-6">
+                                                                                                <div
+                                                                                                    class="form-group row">
+                                                                                                    <div
+                                                                                                        class="col-sm-12">
+                                                                                                        <label
+                                                                                                            class="block"><i
+                                                                                                                class="fa fa-phone"></i>&nbsp;เบอร์โทรศัพท์ผู้ป่วย
+                                                                                                            (Phone)
+                                                                                                            *</label>&nbsp;<label
+                                                                                                            style="color:red;">(หากต้องการระบุหลายเบอร์ให้ใช้
+                                                                                                            ,
+                                                                                                            คั่น)</label>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="col-sm-12">
+                                                                                                        <input
+                                                                                                            type="text"
+                                                                                                            class="form-control"
+                                                                                                            name="pa_phone"
+                                                                                                            id="pa_phone"
+                                                                                                            placeholder="ระบุเบอร์โทรศัพท์ผู้ป่วย"
+                                                                                                            OnKeyPress="return chkNumber(this)"
+                                                                                                            value="{{ $lreserve->patient->phone }}">
+                                                                                                        <span
+                                                                                                            id="messages"></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            {{-- </div> --}}
 
                                                                                             <!--  -->
                                                                                             <div
@@ -657,37 +716,7 @@
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--  -->
-                                                                                            <div
-                                                                                                class="col-sm-12 col-xl-6">
-                                                                                                <div
-                                                                                                    class="form-group row">
-                                                                                                    <div
-                                                                                                        class="col-sm-12">
-                                                                                                        <label
-                                                                                                            class="block"><i
-                                                                                                                class="fa fa-phone"></i>&nbsp;เบอร์โทรศัพท์ผู้ป่วย
-                                                                                                            (Phone)
-                                                                                                            *</label>&nbsp;<label
-                                                                                                            style="color:red;">(หากต้องการระบุหลายเบอร์ให้ใช้
-                                                                                                            ,
-                                                                                                            คั่น)</label>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="col-sm-12">
-                                                                                                        <input
-                                                                                                            type="text"
-                                                                                                            class="form-control"
-                                                                                                            name="pa_phone"
-                                                                                                            id="pa_phone"
-                                                                                                            placeholder="ระบุเบอร์โทรศัพท์ผู้ป่วย"
-                                                                                                            OnKeyPress="return chkNumber(this)"
-                                                                                                            value="{{ $lreserve->patient->phone }}">
-                                                                                                        <span
-                                                                                                            id="messages"></span>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
+                                                                                            
                                                                                             <!--  -->
                                                                                             <div
                                                                                                 class="col-sm-12 col-xl-6">
@@ -730,7 +759,7 @@
                                                                                                         class="col-sm-12">
                                                                                                         <label
                                                                                                             class="block"><i
-                                                                                                                class="fa fa-bed"></i>&nbsp;อาการโรค
+                                                                                                                class="fa fa-bed"></i>&nbsp;วินิจฉัยโรค
                                                                                                             *</label>
                                                                                                     </div>
                                                                                                     <div
@@ -741,7 +770,7 @@
                                                                                                             name="disease"
                                                                                                             id="disease"
                                                                                                             placeholder="ระบุโรค"
-                                                                                                            value="{{ $lreserve->patient->disease }}">
+                                                                                                            value="{{ $lreserve->disease }}">
 
                                                                                                     </div>
                                                                                                 </div>
@@ -883,6 +912,39 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--  -->
+                                                                                            <!--  -->
+                                                                                            <div
+                                                                                                class="col-sm-12 col-xl-6">
+                                                                                                <div
+                                                                                                    class="form-group row">
+                                                                                                    <div
+                                                                                                        class="col-sm-12">
+                                                                                                        <label
+                                                                                                            class="block"><i
+                                                                                                                class="fa fa-transgender-alt "></i>&nbsp;วอร์ด
+                                                                                                            (Ward)
+                                                                                                            *</label>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="col-sm-12">
+                                                                                                        <select class="js-example-basic-single col-sm-12 required wardid" name="wardid" style="width: 100%">
+                                                                                                            <option value="" style="align-items: center;display: none" disabled selected>..เลือก Ward..</option>
+                                                                                                            @if (is_null($ward))
+                                                                
+                                                                                                            @else
+                                                                                                            @foreach ($ward as $lward)
+                                                                                                            <option value="{{ $lward->id }}" {{ $lreserve->ward_id == $lward->id ? 'selected' : '' }}>{{ $lward->ward_name }}
+                                                                                                            </option>
+                                                                                                            @endforeach
+                                                                                                            @endif
+                                                
+                                                                                                            </select>
+                                                                                                        <span
+                                                                                                            id="messages"></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--  -->
                                                                                             <div
                                                                                                 class="col-sm-12 col-xl-6">
                                                                                                 <div
@@ -896,35 +958,15 @@
                                                                                                             *</label>
                                                                                                     </div>
                                                                                                     <div
-                                                                                                        class="col-sm-12">
+                                                                                                        class="col-sm-12 opt_div">
+                                                                                                        {{-- <input type="text"
+                                                                                                    class="form-control required opt_id"
+                                                                                                    name="opt" value="{{ $lreserve->operative->name }}"> --}}
                                                                                                         <select
-                                                                                                            class="js-example-basic-single col-sm-12"
+                                                                                                            class="js-example-basic-single col-sm-12 opt_id"
                                                                                                             style="color: black;width: 100%;"
-                                                                                                            name="opt_id"
-                                                                                                            id="opt_id">
-
-                                                                                                            @forelse($opt
-                                                                                                            as $lopt)
-                                                                                                            <option
-                                                                                                                value="{{ $lopt->id }}"
-                                                                                                                @if($lreserve->operative->id==$lopt->id)
-
-                                                                                                                @php
-                                                                                                                echo 'selected';
-                                                                                                                @endphp
-                                                                                                                @endif
-
-                                                                                                                {{-- {{
-                                                                                                                $lreserve->operative->id == $lopt->id ? 'selected' : ''
-                                                                                                                }} --}}
-                                                                                                                >
-
-                                                                                                                {{ $lopt->opt_name }}
-
-
-                                                                                                            </option>
-                                                                                                            @empty
-                                                                                                            @endforelse
+                                                                                                            name="opt_id">
+                                                                                                            <option value="{{ $lreserve->opt_id }}">{{ $lreserve->operative->opt_name }}</option>
                                                                                                         </select>
                                                                                                         <span
                                                                                                             id="messages"></span>
@@ -1094,111 +1136,24 @@
         defer="">
     </script>
 
+<script type='text/javascript'>
+
+    function calculate_age(dob) { 
+         var diff_ms = Date.now() - dob.getTime();
+         var age_dt = new Date(diff_ms); 
+
+         return Math.abs(age_dt.getUTCFullYear() - 1970);
+         }
+
+     function getDateAge(text) {
+     var TextDate = text.split("/");
+     console.log(calculate_age(new Date(TextDate[2],TextDate[1],TextDate[0])));
+     document.getElementById("age").value = calculate_age(new Date(TextDate[2],TextDate[1],TextDate[0]));
+     }
+
+     </script>
 
     <script>
-        function checkForm(form) {
-            var errors = [];
-            var errorsName = [];
-            /////////////hn/////////////////
-            if (form.hn.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("HN!");
-            }
-            var re = /[A-Z]{2}[0-9]{4}/;
-            if (!re.test(form.hn.value)) {
-                errors.push("");
-                errorsName.push("HN ระบุให้ตรงตามรูปแบบ!");
-            }
-            ////////////////
-            if (form.fname.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("ชื่อจริง!");
-            }
-            ////////////////
-            if (form.lname.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("นามสกุล!");
-            }
-            ////////////////
-            if (form.pa_age.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("อายุผู้ป่วย!");
-            }
-            ////////////////
-            if (form.pa_sex.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("เพศผู้ป่วย!");
-            }
-            ////////////////
-            if (form.pa_phone.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("เบอร์โทรศัพท์ผู้ป่วย!");
-            }
-            ////////////////
-            if (form.pay.value == "") {
-                errors.push("กรุณาเลือก ");
-                errorsName.push("สิทธิ์การรักษา!");
-            }
-            ////////////////
-            if (form.disease.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("อาการของโรค!");
-            }
-            ////////////////
-            if (form.doctor_id.value == "") {
-                errors.push("กรุณาเลือก ");
-                errorsName.push("อาจารย์แพทย์!");
-            }
-            ////////////////
-            if (form.reserve_booking.value == "") {
-                errors.push("กรุณาเลือก");
-                errorsName.push("วันที่จอง!");
-            }
-            ////////////////
-            if (form.booking_name.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("ชื่อผู้ทำการจอง!");
-            }
-            ////////////////
-            if (form.booking_phone.value == "") {
-                errors.push("กรุณาระบุ ");
-                errorsName.push("เบอร์โทรศัพท์ผู้จอง!");
-            }
-            ////////////////
-
-            if (errors.length > 0) {
-                var msg = "";
-                for (var i = 0; i < errors.length; i++) {
-                    msg = msg + errors[i] + errorsName[i] + "<br>";
-                }
-                swal.fire({
-                    icon: 'error',
-                    title: msg,
-                })
-                return false;
-            }
-
-        }
-        // return true;
-
-        function executeExample() {
-            swal.fire({
-                icon: "warning",
-                title: "คุณแน่ใจว่าจะยกเลิก ?",
-                showCancelButton: true,
-                confirmButtonText: 'ใช่',
-                cancelButtonText: "ยกเลิก",
-                //  text: "wrong user or password",
-                type: "warning",
-                // timer: 2000,
-            }).then((result) => {
-                // Redirect the user
-                if (result.isConfirmed) {
-                    window.location.href = "/index-user";
-                }
-            });
-        }
-
 
         function chkNumber(ele) {
             var vchar = String.fromCharCode(event.keyCode);
@@ -1212,6 +1167,7 @@
             ele.onKeyPress = vchar;
         }
     </script>
+
 </body>
 
 </html>

@@ -293,6 +293,12 @@
                                             <span class="pcoded-mtext">สถิติ</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -364,21 +370,27 @@
 
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                @if ($errors->any())
-                                                <div class="alert alert-danger background-danger">
-                                                    <ul>
-                                                        @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div><br />
-                                                @endif
+                                            @if ($errors->any())
+                                                        <div class="alert alert-danger background-danger">
+                                                            <ul>
+                                                                @foreach ($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div><br />
+                                                        @endif
 
-                                                @if (session()->has('success'))
-                                                <div class="alert alert-success background-success">
-                                                    {{ session()->get('success') }}
-                                                </div><br />
-                                                @endif
+                                                        @if (session()->has('success'))
+                                                        <div class="alert alert-success background-success">
+                                                            {{ session()->get('success') }}
+                                                        </div><br />
+                                                        @endif
+                                                        @if (session()->has('alerterror'))
+                                                        <div class="alert alert-danger background-danger">
+                                                            {{ session()->get('alerterror') }}
+                                                        </div><br />
+                                                        @endif
+                                                    </div>
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <!-- <h5>จำนวนเตียงทั้งหมด</h5>
@@ -499,9 +511,7 @@
                                                                                                         class="col-sm-12 pa_prefix_div">
                                                                                                         <select class="form-control prefix"
                                                                                                             name="prefix"
-                                                                                                            {{-- id="prefix" --}}
                                                                                                             required>
-        
                                                                                                             <option value=""
                                                                                                                 style="display: none"
                                                                                                                 selected>
@@ -798,7 +808,7 @@
                                                                                         style="font-size: 20px;">
                                                                                         <strong>หัตถการ :</strong>
                                                                                         {{
-                                                                                            $lpati->operative->opt_name
+                                                                                            $lpati->operative->opt_name ?? 'ไม่มีหัตการ'
                                                                                             }}
                                                                                     </p>
                                                                                     <p class="card-text"
@@ -1053,8 +1063,8 @@
                                                                                     style="font-size: 20px;">
                                                                                     <strong>หัตถการ :</strong>
                                                                                     {{
-                                                                                            $lpati->operative->opt_name
-                                                                                            }}
+                                                                                        $lpati->operative->opt_name ?? 'ไม่มีหัตการ'
+                                                                                        }}
                                                                                 </p>
                                                                                 <p class="card-text"
                                                                                     style="font-size: 20px;">
@@ -1241,8 +1251,8 @@
                                                                                 style="font-size: 20px;">
                                                                                 <strong>หัตถการ :</strong>
                                                                                 {{
-                                                                                        $lpati->operative->opt_name ?? ''
-                                                                                        }}
+                                                                                    $lpati->operative->opt_name ?? 'ไม่มีหัตการ'
+                                                                                    }}
                                                                             </p>
                                                                                 @else
                                                                                     

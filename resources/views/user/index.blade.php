@@ -188,6 +188,12 @@
                                             <span class="pcoded-mtext">จองเตียง</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -254,14 +260,17 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-block">
-                                                        <p style="font-size:18px;">1. สามารถเห็น "รายการจองเตียง" ได้
+                                                        <p style="font-size:18px;">1. สามารถดู "รายการจองเตียง" หลังจากทำการจองเตียงสำเร็จได้ที่หน้า "รายการจอง"
                                                         </p>
-                                                        <p style="font-size:18px;">2. สามารถเห็น
-                                                            "รายการจองเตียงที่อนุมัติแล้ว" ได้</p>
-                                                        <p style="font-size:18px;">3. สามารถ "กดยกเลิกรายการจองเตียง"
+                                                        <p style="font-size:18px;">2. สามารถดู
+                                                            "รายการจองเตียงที่อนุมัติแล้ว" ได้ที่หน้า "รายการอนุมัติแล้ว"</p>
+                                                        <p style="font-size:18px;">3. สามารถกด "ยกเลิกรายการจองเตียง"
                                                             ได้</p>
-                                                        <p style="font-size:18px;">7. สามารถ "ทำการจองเตียง" ได้
-                                                            ในหน้าแบบฟอร์มจองเตียง</p>
+                                                        <p style="font-size:18px;">7. สามารถทำการ "จองเตียง" ได้
+                                                            ในหน้า "จองเตียง"</p>
+                                                            <br><br><br>
+                                                            <h2>แบบประเมินการใช้งานระบบ</h2>
+                                                            <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc4i9uxreaXIaN5MaUod9XAnb9ZJVG5qBwmOEnYo-pefzdEbQ/viewform">แบบประเมิน</a>
                                                     </div>
                                                 </div>
                                             </div>

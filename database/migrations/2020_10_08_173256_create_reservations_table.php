@@ -17,6 +17,7 @@ class CreateReservationsTable extends Migration
             $table->bigIncrements('id')->comment('รหัสการจอง');
             $table->string('reserve_status',100)->nullable()->comment('สถานะการจอง');
             $table->bigInteger('patient_id')->nullable()->unsigned()->comment('รหัสผู้ป่วย');
+            $table->bigInteger('ward_enter')->nullable()->unsigned()->comment('รหัสวอร์ดต้นทาง');
             $table->bigInteger('ward_id')->nullable()->unsigned()->comment('รหัสวอร์ดที่ต้องการเข้า');
             $table->bigInteger('opt_id')->nullable()->unsigned()->comment('รหัสหัตถการ');
             $table->date('reserve_booking')->nullable()->comment('วันที่ต้องการจอง');
@@ -33,6 +34,7 @@ class CreateReservationsTable extends Migration
 
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->foreign('ward_id')->references('id')->on('wards');
+            $table->foreign('ward_enter')->references('id')->on('wards');
             $table->foreign('opt_id')->references('id')->on('operatives');
             $table->foreign('created_user_id')->references('id')->on('users');
             $table->foreign('doctor_id')->references('id')->on('doctors');

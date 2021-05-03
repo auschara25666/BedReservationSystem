@@ -343,7 +343,12 @@
                                             <span class="pcoded-mtext">ผู้ป่วย</span>
                                         </a>
                                     </li>
-
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -411,11 +416,11 @@
                                                                     <span
                                                                         class="input-group-text text-bold">ค้นรายการของวันที่</span>
                                                                 </div>
-                                                                <input type="text" id="dropper-default" name="min"
+                                                                <input type="text" id="dropper-default-approve" name="min"
                                                                     class="employee-search-input-approve datepicker form-control"
                                                                     style="max-width: 200px"
                                                                     placeholder="เลือกวันที่..."
-                                                                    data-date-format="dd/mm/yyyy" title="เลือกวันที่">
+                                                                    data-date-format="dd/mm/yyyy" title="เลือกวันที่" autocomplete="off">
                                                             </div>
                                                         </div>
 
@@ -470,6 +475,14 @@
                                                                             <small class="badge badge-success"
                                                                                 style="font-size:15px;">{{ $lreserveapply->reserve_status }}</small>
                                                                             @endif
+                                                                            @if ($lreserveapply->reserve_status =='เข้าเตียง')
+                                                                            <small class="badge badge-success"
+                                                                                style="font-size:15px;">{{ $lreserveapply->reserve_status }}</small>
+                                                                            @endif
+                                                                            @if ($lreserveapply->reserve_status =='เตรียมออก')
+                                                                            <small class="badge badge-warning"
+                                                                                style="font-size:15px;color: back;">{{ $lreserveapply->reserve_status }}</small>
+                                                                            @endif
                                                                             @if ($lreserveapply->reserve_status =='ยกเลิกจอง')
                                                                                 <small class="badge badge-danger"
                                                                                 style="font-size:15px;">{{ $lreserveapply->reserve_status }}</small>
@@ -488,13 +501,11 @@
                                                                                     data-toggle="dropdown">
                                                                                     เมนู
                                                                                 </button>
-                                                                                @if ($lreserveapply->created_user_id == Auth::user()->id)
                                                                                 <div class="dropdown-menu">
                                                                                     <a class="dropdown-item"
                                                                                         data-toggle="modal"
                                                                                         href="#check{{ $lreserveapply->id }}">รายการตรวจ</a>
                                                                                 </div>
-                                                                                @endif
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -644,6 +655,7 @@
 
                                                                                                         @if(!empty($checknum[$n]))
                                                                                                             @if ($checknum[$n] !=$lpre->id)
+                                                                                                            @if ($lreserveapply->created_user_id == Auth::user()->id)
                                                                                                                 <li
                                                                                                                     class="list-group-item">
                                                                                                                     {{ $lpre->pre_opt }}
@@ -658,6 +670,21 @@
                                                                                                                     </label>
                                                                                                                 </li>
                                                                                                             @else
+                                                                                                                <li
+                                                                                                                    class="list-group-item">
+                                                                                                                    {{ $lpre->pre_opt }}
+                                                                                                                    <label
+                                                                                                                        class="checkbox">
+                                                                                                                        <input
+                                                                                                                            type="checkbox"
+                                                                                                                            name="preopt[]"
+                                                                                                                            value="{{ $lpre->id }}" disabled/>
+                                                                                                                        <span
+                                                                                                                            class="success"></span>
+                                                                                                                    </label>
+                                                                                                                </li>
+                                                                                                                @endif
+                                                                                                            @else
 
                                                                                                                 @php
                                                                                                                 $arropt =
@@ -665,7 +692,7 @@
                                                                                                                 @endphp
                                                                                                                 @php $n++; @endphp
 
-
+                                                                                                                @if ($lreserveapply->created_user_id == Auth::user()->id)
                                                                                                                 <li
                                                                                                                     class="list-group-item">
                                                                                                                     {{ $arropt->pre_opt
@@ -676,13 +703,31 @@
                                                                                                                             type="checkbox"
                                                                                                                             name="preopt[]"
                                                                                                                             value="{{ $arropt->id }}"
-                                                                                                                            checked />
+                                                                                                                            checked/>
                                                                                                                         <span
                                                                                                                             class="success"></span>
                                                                                                                     </label>
                                                                                                                 </li>
+                                                                                                                @else
+                                                                                                                <li
+                                                                                                                    class="list-group-item">
+                                                                                                                    {{ $arropt->pre_opt
+                                                                                                                    }}
+                                                                                                                    <label
+                                                                                                                        class="checkbox">
+                                                                                                                        <input
+                                                                                                                            type="checkbox"
+                                                                                                                            name="preopt[]"
+                                                                                                                            value="{{ $arropt->id }}"
+                                                                                                                            checked disabled/>
+                                                                                                                        <span
+                                                                                                                            class="success"></span>
+                                                                                                                    </label>
+                                                                                                                </li>
+                                                                                                                @endif
                                                                                                             @endif
                                                                                                         @else
+                                                                                                        @if ($lreserveapply->created_user_id == Auth::user()->id)
                                                                                                             <li
                                                                                                                 class="list-group-item">
                                                                                                                 {{ $lpre->pre_opt }}
@@ -696,6 +741,21 @@
                                                                                                                         class="success"></span>
                                                                                                                 </label>
                                                                                                             </li>
+                                                                                                            @else
+                                                                                                            <li
+                                                                                                                class="list-group-item">
+                                                                                                                {{ $lpre->pre_opt }}
+                                                                                                                <label
+                                                                                                                    class="checkbox">
+                                                                                                                    <input
+                                                                                                                        type="checkbox"
+                                                                                                                        name="preopt[]"
+                                                                                                                        value="{{ $lpre->id }}" disabled/>
+                                                                                                                    <span
+                                                                                                                        class="success"></span>
+                                                                                                                </label>
+                                                                                                            </li>
+                                                                                                            @endif
                                                                                                         @endif
                                                                                                     @endforeach
                                                                                                 @endif
@@ -708,10 +768,17 @@
                                                                                         value="{{ $ward->id }}">
 
                                                                                     <div class="modal-footer">
+                                                                                        @if ($lreserveapply->created_user_id == Auth::user()->id)
                                                                                         <button type="submit"
                                                                                             class="btn btn-primary"
                                                                                             autocomplete="off"> <i
                                                                                                 class="glyphicon glyphicon-ok-sign"></i>บันทึก</button>
+                                                                                        @else
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-default"
+                                                                                            autocomplete="off" disabled> <i
+                                                                                                class="glyphicon glyphicon-ok-sign"></i>บันทึก</button>
+                                                                                        @endif
                                                                                         <button type="button"
                                                                                             class="btn btn-warning"
                                                                                             data-dismiss="modal">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Expenses;
 use App\Bed;
+use App\Event;
+use App\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,9 +49,17 @@ class ExpensesController extends Controller
 
             $bed = Bed::find($request->bed_id);
             $bed->bed_status = 'เตรียมออก';
+
+            $reserve = Reservation::find($request->reserve_id);
+            $reserve->reserve_status = 'เตรียมออก';
+
+            // $reserve = Reservation::find($request->reserve_id);
+            // $reserve->complication = $request->complication;
     
             $ex->save();
             $bed->save();
+            $reserve->save();
+            // $reserve->save();
 
         return back()->with('success','บันทึกค่าใช้จ่าย สำเร็จ !!');
 
@@ -65,9 +75,14 @@ class ExpensesController extends Controller
     
             $bed = Bed::find($request->bed_id);
             $bed->bed_status = 'เตรียมออก';
+
+            
+            $reserve = Reservation::find($request->reserve_id);
+            $reserve->reserve_status = 'เตรียมออก';
     
             $ex->save();
             $bed->save();
+            $reserve->save();
 
         return back()->with('success','บันทึกค่าใช้จ่าย สำเร็จ !!');
 

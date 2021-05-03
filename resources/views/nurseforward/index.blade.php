@@ -216,7 +216,12 @@
                                             <span class="pcoded-mtext">ผู้ป่วย</span>
                                         </a>
                                     </li>
-
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -291,6 +296,9 @@
                                                         <p style="font-size:18px;">7. สามารถดูรายการที่ได้รับการอนุมัติเตียงแล้ว (รายการอนุมัติแล้ว)</p>
                                                         <p style="font-size:18px;">8. สามารถจองเตียงได้ (หน้าจองเตียง)</p>
                                                         <p style="font-size:18px;">9. สามารถดู/แก้ไข ข้อมูลผู้ป่วยได้ (หน้าผู้ป่วย)</p>
+                                                        <br><br><br>
+                                                        <h2>แบบประเมินการใช้งานระบบ</h2>
+                                                        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc4i9uxreaXIaN5MaUod9XAnb9ZJVG5qBwmOEnYo-pefzdEbQ/viewform">แบบประเมิน</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -325,7 +333,7 @@
 
     <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('admindek/js/script.min.js') }}"></script>
 
-    <script src={{ asset('js/clock.js') }}></script>
+    <script type="d8424a08d31b5b8b406fded2-text/javascript" src="{{ asset('js/clock.js') }}"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
         type="d8424a08d31b5b8b406fded2-text/javascript"></script>

@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.0",
         "filp/whoops": "^2.12",
         "laravel/framework": "^6.18.35",
+        "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.0",
         "yajra/laravel-datatables-oracle": "^9.17"
     },

@@ -23,7 +23,7 @@ class StatisticController extends Controller
 
         $user = User::find(Auth::user()->id);
         $ward = Ward::find(Auth::user()->ward_id);
-        $opt = Operative::where('ward_id',$ward->id)->get();
+        $opt = Operative::orderBy('opt_name','asc')->get();
 
       $reserve = Patient::join('reservations', 'patients.id', '=', 'reservations.patient_id')
       ->where('reservations.rec_status', '=', '1')
@@ -46,7 +46,7 @@ class StatisticController extends Controller
       ->leftjoin('operatives', 'reservations.opt_id', '=', 'operatives.id')
       ->leftjoin('patients', 'patients.id', '=', 'reservations.patient_id')
       ->where('reservations.reserve_status','จำหน่าย')
-       ->where('reservations.ward_id', $ward->id)->select('events.created_at','patients.hn','patients.prefix','patients.fname','patients.lname','patients.birthday','operatives.id','operatives.opt_name','reservations.reserve_status','events.event_status','events.detail','reservations.disease','reservations.complication','expenses.total')->get(); 
+       ->where('reservations.ward_id', $ward->id)->select('events.created_at','patients.hn','patients.prefix','patients.fname','patients.lname','patients.age','operatives.id','operatives.opt_name','reservations.reserve_status','events.event_status','events.detail','reservations.disease','reservations.complication','expenses.total')->get(); 
       
       // Fetch all records
       $response['data'] = $Events;
@@ -67,7 +67,7 @@ class StatisticController extends Controller
        ->leftjoin('operatives', 'reservations.opt_id', '=', 'operatives.id')
        ->leftjoin('patients', 'patients.id', '=', 'reservations.patient_id')
       ->where('reservations.reserve_status','จำหน่าย')
-        ->where('reservations.ward_id', $ward->id)->whereBetween('date', array($dateFrom,$dateTo))->select('events.created_at','patients.hn','patients.prefix','patients.fname','patients.lname','patients.birthday','operatives.id','operatives.opt_name','reservations.reserve_status','events.event_status','events.detail','reservations.disease','reservations.complication','expenses.total')->get();
+        ->where('reservations.ward_id', $ward->id)->whereBetween('date', array($dateFrom,$dateTo))->select('events.created_at','patients.hn','patients.prefix','patients.fname','patients.lname','patients.age','operatives.id','operatives.opt_name','reservations.reserve_status','events.event_status','events.detail','reservations.disease','reservations.complication','expenses.total')->get();
 
       // dd($event_data);
 

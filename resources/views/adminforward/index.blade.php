@@ -31,16 +31,16 @@
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('admindek/css/widget.css') }}"> --}}
 
     <style>
-        .blink {
-            animation: blinker 1.5s step-start infinite;
-            color: #1ed7b2;
-        }
+    .blink {
+        animation: blinker 1.5s step-start infinite;
+        color: #1ed7b2;
+    }
 
-        @keyframes blinker {
-            50% {
-                opacity: 0;
-            }
+    @keyframes blinker {
+        50% {
+            opacity: 0;
         }
+    }
     </style>
 
 </head>
@@ -59,7 +59,8 @@
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="/index-admin">
-                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}" alt="Theme-Logo" />
+                            <img class="img-fluid" src="{{ asset('admindek/image/logolekblack.png') }}"
+                                alt="Theme-Logo" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu icon-toggle-right"></i>
@@ -69,7 +70,7 @@
                         </a>
                     </div>
                     <div class="navbar-container container-fluid">
-                    <ul class="nav-left ">
+                        <ul class="nav-left ">
                             <li>
                                 <div style="font-size:16px;">
 
@@ -106,56 +107,7 @@
                         </ul>
 
                         <ul class="nav-right">
-                            <li class="header-notification">
-                                <!-- <div class="dropdown-primary dropdown">
-                                    <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="feather icon-bell"></i>
-                                        <span class="badge bg-c-red">5</span>
-                                    </div>
-                                    <ul class="show-notification notification-view dropdown-menu"
-                                        data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                                        <li>
-                                            <h6>Notifications</h6>
-                                            <label class="label label-danger">New</label>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="img-radius" src="admindek/jpg/avatar-4.jpg"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">John Doe</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="img-radius" src="admindek/jpg/avatar-3.jpg"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Joseph William</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="media">
-                                                <img class="img-radius" src="admindek/jpg/avatar-4.jpg"
-                                                    alt="Generic placeholder image">
-                                                <div class="media-body">
-                                                    <h5 class="notification-user">Sara Soudein</h5>
-                                                    <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                        elit.</p>
-                                                    <span class="notification-time">30 minutes ago</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div> -->
+
                             </li>
 
                             <li class="user-profile header-notification">
@@ -163,7 +115,8 @@
                                     <div class="dropdown-toggle" data-toggle="dropdown">
                                         <!-- <img src="{{ asset('admindek/jpg/avatar-4.jpg') }}" class="img-radius"
                                             alt="User-Profile-Image"> -->
-                                            <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }} {{ Auth::user()->lname }}</span>
+                                        <span>{{ Auth::user()->prefix }}{{ Auth::user()->fname }}
+                                            {{ Auth::user()->lname }}</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu"
@@ -217,10 +170,9 @@
                                             <span class="pcoded-micon"><i class="feather icon-settings"></i></span>
                                             <span class="pcoded-mtext">จัดสรรวอร์ด
                                                 @if ($userunsub->isNotEmpty())
-                                                <img
-                                                src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
-                                                width='25px' />
-                                            @endif
+                                                <img src='http://oxygen.readyplanet.com/images/column_1303576852/icon0002.gif'
+                                                    width='25px' />
+                                                @endif
                                             </span>
                                         </a>
                                         <ul class="pcoded-submenu">
@@ -256,15 +208,25 @@
                                             </li>
                                             <li class="">
                                                 <a href="/manageuserwards" class="waves-effect waves-dark">
-                                                    <span class="pcoded-mtext">รออนุมัติสิทธิ์ 
+                                                    <span class="pcoded-mtext">รออนุมัติสิทธิ์
                                                         @if ($userunsub->isNotEmpty())
-                                                        <span class="badge badge-danger">New  {{ $userunsub->count() }}</span>
-                                                         @endif
+                                                        <span class="badge badge-danger">New
+                                                            {{ $userunsub->count() }}</span>
+                                                        @endif
                                                     </span>
                                                 </a>
                                             </li>
+                                            
                                         </ul>
                                     </li>
+                                    <li class="">
+                                                <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing"
+                                                    target="_blank" class="waves-effect waves-dark">
+                                                    <span class="pcoded-micon"><i
+                                                            class="feather icon-book"></i></i></span>
+                                                    <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                                </a>
+                                            </li>
                                 </ul>
                             </div>
                         </div>
@@ -280,7 +242,8 @@
                                     <div class="page-header-title">
                                         <i class="feather icon-home bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>หน้าหลัก <span style="color: blue">{{ $ward->ward_name ?? '' }}</span></h5>
+                                            <h5>หน้าหลัก <span style="color: blue">{{ $ward->ward_name ?? '' }}</span>
+                                            </h5>
                                             <span>คำแนะนำการใช้งาน</span>
                                         </div>
                                     </div>
@@ -332,18 +295,24 @@
                                                     </div>
                                                     <div class="card-block">
                                                         <p style="font-size:18px;">1. สามารถเพิ่ม/ลบ/แก้ไข "เตียง" ของ
-                                                        วอร์ด ได้</p>
+                                                            วอร์ด ได้</p>
                                                         <p style="font-size:18px;">2. สามารถเพิ่ม/ลบ/แก้ไข "หัตถการ" ของ
-                                                        วอร์ด ได้</p>
+                                                            วอร์ด ได้</p>
                                                         <p style="font-size:18px;">3. สามารถเพิ่ม/ลบ/แก้ไข
                                                             "อาจารย์แพทย์" ของวอร์ด ได้</p>
-                                                        <p style="font-size:18px;">4. สามารถเพิ่ม/ลบ/แก้ไข "สิทธิ์การรักษา" ของ
-                                                        วอร์ด ได้</p>
-                                                        <p style="font-size:18px;">5. สามารถเพิ่ม/ลบ/แก้ไข "สายการรักษา" ของวอร์ด
+                                                        <p style="font-size:18px;">4. สามารถเพิ่ม/ลบ/แก้ไข
+                                                            "สิทธิ์การรักษา" ของ
+                                                            วอร์ด ได้</p>
+                                                        <p style="font-size:18px;">5. สามารถเพิ่ม/ลบ/แก้ไข "สายการรักษา"
+                                                            ของวอร์ด
                                                             ได้</p>
                                                         <p style="font-size:18px;">6. สามารถ "อนุมัติการเข้าใช้ระบบ" และ
                                                             "แก้ไขสิทธิ์การเข้าใช้ระบบ" ของวอร์ด ได้ (เฉพาะของวอร์ด
                                                             ตัวเอง)</p>
+                                                        <br><br><br>
+                                                        <h2>แบบประเมินการใช้งานระบบ</h2>
+                                                        <a class="btn btn-primary"
+                                                            href="https://docs.google.com/forms/d/e/1FAIpQLSc4i9uxreaXIaN5MaUod9XAnb9ZJVG5qBwmOEnYo-pefzdEbQ/viewform">แบบประเมิน</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -381,7 +350,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
         type="d8424a08d31b5b8b406fded2-text/javascript"></script>
     <script type="d8424a08d31b5b8b406fded2-text/javascript">
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
     function gtag() {
         dataLayer.push(arguments);

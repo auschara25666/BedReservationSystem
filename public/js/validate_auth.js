@@ -2,6 +2,9 @@ $(document).ready(function () {
 
     $('#regisform').validate({
         rules: {
+            prefix: {
+                required: true
+            },
             fname: {
                 required: true
             },
@@ -25,6 +28,9 @@ $(document).ready(function () {
             }
         },
         messages: {
+            prefix: {
+                required: "กรุณาเลือกคำนำหน้า"
+            },
             fname: {
                 required: "กรุณากรอกชื่อจริง"
             },

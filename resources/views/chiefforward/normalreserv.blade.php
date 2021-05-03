@@ -274,6 +274,12 @@
                                             <span class="pcoded-mtext">สถิติ</span>
                                         </a>
                                     </li>
+                                    <li class="">
+                                        <a href="https://drive.google.com/file/d/1KhzcQ1E2gUUNkEM8fULuYqdxhJ8Efn6G/view?usp=sharing" target="_blank" class="waves-effect waves-dark">
+                                            <span class="pcoded-micon"><i class="feather icon-book"></i></i></span>
+                                            <span class="pcoded-mtext">คู่มือใช้งานระบบ</span>
+                                        </a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -435,7 +441,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </td>
-                                                                        {{-- <td>
+                                                                        <!-- <td>
                                                                             <div class="btn-group text-center">
                                                                                 @if (\Carbon\Carbon::now() <
                                                                                     \Carbon\Carbon::parse($lreserve->
@@ -471,7 +477,7 @@
                                                                         </span>
                                                                         </div>
 
-                                                                        </td> --}}
+                                                                        </td> -->
                                                                      </tr>
 
                                                         @php $number = $number + 1; @endphp
@@ -500,7 +506,7 @@
                                                                                     style="font-size: 18px;">
                                                                                     <strong>ชื่อผู้ป่วย
                                                                                         :</strong>
-                                                                                        {{ $lreserve->prefix }}{{ $lreserve->fname }} {{ $lreserve->lname }}
+                                                                                        {{ $lreserve->patient->prefix }}{{ $lreserve->patient->fname }} {{ $lreserve->patient->lname }}
                                                                                 </p>
                                                                                 <p class="card-text"
                                                                                     style="font-size: 18px;">
@@ -512,7 +518,7 @@
                                                                                     style="font-size: 18px;">
                                                                                     <strong>อาจารย์แพทย์เจ้าของไข้
                                                                                         :</strong>
-                                                                                    {{ $lreserve->doctor->name }}
+                                                                                        {{ $lreserve->doctor->prefix }}{{ $lreserve->doctor->fname }} {{ $lreserve->doctor->lname }}
                                                                                 </p>
                                                                                 <p class="card-text"
                                                                                     style="font-size: 18px;">
@@ -580,7 +586,7 @@
                                                                                             <label>ช่วงเวลาที่ให้เข้า</label>
                                                                                             <input type="text"
                                                                                                 class="form-control timepicker"
-                                                                                                name="detailtime" autocomplete="false"
+                                                                                                name="detailtime" autocomplete="off"
                                                                                                 placeholder="กรุณากรอกช่วงเวลาที่เข้าได้"
                                                                                                 required />
                                                                                         </div>
@@ -603,7 +609,7 @@
                                                                     <input type="hidden" name="ward_created"
                                                                         value="{{ $lreserve->ward_created }}">
                                                                     <div class="modal-footer justify-content-between">
-                                                                        <button type="button" class="btn btn-default"
+                                                                        <button type="button" class="btn btn-danger"
                                                                             data-dismiss="modal">ปิด</button>
                                                                         <button type="submit"
                                                                             class="btn btn-primary">บันทึก</button>
@@ -620,8 +626,9 @@
                                                             role="dialog">
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
-                                                                    <form action="/cancelreserve" method="POST">
+                                                                    <form action="{{ route('reserve.destroy',$lreserve->id) }}" method="POST">
                                                                         @csrf
+                                                                        @method('DELETE')
                                                                         <div class="modal-body">
                                                                             <div
                                                                                 style="display: flex;justify-content: center;align-items: center;padding-top:20px;">
